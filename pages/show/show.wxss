@@ -1,0 +1,185 @@
+/* pages/show/show.wxss */
+.container{
+  background: #FFFFFE;
+  float: left;
+  width: 100%;
+}
+
+
+.TabButton{
+  /*color:#FFFFFF;*/
+  float: left;
+  width:100%;
+}
+.navigator{
+  float:left;
+  width:49%;
+  height:60px;
+  /*text-align: center;*/
+  line-height: 63rpx;
+  /*border:1px solid #aaa;*/
+}
+.navigator-img{
+  float: left;
+}
+.navigator-img-navigator{
+  text-align: center;
+  margin:0 auto;
+}
+.navigator-image{
+  width:40px;
+  height:40px;
+  margin-top: 10px;
+  margin-left:5px;
+}
+.navigator-friends{
+  float: right;
+}
+/*button.income,
+button.expend
+{
+  width:50%;
+  height:50px;
+  font-size: 15px;
+  line-height: 50px;
+  text-align: center;
+  float: left;
+  border-radius: 0;
+}
+button.income{
+  border-right:0;
+}*/
+
+
+.container-user{
+  width:100%;
+  background: #9170D9;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:0rpx;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  /*margin: 20rpx;*/
+  border-radius: 50%;
+}
+
+.userinfo-nickname{
+  color:#FFFFFE;
+}
+
+.GetMoner{
+  text-align:center;
+  margin-top:30rpx;
+}
+.GetMoney-money{
+  color:#FFFFFE;
+  font-size: 30px;
+}
+.GetMoney-text{
+  color:#FFFFFE;
+}
+
+.MoneyMessage{
+  margin-top:20px;
+  color:#FFFFFE;
+}
+.MoneyMessage-ul{
+ position: relative;
+}
+.MoneyMessage-ul:after{
+  content:'';
+  display: block;
+  clear:both;
+}
+.MoneyMessage-li01{
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+  width:50%;
+  padding:10px 10px 20px 20px;
+}
+
+.MoneyMessage-li02{
+  position: absolute;
+  right:50%;
+  top:15%;
+  width:1px;
+  height:60%;
+  background:#fff;
+}
+.MoneyMessage-li03{
+  box-sizing: border-box;
+  float: right;
+  text-align: center;
+  padding:10px 20px 20px 10px;
+  width:50%;
+}
+.Stats{
+  width: 100%;
+  height:60rpx;
+  background: #EAF0F0;
+  line-height: 25px;
+}
+.imgs{
+  width:100%;
+  height:100rpx;
+  background: #FFFFFE;
+  float: left;
+  line-height: 50px;
+/*  border-bottom: 1px solid #aaa;*/
+  padding-left: 10px;
+}
+/*.imgs-br:after{
+  content:'';
+  display: block;
+  clear:both;
+}
+.imgs-br{
+  width:95%;
+  height:1px;
+  background: #aaa;
+  margin-top: 48px;
+}*/
+.imgs-text .in-img{
+  width:60rpx;
+  height:60rpx;
+  vertical-align:middle;
+  margin-top:-5px;
+}
+.imgs-text{
+  float: left;
+}
+.imgs-test01{
+  margin:0 10px 0 10px;
+}
+.imgs-test02{
+  margin:0 10px 0 0px;
+  color:#868686;
+  font-size: 14px;
+}
+.imgs .money{
+  float: right;
+  /*margin-right:20px;*/
+  color: red;
+  font-weight: bold;
+  padding-right:20px;
+}
+.StatsTime{
+  float: left;
+  padding:3px 0 3px 20px;
+}
+.StatsStats{
+  float: right;
+  padding:3px 20px 3px 0;
+}
+.list{
+  background: #FFFFFE;
+  width:100%;
+  float: left;
+}

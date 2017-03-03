@@ -1,0 +1,122 @@
+/* pages/account/details/detail_add/account_detail_add.wxss */
+page{  
+  display: block;  
+  min-height: 100%;  
+  background-color: #EDEDED;  
+} 
+.container{
+	background: #EDEDED;
+}
+.container-box{
+	float: left;
+	width: 100%;
+	height:60px;
+	background: #EDEDED;
+	height:auto;
+	line-height: 30px;
+}
+.userinfo-images{
+	width:40px;
+	height:40px;
+	margin-top:18px;
+}
+.ClassImages{
+	float: left;
+	margin:0 0 10px 35px;
+}
+.ClassImages-desc{
+	text-align: center;
+}
+
+.CircleName{
+	width: 100%;
+	height:50px;
+	background: #FFFFFF;
+	margin-top:10px;
+	border-bottom: 1px solid #ECECEC;
+}
+.CircleName-text{
+	line-height: 50px;
+	margin-left:10px;
+}
+.CircleName-name{
+	/*float: left;*/
+}
+.CircleName-input{
+	float: right;
+	margin-top: 11.875px;
+	margin-right:10px;
+}
+.btn-area{
+	background: #FFFFFF;
+	width:100%;
+	height:60px;
+	margin-top: 10px;
+}
+
+.btn-area button{
+	background: #EB9420;
+	width:30%;
+	height:40px;
+	margin-top:10px;
+	color:#FFFFFF;
+}
+
+.SumExpend{
+	width:100%;
+	background: #FFFFFE;
+}
+.SumExpend-money{
+	float: left;
+	border-bottom: 1px solid #ECECEC;
+	height:65px;
+	width:100%;
+	
+	line-height: 20px;
+	margin-top:20px;
+}
+.SumExpend-money01{
+	float: left;
+	height:80px;
+	width:100%;
+	line-height: 20px;
+	margin-top:15px;
+}
+.SumExpend-money01{
+	float: left;
+	margin-left:10px;
+}
+.SumExpend-money02{
+	float: right;
+	margin-top: 10.016px;
+	width:80px;
+}
+.SumExpend-money03{
+	float: left;
+	border:1px solid #ECECEC;
+	height:60px;
+}
+
+.participant{
+	width:100%;
+	background: #FFFFFE;
+	margin-top:20px;
+}
+.participant-box{
+	float: right;
+	/*height: 50px;*/
+	width:98%;
+	/*border-bottom: 0.3px solid #aaa;*/
+}
+.participant-01{
+	line-height: 50px;
+}
+.Head-image{
+	width:100%;
+	float: left;
+}
+.Head-image-box{
+	width:100%;
+	height:50px;
+	border-top: 1px solid #ECECEC;
+}

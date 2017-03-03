@@ -1,0 +1,104 @@
+<!--pages/statistics/statistics.wxml-->
+<view class="container">
+	<view class="TabButton">
+		<button type="{{IncomeType}}" bindtap="DefaultIncome" hover-class="other-button-hover" class="income"> 收入 </button>
+		<button type="{{ExpendType}}" bindtap="DefaultExpend" hover-class="other-button-hover" class="expend"> 支出 </button>
+	</view>
+	<view class="TabButton-br"></view>
+	<form bindsubmit="formSubmit">
+		<view class="userinfo">
+			<view class="userinfo-imgDesc">
+					<view class="userinfo-desc01"><image class="userinfo-img" src="{{avatarUrl}}" background-size="cover" mode=""></image></view>
+					<view class="userinfo-desc01"><text class="userinfo-desc">{{desc}}</text></view>
+			</view>
+			<view class="userinfo-input">
+			  <input name="input" class="userinfo-input-input" maxlength="10" placeholder="请输入金额" type="digit"/>
+			  <text class="userinfo-input-text">元</text>
+			</view>
+		</view>
+
+		<!-- 收入 -->
+		<view class="BillClass-income" style="display:{{IncomeDisplay}}">
+			<view class="BillClass-get">
+				<view class="BillClass-class">
+					<image data-imgurl="../../images/吃.png" data-desc="吃喝" bindtap="BillClassClick" class="userinfo-img" src="../../images/吃.png" background-size="cover" mode=""></image><image style="width:13px;height:13px;position:relative;right:-8px;top:-20px;{{display}}" src="../../images/选中.png"></image><view>吃喝</view>
+				</view>
+				<view class="BillClass-class">
+					<image class="userinfo-img" data-imgurl="../../images/交通.png" data-desc="交通" bindtap="BillClassClick" src="../../images/交通.png" background-size="cover" mode=""></image><image style="width:13px;height:13px;position:relative;right:-8px;top:-20px;" src="../../images/选中.png"></image><view>交通</view>
+				</view>
+				<view class="BillClass-class">
+					<image class="userinfo-img" data-imgurl="../../images/服饰.png" data-desc="服饰" bindtap="BillClassClick" src="../../images/服饰.png" background-size="cover" mode=""></image><image style="width:13px;height:13px;position:relative;right:-8px;top:-20px;" src="../../images/选中.png"></image><view>服饰</view>
+				</view>
+				<view class="BillClass-class">
+					<image class="userinfo-img" data-imgurl="../../images/居家.png" data-desc="居家" bindtap="BillClassClick" src="../../images/居家.png" background-size="cover" mode=""></image><view>居家</view>
+				</view>
+				<view class="BillClass-class">
+					<image class="userinfo-img" data-imgurl="../../images/娱乐.png" data-desc="娱乐" bindtap="BillClassClick" src="../../images/娱乐.png" background-size="cover" mode=""></image><view>娱乐</view>
+				</view>
+				<view class="BillClass-class">
+					<image class="userinfo-img" data-imgurl="../../images/通讯.png" data-desc="通讯" bindtap="BillClassClick" src="../../images/通讯.png" background-size="cover" mode=""></image><view>通讯</view>
+				</view>
+				<view class="BillClass-class">
+					<image class="userinfo-img" data-imgurl="../../images/学杂.png" data-desc="学杂" bindtap="BillClassClick" src="../../images/学杂.png" background-size="cover" mode=""></image><view>学杂</view>
+				</view>
+				<view class="BillClass-class">
+					<image class="userinfo-img" data-imgurl="../../images/旅游.png" data-desc="旅游" bindtap="BillClassClick" src="../../images/旅游.png" background-size="cover" mode=""></image><view>旅游</view>
+				</view>
+				<view class="BillClass-class">
+					<image class="userinfo-img" data-imgurl="../../images/礼物.png" data-desc="人情" bindtap="BillClassClick" src="../../images/礼物.png" background-size="cover" mode=""></image><view>人情</view>
+				</view>
+				<view class="BillClass-class">
+					<image class="userinfo-img" data-imgurl="../../images/医疗.png" data-desc="医疗" bindtap="BillClassClick" src="../../images/医疗.png" background-size="cover" mode=""></image><view>医疗</view>
+				</view>
+			</view>
+		</view>
+
+		<!-- 支出 -->
+		<view class="BillClass-expend" style="display:{{ExpendDisplay}}">
+			<view class="BillClass-get">
+				<view class="BillClass-class">
+					<image data-imgurl="../../images/吃.png" data-desc="吃喝" bindtap="BillClassClick" class="userinfo-img" src="../../images/吃.png" background-size="cover" mode=""></image><view>吃喝</view>
+				</view>
+				<view class="BillClass-class">
+					<image class="userinfo-img" data-imgurl="../../images/交通.png" data-desc="交通" bindtap="BillClassClick" src="../../images/交通.png" background-size="cover" mode=""></image><view>交通</view>
+				</view>
+				<view class="BillClass-class">
+					<image class="userinfo-img" data-imgurl="../../images/服饰.png" data-desc="服饰" bindtap="BillClassClick" src="../../images/服饰.png" background-size="cover" mode=""></image><view>服饰</view>
+				</view>
+				<view class="BillClass-class">
+					<image class="userinfo-img" data-imgurl="../../images/居家.png" data-desc="居家" bindtap="BillClassClick" src="../../images/居家.png" background-size="cover" mode=""></image><view>居家</view>
+				</view>
+				<view class="BillClass-class">
+					<image class="userinfo-img" data-imgurl="../../images/娱乐.png" data-desc="娱乐" bindtap="BillClassClick" src="../../images/娱乐.png" background-size="cover" mode=""></image><view>娱乐</view>
+				</view>
+				<view class="BillClass-class">
+					<image class="userinfo-img" data-imgurl="../../images/通讯.png" data-desc="通讯" bindtap="BillClassClick" src="../../images/通讯.png" background-size="cover" mode=""></image><view>通讯</view>
+				</view>
+				<view class="BillClass-class">
+					<image class="userinfo-img" data-imgurl="../../images/学杂.png" data-desc="学杂" bindtap="BillClassClick" src="../../images/学杂.png" background-size="cover" mode=""></image><view>学杂</view>
+				</view>
+			</view>
+		</view>
+
+		<!-- 时间 -->
+		<view class="FromText">
+			<view class="section">
+			  <!-- <view class="section__title">日期选择器</view> -->
+			  <picker mode="date" name="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+			    <view class="picker">
+			      时间: {{date}} <text class="picker-text">不能选择未来日期</text>
+			    </view>
+			  </picker>
+			</view>
+			<view class="section-br"></view>
+			<view class="get-remark">
+				<view class="remark remark-remark">备注：</view>
+				<view class="remark remark-input">
+					<input bindinput="bindKeyInput" name="input1" maxlength="10" placeholder="备注，例如：租房"/></view><text class="remark" class="remark-limit">{{remark_length}}/10</text>
+			</view>
+		</view>
+		<view class="btn-area">
+		    <button formType="submit">提交</button>
+		</view>
+	</form>
+</view>

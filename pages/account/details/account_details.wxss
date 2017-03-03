@@ -1,0 +1,129 @@
+/* pages/account/account_desc.wxss */
+page{  
+  display: block;  
+  min-height: 100%;  
+  background-color: #EDEDED;  
+}  
+.container{
+	height:auto;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+.UserImg{
+	width:100%;
+	background: #FFFFFE;
+	height:auto;
+	float: left;
+}
+.UserImg-images{
+	width:70px;
+	text-align: center;
+	margin:10px 10px 10px 10px;
+	float: left;
+	font-size: 13px;
+}
+.nav{
+	width:100%;
+    height:60px;
+    background: #FFFFFE;
+    margin:0 auto;
+    position:fixed;
+    bottom:0;
+    border-top:1px solid #EDEDED;
+    text-align:center;
+    float: left;
+}
+.nav-desc{
+	float: left;
+	width: 30%;
+	height:40px;
+	margin:10px 10% 0 10%;
+	text-align: center;
+	line-height: 40px;
+	border:1px solid #F29900;
+}
+.UserImg-images-number{
+	width:110rpx;
+	height:110rpx;
+	border-radius: 50%;
+	background: #272822;
+	margin-left:7px;
+	color:#FFFFFE;
+	line-height: 55px;
+	/*border:1px solid #aaa;*/
+	/*line-height: 11rpx;*/
+}
+
+
+.Money{
+	width:100%;
+	background: #FFFFFE;
+	height:80px;
+	margin-top: 10px;
+}
+.MoneyClass-left{
+	width:50%;
+	float: left;
+	line-height: 40px;
+	margin-top: 12.5px;
+	border-right:1px solid #aaa;
+}
+.MoneyClass-right{
+	width:49%;
+	float: right;
+	font-size: 13px;
+}
+.MoneyClass-rightBox{
+	width:100%;
+	height:70px;
+	line-height: 40px;
+	margin-left:10px;
+}
+.Money-money{
+	margin-left: 20px;
+	font-weight: bold;
+}
+.Money-text{
+	color:#FFFFFE;
+	width: 50px;
+	height:15px;
+	line-height: 15px;
+	font-size: 10px;
+	text-align: center;
+	margin-left:15px;
+	background: #66D9EF;
+}
+
+.BillList{
+	width:100%;
+	height:auto;
+	background: #FFFFFE;
+	margin-top: 10px;
+}
+.BillList-box{
+	float: left;
+	border-bottom: 0.5px solid #EDEDED;
+	width:100%;
+	height:80px;
+	/*line-height: 20px;*/
+}
+.BillListGetBox{
+	float: left;
+}
+.BillListGetBox-images{
+	margin-top:20px;
+	margin-left:10px;
+}
+.BillListGetBox-01{
+	line-height: 25px;
+	margin: 15px 0 0 20px;
+}
+.BillListGetBox-02{
+	line-height: 25px;
+	margin-top: 15px;
+	float: right;
+	margin-right:10px;
+}

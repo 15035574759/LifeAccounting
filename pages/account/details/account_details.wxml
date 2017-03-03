@@ -1,0 +1,77 @@
+<!--pages/account/account_desc.wxml-->
+<view class="container">
+	<view class="UserImg">
+		<view class="UserImg-images">
+			<image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover" mode=""></image>
+			<view>张三</view>
+		</view>
+		<view class="UserImg-images">
+			<image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover" mode=""></image>
+			<view>张三</view>
+		</view>
+		<view class="UserImg-images">
+			<image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover" mode=""></image>
+			<view>张三</view>
+		</view>
+		<view class="UserImg-images">
+			<navigator url="navigate?title=navigate" hover-class="navigator-hover">
+				<view class="UserImg-images-number">4人</view>
+				<view style="margin-top:10px;">全部成员></view>
+			</navigator>
+		</view>
+	</view>
+
+	<view class="Money">
+		<view class="MoneyClass-left"> 
+				<view class="Money-money">75元</view>
+				<view class="Money-text">还应收取</view>
+		</view>
+		<view class="MoneyClass-right">
+			<view class="MoneyClass-rightBox">
+				<view><image style="width:15px;height:15px;margin-right:8px;" src="../../../images/消费.png" background-size="cover" mode=""></image>我的消费：1,091.67</view>
+				<view><image style="width:15px;height:15px;margin-right:8px;" src="../../../images/消费(1).png" background-size="cover" mode=""></image>全员消费：3,800</view>
+			</view>
+		</view>
+	</view>
+	
+	<view class="BillList">
+		<navigator url="../particulars/account_particulars" hover-class="navigator-hover">
+			<view class="BillList-box">
+				<view class="BillListGetBox"><image class="BillListGetBox-images" style="width:40px;height:40px;" src="../../../images/娱乐.png" background-size="cover" mode=""></image></view>
+				<view class="BillListGetBox BillListGetBox-01">
+					<view>娱乐</view>
+					<view style="font-size:13px;color:#aaa;">今天12:00</view>
+				</view>
+				<view class="BillListGetBox BillListGetBox-02">
+					<view style="text-align:right;font-weight:bold;">1000</view>
+					<view style="font-size:13px;color:#aaa;">4人消费,秦林慧付款</view>
+				</view>
+			</view>
+		</navigator>
+		<navigator url="../particulars/account_particulars" hover-class="navigator-hover">
+			<view class="BillList-box">
+				<view class="BillListGetBox"><image class="BillListGetBox-images" style="width:40px;height:40px;" src="../../../images/居家.png" background-size="cover" mode=""></image></view>
+				<view class="BillListGetBox BillListGetBox-01">
+					<view>居家</view>
+					<view style="font-size:13px;color:#aaa;">今天12:00</view>
+				</view>
+				<view class="BillListGetBox BillListGetBox-02">
+					<view style="text-align:right;font-weight:bold;">1000</view>
+					<view style="font-size:13px;color:#aaa;">4人消费,秦林慧付款</view>
+				</view>
+			</view>
+		</navigator>
+	</view>
+
+    <!-- <view style="height:100px;"></view> -->
+	<!-- 底部自定义导航 -->
+    <!-- <view class="nav">
+		<button class="nav-desc" style="background:#F29900;color:#FFFFFE;" type="default" bindtap="default" hover-class="other-button-hover"> 删除 </button>
+		<button class="nav-desc" type="default" bindtap="default" hover-class="other-button-hover"> 编辑 </button>
+	</view> -->
+	<view class="nav">
+		<navigator url="detail_add/account_detail_add" hover-class="navigator-hover">
+			<image class="BillListGetBox-nav-images" style="width:40px;height:40px;margin-top:15px;" src="../../../images/记.png" background-size="cover" mode=""></image>
+		</navigator>
+	</view>
+</view>

@@ -1,0 +1,29 @@
+{
+  "pages":[
+    "pages/account/account"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#9170D9",
+    "navigationBarTitleText": "生活记账111",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": { 
+     "backgroundColor":"#333333",
+     "color":"white",
+     "borderStyle":"white",
+     "selectedColor":"#EA9518",
+     "list": [{
+      "pagePath": "pages/show/show",
+      "iconPath":"images/book1.png",
+      "selectedIconPath":"images/book.png",
+      "text": "账单"
+    }, {
+      "pagePath": "pages/statistics/statistics",
+      "iconPath":"images/add1.png",
+      "selectedIconPath":"images/add.png",
+      "text": "记账"
+    }]
+  }
+}

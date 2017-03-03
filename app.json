@@ -1,0 +1,51 @@
+{
+  "pages":[
+    "pages/show/show",
+    "pages/statistics/statistics",
+    "pages/index/index",
+    "pages/tally/tally",
+    "pages/user/user",
+    "pages/account/account",
+    "pages/account/add/account_add",
+    "pages/account/details/account_details",
+    "pages/friend/friend",
+    "pages/friend/add/add_friend",
+    "pages/account/particulars/account_particulars",
+    "pages/account/details/detail_add/account_detail_add",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#9170D9",
+    "navigationBarTitleText": "生活记账",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": { 
+     "backgroundColor":"#333333",
+     "color":"white",
+     "borderStyle":"white",
+     "selectedColor":"#EA9518",
+     "list": [{
+      "pagePath": "pages/show/show",
+      "iconPath":"images/book1.png",
+      "selectedIconPath":"images/book.png",
+      "text": "账单"
+    }, {
+      "pagePath": "pages/statistics/statistics",
+      "iconPath":"images/add1.png",
+      "selectedIconPath":"images/add.png",
+      "text": "记账"
+    },{
+      "pagePath": "pages/tally/tally",
+      "iconPath":"images/static2.png",
+      "selectedIconPath":"images/static.png",
+      "text": "统计"
+    },{
+      "pagePath": "pages/user/user",
+      "iconPath":"images/set.png",
+      "selectedIconPath":"images/set1.png",
+      "text": "设置"
+    }]
+  }
+}

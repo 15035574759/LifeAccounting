@@ -1,0 +1,123 @@
+/* pages/account/particulars/account_particulars.wxss */
+page{  
+  display: block;  
+  min-height: 100%;  
+  background-color: #EDEDED;  
+}
+.circle{
+	width:100%;
+	height:30px;
+	line-height: 30px;
+	margin-left:10px;
+}
+.CircleClass{
+	width:100%;
+	height:80px;
+	border-bottom: 0.5px solid #EDEDED;
+	background: #FFFFFE;
+}
+.CircleClass-bill{
+	/*float: left;*/
+	text-align: center;
+	line-height: 25px;
+}
+.CircleClass-bill01-name{
+	float: left;
+	margin-top: 15px;
+	margin-left:10px;
+}
+.CircleClass-bill01-rmb{
+	float: right;
+	line-height: 80px;
+	margin-right:10px;
+	font-weight: bold;
+	font-size: 20px;
+}
+.GetRemark{
+	margin:15px 0 0 10px;
+}
+.remark{
+	background: #FFFFFE;
+	width:100%;
+	height:80px;
+	line-height: 25px;
+	margin-bottom: 15px;
+}
+
+.payer{
+	width:100%;
+	/*height:130px;*/
+	background: #FFFFFE;
+}
+.payer-user{
+	width:100%;
+	float: left;
+	background: #FFFFFE;
+	border-bottom: 0.5px solid #EDEDED;
+}
+.payer-user:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+.payer-man-name{
+	width:90%;
+	height:50px;
+	line-height: 50px;
+	margin-left:10px;
+	border-bottom:0.5px solid #EDEDED;
+}
+.payer-user-img{
+	margin-top:15px;
+}
+.payer-user-public{
+	float: left;
+}
+.payer-user-pay{
+	float: right;
+	line-height: 80px;
+	margin:0 10px 0 30px;
+}
+.settle{
+	float: right;
+	margin-top:25px;
+	margin-right:15px;
+}
+.participant-consume{
+	margin-top:25px;
+	margin-left:40px;
+}
+.payer-userName{
+	line-height: 80px;
+}
+.specification{
+	width:100%;
+	background: #FFFFFE;
+	margin-top:20px;
+	line-height: 30px;
+}
+.specification-box{
+	margin:10px 0 0 10px;
+	color: #aaa;
+	font-size:13px;
+}
+.nav{
+	width:100%;
+    height:60px;
+    background: #FFFFFE;
+    margin:0 auto;
+    position:fixed;
+    bottom:0;
+    border-top:1px solid #EDEDED;
+    text-align:center;
+    float: left;
+}
+.nav-desc{
+	float: left;
+	width: 30%;
+	height:40px;
+	margin:10px 10% 0 10%;
+	text-align: center;
+	line-height: 40px;
+	border:1px solid #F29900;
+}

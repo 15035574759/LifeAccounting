@@ -1,0 +1,51 @@
+<!--pages/account/add/account_add.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class="container">
+	<view class="container-box">
+		<view class="ClassImages">
+			<view class="ClassImages-imges">
+				<image class="userinfo-images" src="../../../images/旅游.png" background-size="cover" mode=""></image>
+			</view>
+			<view class="ClassImages-desc">旅游</view>
+		</view>
+		<view class="ClassImages">
+			<view class="ClassImages-imges">
+				<image class="userinfo-images" src="../../../images/室.png" background-size="cover" mode=""></image>
+			</view>
+			<view class="ClassImages-desc">室友</view>
+		</view>
+		<view class="ClassImages">
+		<view class="ClassImages-imges"><image class="userinfo-images" src="../../../images/同事圈.png" background-size="cover" mode=""></image></view>
+		<view class="ClassImages-desc">同事</view>
+		</view>
+		<view class="ClassImages">
+			<view class="ClassImages-imges"><image class="userinfo-images" src="../../../images/球队.png" background-size="cover" mode=""></image></view>
+			<view class="ClassImages-desc">球队</view>
+		</view>
+		<view class="ClassImages">
+			<view class="ClassImages-imges"><image class="userinfo-images" src="../../../images/自驾游.png" background-size="cover" mode=""></image></view>
+			<view class="ClassImages-desc">自驾</view>
+		</view>
+		<view class="ClassImages">
+			<view class="ClassImages-imges"><image class="userinfo-images" src="../../../images/户外.png" background-size="cover" mode=""></image></view>
+			<view class="ClassImages-desc">户外</view>
+		</view>
+		<view class="ClassImages">
+			<view class="ClassImages-imges"><image class="userinfo-images" src="../../../images/活动.png" background-size="cover" mode=""></image></view>
+			<view class="ClassImages-desc">活动</view>
+		</view>
+	</view>
+
+	<view class="CircleName">
+		<view class="CircleName-name">
+			<text class="CircleName-text">圈子名称</text>
+			<view class="CircleName-input"><input name="name" placeholder="请填写圈子名称" /></view>
+		</view>
+	</view>
+
+	<view class="btn-area">
+    	<button type="default" hover-class="other-button-hover" formType="submit">完成</button>
+  	</view>
+  	<view style="background:#EDEDED;height:300px;"></view>
+</view>
+ </form>

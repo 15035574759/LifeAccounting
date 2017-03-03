@@ -1,0 +1,153 @@
+/* pages/statistics/statistics.wxss */
+
+.TabButton{
+	color:#FFFFFF;
+}
+button.income,
+button.expend
+{
+	width:200rpx;
+	height:50rpx;
+	font-size: 15px;
+	line-height: 25px;
+	text-align: center;
+	margin-top:20px;
+	float: left;
+	border-radius: 0;
+    /*border-color: #FE8A00;*/
+	/*color:#FE8A00;*/
+}
+button.income{
+	border-right:0;
+}
+.TabButton-br{
+	width:100%;
+	height:1px;
+	background: #aaa;
+	margin-top: 10px;
+}
+
+.userinfo{
+	width:100%;
+	height:80px;
+	border-bottom: 1px solid #aaa;
+}
+.userinfo-imgDesc{
+	float: left;
+	height:80px;
+}
+.userinfo-desc01{
+	float: left;
+}
+
+.userinfo-img{
+	margin: 25px 5px 0 5px;
+	width:30px;
+	height:30px;
+	/*line-height: 30px;*/
+}
+.userinfo-desc{
+	line-height: 80px;
+}
+.userinfo-input{
+	float: right;
+	margin-top:26.875px;
+	width:130px;
+}
+.userinfo-input-input{
+	direction: rtl;
+	margin-right:45px;
+}
+.userinfo-input-text{
+	margin-top:-21px;
+	float: right;
+	margin-right:15px;
+}
+
+.BillClass-income,.BillClass-expend{
+	clear: both;
+	width: 100%;
+	height:auto;
+	border-bottom: 1px solid #aaa;
+	padding-bottom: 20px;
+}
+.BillClass-get{
+	/*float: left;*/
+	height: 140px;
+	width:100%;
+	/*border:1px solid #aaa;*/
+	text-align: center;
+	margin-left:10px;
+}
+.BillClass-class{
+	float: left;
+	/*margin-top:0px;*/
+	width:50px;
+	height:65px;
+	text-align:center;
+	margin-right:20px;
+}
+.FromText{
+	width:100%;
+	height:auto;
+}
+.section{
+    /*margin-bottom: 80rpx;*/
+	height:50px;
+}
+.section .picker{
+	line-height: 50px;
+	margin-left:10px;
+}
+
+.picker-text{
+	float: right;
+	font-size: 14px;
+	color:#aaa;
+	margin-right:10px;
+}
+.section-br{
+	width:95%;
+	height:1px;
+	background:#aaa;
+	margin:0 auto;
+}
+.get-remark{
+	float: left;
+	width: 100%;
+	border-bottom:1px solid #aaa;
+	height:50px;
+	margin-bottom: 20px;
+
+}
+.remark
+{
+	float: left;
+	line-height: 50px;
+}
+.remark-remark{
+	margin-left:10px;
+}
+.remark-input{
+	margin-top:11.875px;
+}
+.remark-limit{
+	float: right;
+	line-height: 50px;
+	margin-right: 10px;
+	color:#aaa;
+}
+
+.btn-area{
+	clear: both;
+	width:90%;
+	height:50px;
+	border:1px solid #E64340;
+	border-radius:5px;
+	/*margin-bottom: 20px;*/
+	margin:0 auto;
+}
+
+.btn-area button{
+	color:#E64340;
+}

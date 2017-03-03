@@ -1,0 +1,70 @@
+<!--pages/account/account.wxml-->
+<view class="container">
+	 <view bindtap="bindViewTap" class="userinfo">
+        <image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover" mode=""></image>
+        <text class="userinfo-nickname">{{username}}</text>
+        <navigator style="float:right;" url="../../pages/account/add/account_add" hover-class="navigator-hover"><image class="userinfo-avatar" style="width:30px;height:30px;margin-right:20px;margin-top:17px;" src="../../images/添加.png" background-size="cover" mode=""></image></navigator>
+      </view>
+
+      	<!-- 列表 -->
+	    <view class="AccountInventory">
+	    	<navigator url="../../pages/account/details/account_details" hover-class="navigator-hover">
+		      	<view class="AccountInventory-get">
+		      		<image class="userinfo-avatar" style="width:50px;height:50px;margin-top:15px;" src="../../images/账本.png" background-size="cover" mode=""></image>
+		      	</view>
+		      	<view class="AccountInventory-get AccountInventory-get-class">
+		      		<view>室友</view>
+		      		<view>1人</view>
+		      	</view>
+			</navigator>
+			<view style="float:right;" bindtap="GetDelete"><image class="userinfo-avatar" style="width:30px;height:30px;margin-top:25px;" src="../../images/删除.png" background-size="cover" mode=""></image></view>
+	    </view>
+	    <view class="AccountInventory">
+	    	<navigator url="../../pages/account/details/account_details" hover-class="navigator-hover">
+		      	<view class="AccountInventory-get">
+		      		<image class="userinfo-avatar" style="width:50px;height:50px;margin-top:15px;" src="../../images/账本.png" background-size="cover" mode=""></image>
+		      	</view>
+		      	<view class="AccountInventory-get AccountInventory-get-class">
+		      		<view>旅游</view>
+		      		<view>10人</view>
+		      	</view>
+			</navigator>
+			<view style="float:right;" bindtap="GetDelete"><image class="userinfo-avatar" style="width:30px;height:30px;margin-top:25px;" src="../../images/删除.png" background-size="cover" mode=""></image></view>
+	    </view>
+	    <view class="AccountInventory">
+	    	<navigator url="../../pages/account/account_desc" hover-class="navigator-hover">
+		      	<view class="AccountInventory-get">
+		      		<image class="userinfo-avatar" style="width:50px;height:50px;margin-top:15px;" src="../../images/账本.png" background-size="cover" mode=""></image>
+		      	</view>
+		      	<view class="AccountInventory-get AccountInventory-get-class">
+		      		<view>同事</view>
+		      		<view>5人</view>
+		      	</view>
+			</navigator>
+			<view style="float:right;" bindtap="GetDelete"><image class="userinfo-avatar" style="width:30px;height:30px;margin-top:25px;" src="../../images/删除.png" background-size="cover" mode=""></image></view>
+	    </view>
+	    <view class="AccountInventory">
+	    	<navigator url="../../pages/account/account" hover-class="navigator-hover">
+		      	<view class="AccountInventory-get">
+		      		<image class="userinfo-avatar" style="width:50px;height:50px;margin-top:15px;" src="../../images/账本.png" background-size="cover" mode=""></image>
+		      	</view>
+		      	<view class="AccountInventory-get AccountInventory-get-class">
+		      		<view>球队</view>
+		      		<view>20人</view>
+		      	</view>
+			</navigator>
+			<view style="float:right;" bindtap="GetDelete"><image class="userinfo-avatar" style="width:30px;height:30px;margin-top:25px;" src="../../images/删除.png" background-size="cover" mode=""></image></view>
+	    </view>
+		<view class="AccountInventory">
+	    	<navigator url="../../pages/account/account" hover-class="navigator-hover">
+		      	<view class="AccountInventory-get">
+		      		<image class="userinfo-avatar" style="width:50px;height:50px;margin-top:15px;" src="../../images/账本.png" background-size="cover" mode=""></image>
+		      	</view>
+		      	<view class="AccountInventory-get AccountInventory-get-class">
+		      		<view>活动</view>
+		      		<view>10人</view>
+		      	</view>
+			</navigator>
+			<view style="float:right;" bindtap="GetDelete"><image class="userinfo-avatar" style="width:30px;height:30px;margin-top:25px;" src="../../images/删除.png" background-size="cover" mode=""></image></view>
+	    </view>
+</view>

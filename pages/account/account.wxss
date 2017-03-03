@@ -1,0 +1,37 @@
+/* pages/account/account.wxss */
+.container{
+	background: #FFFBE6;
+}
+.userinfo {
+  width: 100%;
+  text-align: left;
+  margin:20px 0 20px 0;
+}
+.userinfo-nickname{
+	line-height: 74px;
+	margin-left:10px;
+}
+.userinfo-avatar{
+	float: left;
+	margin:10px 5px 0 10px;
+	width: 128rpx;
+  	height: 128rpx;
+  	border-radius: 50%;
+}
+.AccountInventory {
+  width:90%;
+  float: left;
+  border-bottom:0.2px solid #EDEDED;
+  background: #FFFFFE;
+  margin-bottom: 10px;
+}
+.AccountInventory-get{
+	/*width:90%;*/
+	height:80px;
+	float: left;
+	/*line-height: 80px;*/
+}
+.AccountInventory-get-class{
+	height:40px;
+	margin-top:23px;
+}

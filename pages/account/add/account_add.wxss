@@ -1,0 +1,59 @@
+/* pages/account/add/account_add.wxss */
+.container{
+	background: #EDEDED;
+}
+.container-box{
+	float: left;
+	width: 100%;
+	height:80px;
+	background: #FFFFFF;
+	height:auto;
+	line-height: 30px;
+	padding-bottom: 20px;
+}
+.userinfo-images{
+	width:80px;
+	height:80px;
+	margin-top:18px;
+}
+.ClassImages{
+	float: left;
+	margin:10px 0 0 10px;
+}
+.ClassImages-desc{
+	text-align: center;
+}
+
+.CircleName{
+	width: 100%;
+	height:50px;
+	background: #FFFFFF;
+	margin-top:10px;
+	border-bottom: 1px solid #EDEDED;
+}
+.CircleName-text{
+	line-height: 50px;
+	margin-left:10px;
+}
+.CircleName-name{
+	/*float: left;*/
+}
+.CircleName-input{
+	float: right;
+	margin-top: 11.875px;
+	margin-right:10px;
+}
+.btn-area{
+	background: #FFFFFF;
+	width:100%;
+	height:60px;
+	margin-top: 10px;
+}
+
+.btn-area button{
+	background: #EB9420;
+	width:30%;
+	height:40px;
+	margin-top:10px;
+	color:#FFFFFF;
+}

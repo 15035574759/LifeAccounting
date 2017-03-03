@@ -1,0 +1,77 @@
+<!--pages/account/particulars/account_particulars.wxml-->
+<view class="container">
+	<view class="circle">所属圈子：{{circle}}</view>
+
+	<view class="CircleClass">
+		<view class="CircleClass-bill">
+			<view class="CircleClass-bill01-name">娱乐<view style="color:red;font-size:13px;">人民币</view></view>
+			<view class="CircleClass-bill01-rmb">100</view>
+		</view>
+	</view>
+
+	<view class="remark">
+		<view class="GetRemark">
+			<view>备注</view>
+			<view style="color:#aaa;font-size:15px;">未填写</view>
+		</view>
+	</view>
+	
+	<!-- 支付人 -->
+	<view class="payer">
+		<view class="payer-man-name">付款人 (2)</view>
+		<view class="payer-user">
+			<view class="payer-user-public payer-user-img">
+				<image class="userinfo-avatar" style="width:50px;height:50px;border-radius: 50%;" src="../../../images/user.png" background-size="cover" mode=""></image>
+			</view>
+			<view class="payer-user-public payer-userName">幸福转角</view>
+			<view class="payer-user-pay"><text style="font-size:15px;color:red;">支付</text><text style="font-size:25px;font-weight:bold;">100</text></view>
+
+		</view>
+		<view class="payer-user">
+			<view class="payer-user-public payer-user-img">
+				<image class="userinfo-avatar" style="width:50px;height:50px;border-radius: 50%;" src="../../../images/user.png" background-size="cover" mode=""></image>
+			</view>
+			<view class="payer-user-public payer-userName">幸福转角</view>
+			<view class="payer-user-pay"><text style="font-size:15px;color:red;">消费</text><text style="font-size:25px;font-weight:bold;">100</text></view>
+		</view>
+	</view>
+	<view style="width:100%;height:15px;background:#EDEDED;"></view>
+	<!-- 参与人 -->
+	<view class="payer participant">
+		<view class="payer-man-name">参与人 (2)</view>
+		<view class="payer-user">
+			<view class="payer-user-public payer-user-img">
+				<image class="userinfo-avatar" style="width:50px;height:50px;border-radius: 50%;" src="../../../images/user.png" background-size="cover" mode=""></image>
+			</view>
+			<view class="payer-user-public payer-userName">幸福转角</view>
+			<view class="payer-user-public participant-consume"><text style="font-size:15px;color:red;">支付</text><text style="font-size:25px;font-weight:bold;">100</text></view>
+			<view class="settle"><image class="userinfo-avatar" style="width:40px;height:40px;border-radius: 50%;" src="../../../images/结账.png" background-size="cover" mode="" bindtap="GetSettle"></image></view>
+		</view>
+		<view class="payer-user">
+			<view class="payer-user-public payer-user-img">
+				<image class="userinfo-avatar" style="width:50px;height:50px;border-radius: 50%;" src="../../../images/user.png" background-size="cover" mode=""></image>
+			</view>
+			<view class="payer-user-public payer-userName">幸福转角</view>
+			<view class="payer-user-public participant-consume"><text style="font-size:15px;color:red;">消费</text><text style="font-size:25px;font-weight:bold;">100</text></view>
+			<view class="settle" style="color:red;">已结算</view>
+		</view>
+	</view>
+	
+	<!-- 明细 -->
+	<view class="specification">
+		<view class="specification-box">
+			<view>记账货币：人民币</view>
+			<view>结算货币：人民币</view>
+			<view>100人民币=100人民币</view>
+			<view>记录人：幸福转角</view>
+			<view>时间：2017.2.19 21:00:00</view>
+			<view>状态：已生效</view>
+		</view>
+	</view>
+	<view style="line-height:20px;height:100px;font-size:13px;color:#aaa;margin-top:10px;">如果账单有误，请联系记录人员进行修改，如果对我们的产品有什么建议或者意见，请联系管理员：15110110706</view>
+	<!-- 底部自定义导航 -->
+    <view class="nav">
+		<button class="nav-desc" style="background:#F29900;color:#FFFFFE;" type="default" bindtap="GetDelete" hover-class="other-button-hover"> 删除 </button>
+		<button class="nav-desc" type="default" bindtap="GetUpdate" hover-class="other-button-hover"> 编辑 </button>
+	</view>
+</view>

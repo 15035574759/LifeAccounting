@@ -1,0 +1,82 @@
+<!--pages/show/show.wxml-->
+<view class="TableGet">
+   <!-- <view class="TabButton">
+    <button bindtap="Bill" style="background:#9170D9;color:#FFFFFE;" hover-class="other-button-hover" class="income"> 账单 </button>
+    <button bindtap="AccountBook" hover-class="other-button-hover" class="expend"> 账本 </button>
+  </view> -->
+  <view class="container" style="display:{{BillDisplay}}">
+    <view class="container-user">
+      <view bindtap="bindViewTap" class="userinfo">
+        <image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover" mode=""></image>
+        <!--<text class="userinfo-nickname">{{username}}</text>-->
+      </view>
+
+      <view class="GetMoner">
+        <view class="GetMoney-money">{{money}}</view>
+        <text class="GetMoney-text">本月预算余额</text>
+      </view>
+
+      <view class="MoneyMessage">
+          <view class="MoneyMessage-ul">
+                <view class="MoneyMessage-li01">
+                  <view>{{incomes}}</view>
+                  <text>本月收入</text>
+                </view>
+                <view class="MoneyMessage-li02"></view>
+                <view class="MoneyMessage-li03">
+                  <view>{{pay}}</view>
+                  <text>本月支出</text>
+                </view>
+          </view>  
+      </view>
+    </view>
+
+    <view class="TabButton">
+        <navigator class="navigator-img-navigator" url="../../pages/account/account" hover-class="navigator-hover">
+          <view class="navigator">
+            <view class="navigator-img">
+              <image class="navigator-image" src="../../images/账本.png" background-size="cover" mode=""></image>
+            </view>
+            <view class="navigator-img">
+              账本管理 <view style="color:#aaa;font-size:13px;">小伙伴一起AA记账</view>
+            </view>
+          </view>
+        </navigator>
+        <navigator class="navigator-img-navigator" url="../friend/friend" hover-class="navigator-hover">
+            <view class="navigator navigator-friends">
+              <view class="navigator-img">
+                <image class="navigator-image" src="../../images/好友.png" background-size="cover" mode=""></image>
+              </view>
+              <view class="navigator-img" style="width:104px;">
+               好友管理 <view style="color:#aaa;font-size:13px;">添加你的好友</view>
+              </view>
+            </view>
+        </navigator>
+    </view>
+
+
+       <!--定义模板-->
+      <template name="items">
+        <navigator url="../../pages/detail/detail?id={{id}}" hover-class="navigator-hover">
+      <!-- <view wx:for="{{newsList}}" class="list" wx:for-item="itemName"> -->
+          <view class="Stats" >
+            <view class="StatsTime">{{time}}</view>
+            <view class="StatsStats">收入:{{month_income}} 支出:{{month_pay}}</view>
+          </view>
+              <view class="imgs" wx:for="{{array}}" wx:for-item="item">
+                <view class="imgs-text"><image class="in-img" src="{{item.month_img}}" background-size="cover"></image></view>
+                <view class="imgs-text"><text class="imgs-test01">{{item.month_name}}</text><text class="imgs-test02">{{item.month_desc}}</text></view>
+                <view class="imgs-text money">{{item.month_money}}</view>
+              </view>
+        <!-- </view> -->
+        </navigator>
+      </template>
+
+      <!--循环输出列表 begin-->
+      <view wx:for="{{newsList}}" class="list">
+         <template is="items" data="{{...item}}"/>
+      </view>
+      <!--循环输出列表 end-->
+  </view>
+  <view class="container01" style="display:{{AccountBookDisplay}};">111</view>
+</view>
