@@ -30,20 +30,20 @@ App({
                 //获取用户信息
                 wx.getUserInfo({
                   success: function (res) { 
-                    // var data = res.encryptedData
-
+                    var data = res.encryptedData
+                    // console.log(data)
                     that.globalData.userInfo = res.userInfo
                     typeof cb == "function" && cb(that.globalData.userInfo)
 
                     wx.request({
-                      url: that.url + 'addon/Cms/Cms/saveUserInfo', //仅为示例，并非真实的接口地址
+                      url: that.url + 'login/saveUserInfo', //仅为示例，并非真实的接口地址
                       data: {
                         encryptedData : res.encryptedData,
                         PHPSESSID: wx.getStorageSync('PHPSESSID'),
                         iv:res.iv
                       },
                       success: function (res) {
-                        //console.log(res)
+                        console.log(res)
                       }
                     })
                   }
