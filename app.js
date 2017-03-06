@@ -16,14 +16,14 @@ App({
         success: function (res) {
           if (res) {
             wx.request({
-              url: that.url + 'addon/Cms/Cms/sendCode', //仅为示例，并非真实的接口地址
+              url: that.url + 'login/sendCode', //仅为示例，并非真实的接口地址
               data: {
                 code: res.code,
                 PHPSESSID: wx.getStorageSync('PHPSESSID')//设置session值
               },
               success: function (res) {
-                //console.log(res.data)
-                //缓存session_id
+                console.log(res)
+                // //缓存session_id
                 wx.setStorageSync('PHPSESSID', res.data.PHPSESSID)
                 wx.setStorageSync('openid', res.data.openid)
 
@@ -64,5 +64,5 @@ App({
   globalData:{
     userInfo:null
   },
-    url: "http://www.qlh6.cn/weicms/index.php?s=/"
+    url: "http://localhost/charge/public/index.php/port/"
 })

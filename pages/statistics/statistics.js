@@ -9,7 +9,6 @@ Page({
     desc:"加油",
     date: '2017-01-01',
     remark_length:0,
-    ShoeNone:'none',
     array:[
       {
         "img-id":"img01",
@@ -42,9 +41,9 @@ Page({
     this.setData({"ExpendType":"warn"})
     this.setData({"IncomeType":"default"})
   },
-  BillClassClick:function(e){
-    var topImges = e.target.dataset.imgurl;
-    this.setData({"ShoeNone":'show'});
+  BillClassClick:function(e){//图标样式
+    var topImges = e.target.dataset.imgurl
+    // var display = {}; 
     var topDesc = e.target.dataset.desc;
     this.setData({"avatarUrl":topImges});
     this.setData({"desc":topDesc});
