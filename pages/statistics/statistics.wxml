@@ -20,93 +20,28 @@
 		<!-- 收入 -->
 		<view class="BillClass-income" style="display:{{IncomeDisplay}}">
 			<view class="BillClass-get">
-				<view class="BillClass-class">
+		
+				<view class="BillClass-class" wx:for="{{inoutClass}}" wx:for-item="item">
 					<view style="height:60px;">
-						<image data-imgurl="../../images/吃.png" data-desc="吃喝" data-id="01" bindtap="BillClassClick" class="userinfo-img" src="../../images/吃.png" background-size="cover" mode=""></image><image style="width:13px;height:13px;position: relative;right:-8px;top:-20px;display:none;" src="../../images/选中.png"></image>
+						<image data-imgurl="{{item.inout_url}}" data-desc="{{item.describe}}" data-id="01" bindtap="BillClassClick" class="userinfo-img" src="{{item.inout_url}}" background-size="cover" mode=""></image><image style="width:13px;height:13px;position: relative;right:-8px;top:-20px;display:none;" src="../../images/选中.png"></image>
 					</view>
-					<view>吃喝</view>
+					<view>{{item.describe}}</view>
 				</view>
-				<view class="BillClass-class">
-					<view style="height:60px;">
-						<image class="userinfo-img" data-imgurl="../../images/交通.png" data-id="02" data-desc="交通" bindtap="BillClassClick" src="../../images/交通.png" background-size="cover" mode=""></image><image style="width:13px;height:13px;position:relative;right:-8px;top:-20px;display:none;" src="../../images/选中.png"></image>
-					</view>
-					<view>交通</view>
-				</view>
-				<view class="BillClass-class">
-					<view style="height:60px;">
-						<image class="userinfo-img" data-imgurl="../../images/服饰.png" data-id="03" data-desc="服饰" bindtap="BillClassClick" src="../../images/服饰.png" background-size="cover" mode=""></image><image style="width:13px;height:13px;position:relative;right:-8px;top:-20px;display:none;" src="../../images/选中.png"></image>
-					</view>
-					<view>服饰</view>
-				</view>
-				<view class="BillClass-class">
-					<view style="height:60px;">
-						<image class="userinfo-img" data-imgurl="../../images/居家.png" data-desc="居家" bindtap="BillClassClick" src="../../images/居家.png" background-size="cover" mode=""></image>
-					</view>
-					<view>居家</view>
-				</view>
-				<view class="BillClass-class">
-					<view style="height:60px;">
-						<image class="userinfo-img" data-imgurl="../../images/娱乐.png" data-desc="娱乐" bindtap="BillClassClick" src="../../images/娱乐.png" background-size="cover" mode=""></image>
-					</view>
-					<view>娱乐</view>
-				</view>
-				<view class="BillClass-class">
-					<view style="height:60px;">
-						<image class="userinfo-img" data-imgurl="../../images/通讯.png" data-desc="通讯" bindtap="BillClassClick" src="../../images/通讯.png" background-size="cover" mode=""></image>
-					</view>
-					<view>通讯</view>
-				</view>
-				<view class="BillClass-class">
-					<view style="height:60px;">
-						<image class="userinfo-img" data-imgurl="../../images/学杂.png" data-desc="学杂" bindtap="BillClassClick" src="../../images/学杂.png" background-size="cover" mode=""></image>
-					</view>
-					<view>学杂</view>
-				</view>
-				<view class="BillClass-class">
-					<view style="height:60px;">
-						<image class="userinfo-img" data-imgurl="../../images/旅游.png" data-desc="旅游" bindtap="BillClassClick" src="../../images/旅游.png" background-size="cover" mode=""></image>
-					</view>
-					<view>旅游</view>
-				</view>
-				<view class="BillClass-class">
-					<view style="height:60px;">
-						<image class="userinfo-img" data-imgurl="../../images/礼物.png" data-desc="人情" bindtap="BillClassClick" src="../../images/礼物.png" background-size="cover" mode=""></image>
-					</view>
-					<view>人情</view>
-				</view>
-				<view class="BillClass-class">
-					<view style="height:60px;">
-						<image class="userinfo-img" data-imgurl="../../images/医疗.png" data-desc="医疗" bindtap="BillClassClick" src="../../images/医疗.png" background-size="cover" mode=""></image>
-					</view>
-					<view>医疗</view>
-				</view>
+
 			</view>
 		</view>
 
 		<!-- 支出 -->
 		<view class="BillClass-expend" style="display:{{ExpendDisplay}}">
 			<view class="BillClass-get">
-				<view class="BillClass-class">
-					<image data-imgurl="../../images/吃.png" data-desc="吃喝" bindtap="BillClassClick" class="userinfo-img" src="../../images/吃.png" background-size="cover" mode=""></image><view>吃喝</view>
+
+				<view class="BillClass-class" wx:for="{{expendClass}}" wx:for-item="item">
+					<view style="height:60px;">
+						<image data-imgurl="{{item.inout_url}}" data-desc="{{item.describe}}" data-id="01" bindtap="BillClassClick" class="userinfo-img" src="{{item.inout_url}}" background-size="cover" mode=""></image><image style="width:13px;height:13px;position: relative;right:-8px;top:-20px;display:none;" src="../../images/选中.png"></image>
+					</view>
+					<view>{{item.describe}}</view>
 				</view>
-				<view class="BillClass-class">
-					<image class="userinfo-img" data-imgurl="../../images/交通.png" data-desc="交通" bindtap="BillClassClick" src="../../images/交通.png" background-size="cover" mode=""></image><view>交通</view>
-				</view>
-				<view class="BillClass-class">
-					<image class="userinfo-img" data-imgurl="../../images/服饰.png" data-desc="服饰" bindtap="BillClassClick" src="../../images/服饰.png" background-size="cover" mode=""></image><view>服饰</view>
-				</view>
-				<view class="BillClass-class">
-					<image class="userinfo-img" data-imgurl="../../images/居家.png" data-desc="居家" bindtap="BillClassClick" src="../../images/居家.png" background-size="cover" mode=""></image><view>居家</view>
-				</view>
-				<view class="BillClass-class">
-					<image class="userinfo-img" data-imgurl="../../images/娱乐.png" data-desc="娱乐" bindtap="BillClassClick" src="../../images/娱乐.png" background-size="cover" mode=""></image><view>娱乐</view>
-				</view>
-				<view class="BillClass-class">
-					<image class="userinfo-img" data-imgurl="../../images/通讯.png" data-desc="通讯" bindtap="BillClassClick" src="../../images/通讯.png" background-size="cover" mode=""></image><view>通讯</view>
-				</view>
-				<view class="BillClass-class">
-					<image class="userinfo-img" data-imgurl="../../images/学杂.png" data-desc="学杂" bindtap="BillClassClick" src="../../images/学杂.png" background-size="cover" mode=""></image><view>学杂</view>
-				</view>
+				
 			</view>
 		</view>
 

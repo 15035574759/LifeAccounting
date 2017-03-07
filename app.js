@@ -30,7 +30,7 @@ App({
                 //获取用户信息
                 wx.getUserInfo({
                   success: function (res) { 
-                    var data = res.encryptedData
+                    // var data = res.encryptedData
                     // console.log(data)
                     that.globalData.userInfo = res.userInfo
                     typeof cb == "function" && cb(that.globalData.userInfo)
