@@ -2,13 +2,14 @@
 var app = getApp()
 Page({
   data:{
-    IncomeType:"warn",
-    ExpendType:"default",
-    IncomeDisplay:"show",
-    ExpendDisplay:"none",
-    inout_start:1,
-    avatarUrl:"../../images/user.png",
-    desc:"加油",
+    IncomeType:"default",
+    ExpendType:"warn",
+    IncomeDisplay:"none",
+    ExpendDisplay:"show",
+    inout_start:2,
+    avatarUrl:"../../images/选中.png",
+    desc:"吃喝",
+    c_id:"1",
     date: '2017-01-01',
     remark_length:0,
     array:[
@@ -26,9 +27,32 @@ Page({
     inoutClass:[],
     expendClass:[]
   },
-  bindDateChange: function(e) {
-    this.setData({
-      date: e.detail.value
+  bindDateChange: function(e) {//日期选择
+    var getdate = e.detail.value 
+    var that = this
+    //对时间进行判断 不能选择未来日期
+    wx.request({
+      url: app.url + 'check/TimeJson', //仅为示例，并非真实的接口地址
+      data: {getdate:getdate},
+      header: {
+          'content-type': 'application/json'
+      },
+      success: function(res) {
+        console.log(res.data)
+        var timeDate = res.data.date
+        if(res.data.start == 1)
+        {
+          that.setData({'date': getdate})//赋值数据
+        }
+        else
+        {
+            wx.showToast({
+            title: '不能选择未来日期',
+            icon: 'success',
+            duration: 2000
+          })
+        }
+      }
     })
   },
   DefaultIncome:function(e){//收入选项卡
@@ -49,34 +73,62 @@ Page({
   },
   BillClassClick:function(e){//图标样式
     var topImges = e.target.dataset.imgurl
+    var c_id = e.target.dataset.id
     // var display = {}; 
     var topDesc = e.target.dataset.desc;
     this.setData({"avatarUrl":topImges});
     this.setData({"desc":topDesc});
+    this.setData({"c_id":c_id});
   },
-  formSubmit: function(e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    var inout_start = this.data.inout_start//支出与收入状态
+  formSubmit: function(e) {//提交表单
+    var formData = e.detail.value
+    formData.inout_start = this.data.inout_start//支出与收入状态
+    formData.inout_class = this.data.c_id//支出与收入状态 id
+    formData.money = formData.input;
+    formData.remark = formData.input1;
+    formData.time = formData.date;
+    console.log('form发生了submit事件，携带数据为：', formData)
+    
     wx.getStorage({
       key: 'openid',
       success: function(res) {
          var openid = res.data
+
           wx.request({
             url: app.url + 'check/charge', //仅为示例，并非真实的接口地址
             data: {
               openid:openid,
+              formData:formData,
             },
             header: {
                 'content-type': 'application/json'
             },
             success: function(res) {
-              console.log(res.data)
+              // console.log(res.data)
+              if(res.data.status == 1){
+                wx.showToast({
+                  title: '添加成功',
+                  icon: 'success',
+                  duration: 2000,
+                  success:function(res){
+                    wx.switchTab({
+                      url: '../show/show'
+                    })
+                  }
+                }) 
+              }else{
+                wx.showToast({
+                  title: '添加失败',
+                  icon: 'success',
+                  duration: 2000
+                })
+              }
             }
         })
       } 
     })
   },
-  bindKeyInput:function(e){
+  bindKeyInput:function(e){//验证备注不得超过10个字
     var StringLength = e.detail.value.length
     this.setData({"remark_length":StringLength})
     if(StringLength > 10){
@@ -90,6 +142,8 @@ Page({
   onLoad:function(options){
      var that = this
     // 页面初始化 options为页面跳转所带来的参数
+    
+    //调用账单收入与支出类型列表
     wx.request({
         url: app.url + 'check/inoutClass', //仅为示例，并非真实的接口地址
         data: {},
@@ -102,6 +156,20 @@ Page({
           that.setData({ expendClass: res.data.IncomeData })//支出数据赋值
         }
     })
+
+    //调用当前时间接口
+     wx.request({
+        url: app.url + 'check/GetTime', //仅为示例，并非真实的接口地址
+        data: {},
+        header: {
+            'content-type': 'application/json'
+        },
+        success: function(res) {
+          console.log(res.data)
+          that.setData({ date: res.data})//赋值当前时间
+        }
+    })
+
   },
   onReady:function(){
     // 页面渲染完成

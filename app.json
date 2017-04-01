@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/show/show",
+    "pages/show/show_list/show_list",
     "pages/statistics/statistics",
     "pages/index/index",
     "pages/tally/tally",

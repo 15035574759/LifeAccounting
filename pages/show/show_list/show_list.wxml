@@ -1,0 +1,36 @@
+<!--pages/show/show_list/show_list.wxml-->
+<view class="container">
+	<view class="getTable">
+		<view class="getTable-box">
+			<view class="getTable-left">记账金额</view>
+			<view class="getTable-right">{{money}}</view>
+		</view>
+		<view class="getTable-hr"></view>
+		<view class="getTable-box">
+			<view class="getTable-left">分类</view>
+			<view class="getTable-right" wx:if="{{item.inout_start == 1}}">收入>{{describe}}</view>
+			<view class="getTable-right" wx:else="{{item.inout_start == 2}}">支出>{{describe}}</view>
+		</view>
+		<view class="getTable-hr"></view>
+		<view class="getTable-box">
+			<view class="getTable-left">记录时间</view>
+			<view class="getTable-right">{{time}}</view>
+		</view>
+	</view>
+	<view class="getTable01">
+		<view class="getTable-box01">
+			<view>备注</view>
+			<view>{{remark}}</view>
+		</view>
+	</view>
+	<view class="GetButton">
+		<navigator url="add/add_friend" hover-class="navigator-hover">
+			<view class="GetButton-button" bindtap="GetSave" data-lastid="{{a_id}}">
+				<button class="nav-desc" style="color:#F29900;font-size:15px;" type="default" bindtap="AddMember" hover-class="other-button-hover"> 编辑 </button>
+			</view>
+		</navigator>
+			<view class="GetButton-button" bindtap="GetDel" data-lastid="{{a_id}}">
+				<button class="nav-desc" style="color:#F29900;font-size:15px;margin-top:10px;" type="default" bindtap="close" hover-class="other-button-hover"> 删除 </button>
+			</view>
+	</view>	
+</view>

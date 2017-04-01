@@ -9,7 +9,7 @@
 		<view class="userinfo">
 			<view class="userinfo-imgDesc">
 					<view class="userinfo-desc01"><image class="userinfo-img" src="{{avatarUrl}}" background-size="cover" mode=""></image></view>
-					<view class="userinfo-desc01"><text class="userinfo-desc">{{desc}}</text></view>
+					<view class="userinfo-desc01"><text class="userinfo-desc" data_id="{{desc_id}}">{{desc}}</text></view>
 			</view>
 			<view class="userinfo-input">
 			  <input name="input" class="userinfo-input-input" maxlength="10" placeholder="请输入金额" type="digit"/>
@@ -23,7 +23,7 @@
 		
 				<view class="BillClass-class" wx:for="{{inoutClass}}" wx:for-item="item">
 					<view style="height:60px;">
-						<image data-imgurl="{{item.inout_url}}" data-desc="{{item.describe}}" data-id="01" bindtap="BillClassClick" class="userinfo-img" src="{{item.inout_url}}" background-size="cover" mode=""></image><image style="width:13px;height:13px;position: relative;right:-8px;top:-20px;display:none;" src="../../images/选中.png"></image>
+						<image data-imgurl="{{item.inout_url}}" data-desc="{{item.describe}}" data-id="{{item.c_id}}" bindtap="BillClassClick" class="userinfo-img" src="{{item.inout_url}}" background-size="cover" mode=""></image><image style="width:13px;height:13px;position: relative;right:-8px;top:-20px;display:none;" src="../../images/选中.png"></image>
 					</view>
 					<view>{{item.describe}}</view>
 				</view>
@@ -37,7 +37,7 @@
 
 				<view class="BillClass-class" wx:for="{{expendClass}}" wx:for-item="item">
 					<view style="height:60px;">
-						<image data-imgurl="{{item.inout_url}}" data-desc="{{item.describe}}" data-id="01" bindtap="BillClassClick" class="userinfo-img" src="{{item.inout_url}}" background-size="cover" mode=""></image><image style="width:13px;height:13px;position: relative;right:-8px;top:-20px;display:none;" src="../../images/选中.png"></image>
+						<image data-imgurl="{{item.inout_url}}" data-desc="{{item.describe}}" data-id="{{item.c_id}}" bindtap="BillClassClick" class="userinfo-img" src="{{item.inout_url}}" background-size="cover" mode=""></image><image style="width:13px;height:13px;position: relative;right:-8px;top:-20px;display:none;" src="../../images/选中.png"></image>
 					</view>
 					<view>{{item.describe}}</view>
 				</view>

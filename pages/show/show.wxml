@@ -53,23 +53,27 @@
             </view>
         </navigator>
     </view>
-
+      
+      <view style="margin-top:100px;display:{{display}}">您还没有账单,快去记一笔吧！</view>
 
        <!--定义模板-->
       <template name="items">
-        <navigator url="../../pages/detail/detail?id={{id}}" hover-class="navigator-hover">
+        <!-- <navigator url="../../pages/detail/detail?id={{id}}" hover-class="navigator-hover"> -->
       <!-- <view wx:for="{{newsList}}" class="list" wx:for-item="itemName"> -->
-          <view class="Stats" >
+          <view class="Stats">
             <view class="StatsTime">{{time}}</view>
-            <view class="StatsStats">收入:{{month_income}} 支出:{{month_pay}}</view>
+            <view class="StatsStats">收入:{{IncomeTimeDataArrSum}} 支出:{{ExpendTimeDataArrSum}}</view>
           </view>
               <view class="imgs" wx:for="{{array}}" wx:for-item="item">
-                <view class="imgs-text"><image class="in-img" src="{{item.month_img}}" background-size="cover"></image></view>
-                <view class="imgs-text"><text class="imgs-test01">{{item.month_name}}</text><text class="imgs-test02">{{item.month_desc}}</text></view>
-                <view class="imgs-text money">{{item.month_money}}</view>
+                <view bindtap="GetNav"  data-lastid="{{item.a_id}}">
+                  <view class="imgs-text"><image class="in-img" src="{{item.inout_url}}" background-size="cover"></image></view>
+                  <view class="imgs-text"><text class="imgs-test01">{{item.describe}}</text><text class="imgs-test02">{{item.remark}}</text></view>
+                </view>
+                <view class="imgs-text money" wx:if="{{item.inout_start == 1}}" style="color:#9170D9;font-weight:bold;">{{item.money}}</view>
+                <view class="imgs-text money" wx:else="{{item.inout_start == 2}}" style="color:red;font-weight:bold;">{{item.money}}</view>
               </view>
         <!-- </view> -->
-        </navigator>
+        <!-- </navigator> -->
       </template>
 
       <!--循环输出列表 begin-->
@@ -77,6 +81,9 @@
          <template is="items" data="{{...item}}"/>
       </view>
       <!--循环输出列表 end-->
+
+      <view bindtap="loadMore" data-lastid="{{lastid}}" class="loadMore" style="display:{{moreHidden}}">加载更多</view>
+      <loading hidden="{{Loading}}">加载中...</loading>
   </view>
   <view class="container01" style="display:{{AccountBookDisplay}};">111</view>
 </view>

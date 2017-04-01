@@ -1,0 +1,50 @@
+/* pages/show/show_list/show_list.wxss */
+page{  
+  display: block;  
+  min-height: 100%;  
+  background-color: #EDEDED;  
+}
+.container{
+	background: #EDEDED;
+}
+.getTable{
+	width:100%;
+	/*float: left;*/
+	background: #FFFFFF;
+	margin-top:20px;
+}
+.getTable-box{
+	line-height: 50px;
+	width:85%;
+	margin:0 auto;
+}
+.getTable01{
+	background: #FFFFFF;
+	width:100%;
+	margin-top:10px;
+}
+.getTable-box01{
+	width:85%;
+	line-height: 30px;
+	background: #FFFFFF;
+	margin: 0 auto;
+}
+.getTable-hr{
+	width:85%;
+	height:0.5px;
+	background: #EDEDED;
+	margin:0 auto;
+	clear: both;
+}
+.getTable-left{
+	float: left;
+}
+.getTable-right{
+	float: right;
+}
+
+.GetButton{
+	margin-top: 30px;
+	width:80%;
+	text-align: center;
+}
