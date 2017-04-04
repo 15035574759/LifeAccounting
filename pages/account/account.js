@@ -4,6 +4,7 @@ Page({
   data:{
     username:'',
     avatarUrl:'',
+    circleData:[],
   },
   GetDelete:function(){
     wx.showModal({
@@ -26,6 +27,23 @@ Page({
          var avatarUrl = userInfo.avatarUrl
          that.setData({avatarUrl:avatarUrl})
          that.setData({username:nickName})
+    })
+    wx.getStorage({//获取当前用户openid
+      key: 'openid',
+      success: function(res) {
+        var openid = res.data
+         wx.request({
+          url: app.url + 'circle/circleUser', //查询当前用户下所有圈子
+          data: {openid:openid},
+          header: {
+              'content-type': 'application/json'
+          },
+          success: function(res) {
+            console.log(res.data)
+            that.setData({circleData:res.data})
+          }
+        })
+      }
     })
   },
   onReady:function(){
