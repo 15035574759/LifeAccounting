@@ -1,0 +1,45 @@
+/* pages/account/details/circle_friend/circle_friend.wxss */
+.payer{
+	width:100%;
+	/*height:130px;*/
+	background: #FFFFFE;
+}
+.payer-user{
+	width:100%;
+	float: left;
+	background: #FFFFFE;
+	border-bottom: 0.5px solid #EDEDED;
+}
+.payer-user:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+.payer-user-img{
+	margin-top:15px;
+}
+.payer-user-public{
+	float: left;
+}
+.payer-user-pay{
+	float: right;
+	line-height: 80px;
+	margin-right:10px;
+}
+.payer-userName{
+	/*line-height: 80px;*/
+	line-height: 25px;
+	margin-top:15px;
+	margin-left:5px;
+}
+
+.GetButton{
+	float: left;
+	margin-top: 30px;
+	width:230px;
+	text-align: center;
+}
+
+.GetButton-button{
+	float: left;
+}

@@ -22,7 +22,7 @@ page{
 }
 .ClassImages{
 	float: left;
-	margin:0 0 10px 35px;
+	margin:0 0 10px 25px;
 }
 .ClassImages-desc{
 	text-align: center;
@@ -34,6 +34,14 @@ page{
 	background: #FFFFFF;
 	margin-top:10px;
 	border-bottom: 1px solid #ECECEC;
+}
+
+.xuanzhong{
+	width:13px;
+	height:13px;
+	position: relative;
+	top:-3px;
+	margin-left:-15px;
 }
 .CircleName-text{
 	line-height: 50px;
@@ -103,13 +111,19 @@ page{
 	margin-top:20px;
 }
 .participant-box{
-	float: right;
+	float: left;
 	/*height: 50px;*/
 	width:98%;
 	/*border-bottom: 0.3px solid #aaa;*/
 }
 .participant-01{
 	line-height: 50px;
+	float: left;
+	margin-left:10px;
+}
+.participant-02{
+	line-height: 50px;
+	float: right;
 }
 .Head-image{
 	width:100%;

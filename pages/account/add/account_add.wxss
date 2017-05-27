@@ -23,6 +23,13 @@
 .ClassImages-desc{
 	text-align: center;
 }
+.xuanzhong{
+	width:20px;
+	height:20px;
+	position: relative;
+	top:-3px;
+	margin-left:-30px;
+}
 
 .CircleName{
 	width: 100%;

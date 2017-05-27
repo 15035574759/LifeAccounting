@@ -1,14 +1,30 @@
 <!--pages/friend/friend.wxml-->
 <view class="container">
 	<view class="payer">
-		<view class="payer-user">
+		<view class="payer-user" wx:for="{{MyFriend}}" wx:for-item="item">
 			<view class="payer-user-public payer-user-img">
-				<image class="userinfo-avatar" style="width:50px;height:50px;border-radius: 50%;" src="../../../images/user.png" background-size="cover" mode=""></image>
+				<image class="userinfo-avatar" style="width:50px;height:50px;border-radius: 50%;margin-left: 10px;" src="{{item.friend_imgurl}}" background-size="cover" mode=""></image>
 			</view>
-			<view class="payer-user-public payer-userName"><view>幸福转角 <text style="font-size:15px;color:red;">(管理员)</text></view><view style="font-size:13px;color:#aaa;">累计消费1091.111</view></view>
-			<view class="payer-user-pay"><text style="font-size:15px;color:red;">需支付</text><text style="font-size:25px;font-weight:bold;">100</text></view>
+			<view class="payer-user-public payer-userName">
+				<view>{{item.friend_name}} <text style="font-size:15px;color:red;" wx:if="{{item.start == 1}}">(管理员)</text><text style="font-size:15px;color:red;" wx:else>(未注册)</text></view>
+
+				<view style="font-size:13px;color:#aaa;" wx:if="{{item.total_money == null}}">
+					<text>未消费</text>
+				</view>
+				<view style="font-size:13px;color:#aaa;" wx:else>
+					<text>累计消费{{item.total_money}}</text>
+				</view>
+
+			</view>
+			
+			<view class="payer-user-pay" wx:if="{{item.pay_money == null}}">
+				<text style="font-size:15px;color:red;">已还清</text>
+			</view>
+			<view class="payer-user-pay" wx:else>
+				<text style="font-size:13px;color:red;margin-right:5px;">需支付</text><text style="font-size:15px;font-weight:bold;">{{item.pay_money}}</text>
+			</view>
 		</view>
-		<view class="payer-user">
+		<!-- <view class="payer-user">
 			<view class="payer-user-public payer-user-img">
 				<image class="userinfo-avatar" style="width:50px;height:50px;border-radius: 50%;" src="../../../images/user.png" background-size="cover" mode=""></image>
 			</view>
@@ -21,7 +37,7 @@
 			</view>
 			<view class="payer-user-public payer-userName"><view>幸福转角 <text style="font-size:15px;color:red;">(已注册)</text></view><view style="font-size:13px;color:#aaa;">累计消费1091.111</view></view>
 			<view class="payer-user-pay"><text style="font-size:15px;color:red;">需支付</text><text style="font-size:25px;font-weight:bold;">100</text></view>
-		</view>
+		</view> -->
 	</view>
 
 	<view class="GetButton">

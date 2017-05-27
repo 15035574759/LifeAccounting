@@ -1,0 +1,32 @@
+<!--pages/account/details/circle_friend_add/circle_friend_add.wxml-->
+<!--pages/friend/friend.wxml-->
+<view class="container">
+	<view class="payer">
+		<view class="payer-user" wx:for="{{FriendData}}" wx:for-item="item">
+			<view class="payer-user-public payer-user-img">
+				<image class="userinfo-avatar" style="width:50px;height:50px;border-radius: 50%;" src="{{item.friend_imgurl}}" background-size="cover" mode=""></image>
+			</view>
+			<view class="payer-user-public payer-userName">
+				<view>{{item.friend_name}} 
+					<text style="font-size:15px;color:red;" wx:if="{{item.start == -1}}">(管理员)</text>
+					<text style="font-size:15px;color:red;" wx:else="{{item.start == 0}}">(未注册)</text>
+				</view>
+			</view>
+			<view class="payer-user-pay" >
+				<button bindtap="AddFriend" class="getAddbutton" open-type="contact" data-id="{{item.f_id}}">添加</button>
+			</view>
+		</view>
+	</view>
+
+	<!-- <view class="GetButton">
+		<navigator url="../circle_friend_add/circle_friend_add?cir_id={{cir_id}}" hover-class="navigator-hover">
+			<view class="GetButton-button">
+				<button class="nav-desc" style="background:#F29900;color:#FFFFFE;font-size:15px;margin-right:50px;" type="default" bindtap="AddMember" hover-class="other-button-hover"> 手动添加 </button>
+			</view>
+		</navigator>
+		<navigator url="navigate?title=navigate" hover-class="navigator-hover">
+			<view class="GetButton-button"><button class="nav-desc" style="background:#F29900;width:88px;color:#FFFFFE;font-size:15px;" type="default" bindtap="close" hover-class="other-button-hover"> 微信添加 </button></view>
+		</navigator>
+	</view> -->
+</view>
+

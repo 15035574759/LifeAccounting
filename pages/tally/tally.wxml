@@ -1,2 +1,36 @@
 <!--pages/tally/tally.wxml-->
-<text>pages/tally/tally.wxml</text>
+<view class="container">
+	<view class="TabButton">
+		<button type="{{IncomeType}}" style="background:{{IncomeColor}};color:{{incomeFontColor}};" bindtap="DefaultIncome" hover-class="other-button-hover" class="income"> 收入 </button>
+		<button type="{{ExpendType}}" style="background:{{ExpendColor}};color:{{expendFontColor}};" bindtap="DefaultExpend" hover-class="other-button-hover" class="expend"> 支出 </button>
+	</view>
+	<view class="CircleBox">
+		<view class="circle">
+			<view style='position: absolute; text-align: center; transform: translate(30.5px, 32px);line-height: 18px;'>
+				<view style="">
+					<view style="font-size:20px;font-weight:bold;">{{TotalParice}}</view>
+					<view style="font-size:12px;color:#FF8800;">{{totalStart}}</view>
+				</view>
+			</view>
+		</view>
+		<canvas canvas-id="mypie" class="mypie" style="width:240px;height:240px;"></canvas> 
+	</view>
+	
+	<view class="Br"></view>
+	<view class="Bill">
+		<view class="BillName">
+			<view class="BillName03"><image class="navigator-image" src="../../images/交通.png" background-size="cover" mode=""></image></view>
+			<text class="BillName01">日用品</text>
+			<text class="BillName02">100%</text>
+		</view>
+		<view class="BillMoney">100</view>
+	</view>
+	<view class="Bill">
+		<view class="BillName">
+			<view class="BillName03"><image class="navigator-image" src="../../images/交通.png" background-size="cover" mode=""></image></view>
+			<text class="BillName01">日用品</text>
+			<text class="BillName02">100%</text>
+		</view>
+		<view class="BillMoney">100</view>
+	</view>
+</view> 

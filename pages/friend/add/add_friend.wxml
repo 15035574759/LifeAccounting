@@ -4,11 +4,11 @@
 		<view class="FromSubmit">
 			<view class="FromSubmit-input">
 				<view class="input-name input-name-name">昵  称</view>
-				<view class="input-name input-name-input"><input type="text" bindinput="bindReplaceInput" placeholder="请输入名称" /></view>
+				<view class="input-name input-name-input"><input type="text" bindinput="bindReplaceInput" placeholder="请输入名称" name="name"/></view>
 			</view>
 			<view class="FromSubmit-input" style="margin-top:30px;">
 				<view class="input-name input-name-name">手机号码</view>
-				<view class="input-name input-name-input"><input  bindinput="bindReplaceInput" placeholder="请输入电话" /></view>
+				<view class="input-name input-name-input"><input  bindinput="bindPhone" placeholder="请输入电话" name="phone"/></view>
 			</view>
 			<view style="color:#aaa;font-size:15px;margin-top:8px;">没有提填写手机号的将无法正常查收账单</view>
 			<view class="btn-area">

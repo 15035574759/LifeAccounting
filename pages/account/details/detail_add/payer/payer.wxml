@@ -1,0 +1,27 @@
+<!--pages/account/details/detail_add/payer/payer.wxml-->
+<view class="container">
+	<view class="payer">
+		<view class="payer-user" wx:for="{{FriendData}}" wx:for-item="item">
+			<view class="payer-user-public payer-user-img">
+				<image class="userinfo-avatar" style="width:50px;height:50px;border-radius: 50%;" src="{{item.friend_imgurl}}" background-size="cover" mode=""></image>
+			</view>
+			<view class="payer-user-public payer-userName">
+				<view>{{item.friend_name}}</view>
+				<view>15035574759</view>
+			</view>
+			<view class="payer-user-pay" >
+				<checkbox-group bindchange="checkboxChange" data-id="{{item.f_id}}">
+				    <checkbox value="{{item.f_id}}"  checked="{{item.checked}}" />
+				</checkbox-group>
+			</view>
+		</view>
+	</view>
+
+	<view class="GetButton">
+		<view class="GetButton-button">
+		<button class="nav-desc" bindtap="GetButton" style="background:#F29900;width:100px;color:#FFFFFE;font-size:15px;" type="default" hover-class="other-button-hover"> 完成(2) </button>
+		</view>
+	</view>
+</view>
+
+

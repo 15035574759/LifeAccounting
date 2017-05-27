@@ -1,66 +1,62 @@
 <!--pages/account/account_desc.wxml-->
 <view class="container">
 	<view class="UserImg">
-		<view class="UserImg-images">
-			<image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover" mode=""></image>
-			<view>张三</view>
+		<view class="UserImg-images" wx:for="{{FriendData}}" wx:for-item="item">
+			<image class="userinfo-avatar" src="{{item.friend_imgurl}}" background-size="cover" mode=""></image>
+			<view>{{item.friend_name}}</view>
 		</view>
-		<view class="UserImg-images">
-			<image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover" mode=""></image>
-			<view>张三</view>
-		</view>
-		<view class="UserImg-images">
-			<image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover" mode=""></image>
-			<view>张三</view>
-		</view>
-		<view class="UserImg-images">
-			<navigator url="navigate?title=navigate" hover-class="navigator-hover">
-				<view class="UserImg-images-number">4人</view>
+		<view class="UserImg-images" style="display:{{friend_show}}">
+			<navigator url="circle_friend/circle_friend?cir_id={{cir_id}}" wx:if="{{friend_length > 3}}" hover-class="navigator-hover">
+				<view class="UserImg-images-number">{{friend_length}}人</view>
 				<view style="margin-top:10px;">全部成员></view>
 			</navigator>
+			<navigator url="circle_friend_add/circle_friend_add?cir_id={{cir_id}}" wx:else hover-class="navigator-hover">
+				<view class="UserImg-images-number">{{friend_length}}人</view>
+				<view style="margin-top:10px;">添加成员></view>
+			</navigator>
 		</view>
+		<!-- <view class="UserImg-images" style="display:{{friend_show}}" wx:else>
+			<navigator url="circle_friend/circle_friend?cir_id={{cir_id}}" hover-class="navigator-hover">
+				<view class="UserImg-images-number">{{friend_length}}人</view>
+				<view style="margin-top:10px;">添加成员></view>
+			</navigator>
+		</view> -->
 	</view>
 
 	<view class="Money">
-		<view class="MoneyClass-left"> 
+		<view class="MoneyClass-left">
+			<!-- <view style="float:left;">
 				<view class="Money-money">75元</view>
 				<view class="Money-text">还应收取</view>
+			</view>  -->
+			<view style="float:left;">
+				<view class="Money-money">{{payMoney}}元</view>
+				<view class="Money-text">还应支付</view>
+			</view> 		
+				<!-- <view class="Money-text" style="float:left;" style="background:#FFFFFE;color:#aaa;">人民币</view> -->
 		</view>
 		<view class="MoneyClass-right">
 			<view class="MoneyClass-rightBox">
-				<view><image style="width:15px;height:15px;margin-right:8px;" src="../../../images/消费.png" background-size="cover" mode=""></image>我的消费：1,091.67</view>
-				<view><image style="width:15px;height:15px;margin-right:8px;" src="../../../images/消费(1).png" background-size="cover" mode=""></image>全员消费：3,800</view>
+				<view><image style="width:15px;height:15px;margin-right:8px;" src="../../../images/消费.png" background-size="cover" mode=""></image>我的消费：{{MyconsumeMoney}}</view>
+				<view><image style="width:15px;height:15px;margin-right:8px;" src="../../../images/消费(1).png" background-size="cover" mode=""></image>全员消费：{{AllconsumeMoney}}</view>
 			</view>
 		</view>
 	</view>
 	
 	<view class="BillList">
-		<navigator url="../particulars/account_particulars" hover-class="navigator-hover">
-			<view class="BillList-box">
-				<view class="BillListGetBox"><image class="BillListGetBox-images" style="width:40px;height:40px;" src="../../../images/娱乐.png" background-size="cover" mode=""></image></view>
-				<view class="BillListGetBox BillListGetBox-01">
-					<view>娱乐</view>
-					<view style="font-size:13px;color:#aaa;">今天12:00</view>
-				</view>
-				<view class="BillListGetBox BillListGetBox-02">
-					<view style="text-align:right;font-weight:bold;">1000</view>
-					<view style="font-size:13px;color:#aaa;">4人消费,秦林慧付款</view>
-				</view>
+			<view class="BillList-box" wx:for="{{CircleList}}" wx:for-item="item" data-id="{{item.cbl_id}}">
+				<navigator url="../particulars/account_particulars?cbl_id={{item.cbl_id}}&cir_id={{cir_id}}" hover-class="navigator-hover">
+					<view class="BillListGetBox"><image class="BillListGetBox-images" style="width:40px;height:40px;" src="{{item.inout_url}}" background-size="cover" mode=""></image></view>
+					<view class="BillListGetBox BillListGetBox-01">
+						<view>{{item.describe}}</view>
+						<view style="font-size:13px;color:#aaa;">{{item.circle_time}}</view>
+					</view>
+					<view class="BillListGetBox BillListGetBox-02">
+						<view style="text-align:right;font-weight:bold;">{{item.total}}</view>
+						<view style="font-size:13px;color:#aaa;">{{item.consume_num}}人消费,{{item.consume_name}}付款</view>
+					</view>
+				</navigator>
 			</view>
-		</navigator>
-		<navigator url="../particulars/account_particulars" hover-class="navigator-hover">
-			<view class="BillList-box">
-				<view class="BillListGetBox"><image class="BillListGetBox-images" style="width:40px;height:40px;" src="../../../images/居家.png" background-size="cover" mode=""></image></view>
-				<view class="BillListGetBox BillListGetBox-01">
-					<view>居家</view>
-					<view style="font-size:13px;color:#aaa;">今天12:00</view>
-				</view>
-				<view class="BillListGetBox BillListGetBox-02">
-					<view style="text-align:right;font-weight:bold;">1000</view>
-					<view style="font-size:13px;color:#aaa;">4人消费,秦林慧付款</view>
-				</view>
-			</view>
-		</navigator>
 	</view>
 
     <!-- <view style="height:100px;"></view> -->
@@ -70,8 +66,7 @@
 		<button class="nav-desc" type="default" bindtap="default" hover-class="other-button-hover"> 编辑 </button>
 	</view> -->
 	<view class="nav">
-		<navigator url="detail_add/account_detail_add" hover-class="navigator-hover">
-			<image class="BillListGetBox-nav-images" style="width:40px;height:40px;margin-top:15px;" src="../../../images/记.png" background-size="cover" mode=""></image>
-		</navigator>
+			<image class="BillListGetBox-nav-images" bindtap="GetCharge" style="width:40px;height:40px;margin-top:15px;" src="../../../images/记.png" background-size="cover" mode=""></image>
 	</view>
+	<view style="width:100%;height:100px;"></view>
 </view>

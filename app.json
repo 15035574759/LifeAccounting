@@ -1,10 +1,11 @@
 {
   "pages":[
+    "pages/tally/tally",
     "pages/show/show",
+    "pages/account/details/detail_add/account_detail_add",
     "pages/show/show_list/show_list",
     "pages/statistics/statistics",
     "pages/index/index",
-    "pages/tally/tally",
     "pages/user/user",
     "pages/account/account",
     "pages/account/add/account_add",
@@ -12,7 +13,9 @@
     "pages/friend/friend",
     "pages/friend/add/add_friend",
     "pages/account/particulars/account_particulars",
-    "pages/account/details/detail_add/account_detail_add",
+    "pages/account/details/circle_friend/circle_friend",
+    "pages/account/details/circle_friend_add/circle_friend_add",
+    "pages/account/details/detail_add/payer/payer",
     "pages/logs/logs"
   ],
   "window":{

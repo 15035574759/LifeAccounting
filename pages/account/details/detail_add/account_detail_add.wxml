@@ -1,92 +1,56 @@
 <!--pages/account/details/detail_add/account_detail_add.wxml-->
 <view class="container">
 	<view class="container-box">
-		<view class="ClassImages">
-			<view class="ClassImages-imges">
-				<image class="userinfo-images" src="../../../../images/吃喝玩乐.png" background-size="cover" mode=""></image>
+		<view class="ClassImages" wx:for="{{FriendData}}" wx:for-item="item">
+			<view class="ClassImages-imges" bindtap="BillClassClick">
+				<image class="userinfo-images" data-id="{{item.c_id}}" src="{{item.inout_url}}" background-size="cover" mode=""></image>
+				<image src="/images/选中.png" class="xuanzhong" hidden="{{item.c_id == c_id ? false : true}}"></image>
 			</view>
-			<view class="ClassImages-desc">吃喝</view>
-		</view>
-		<view class="ClassImages">
-			<view class="ClassImages-imges">
-				<image class="userinfo-images" src="../../../../images/交通.png" background-size="cover" mode=""></image>
-			</view>
-			<view class="ClassImages-desc">交通</view>
-		</view>
-		<view class="ClassImages">
-		<view class="ClassImages-imges"><image class="userinfo-images" src="../../../../images/娱乐.png" background-size="cover" mode=""></image></view>
-		<view class="ClassImages-desc">娱乐</view>
-		</view>
-		<view class="ClassImages">
-			<view class="ClassImages-imges"><image class="userinfo-images" src="../../../../images/酒店.png" background-size="cover" mode=""></image></view>
-			<view class="ClassImages-desc">酒店</view>
-		</view>
-		<view class="ClassImages">
-			<view class="ClassImages-imges"><image class="userinfo-images" src="../../../../images/其他.png" background-size="cover" mode=""></image></view>
-			<view class="ClassImages-desc">其他</view>
+			<view class="ClassImages-desc" wx:if="{{item.c_id == c_id}}" style="color:#C7821C">{{item.describe}}</view>
+			<view class="ClassImages-desc" wx:else>{{item.describe}}</view>
 		</view>
 	</view>
 
 	<view class="SumExpend">
 		<view class="SumExpend-money">
 			<view class="SumExpend-money01" style="width:48px;">总支出<span style="color:red;font-size:13px;">人民币></span></view>
-			<view class="SumExpend-money02"><input placeholder="请填写" auto-focus/></view>
+			<view class="SumExpend-money02"><input bindinput="GetPutmoney" placeholder="请填写" auto-focus/></view>
 		</view>
 		<view class="SumExpend-money01">
 			<view class="SumExpend-money01" style="width:50px;margin-top:10px;">备注</view>
-			<view class="SumExpend-money03"><textarea bindblur="bindTextAreaBlur" maxlength="30" auto-height placeholder="简短描述,文字不得超过30字" /></view>
+			<view class="SumExpend-money03"><textarea bindinput="bindTextAreaBlur" name="remark" maxlength="30" auto-height placeholder="简短描述,文字不得超过30字" /></view>
 		</view>
 	</view>
 
 	<view class="participant">
-		<view class="participant-box">
-			<view class="participant-01">付款人(1)</view>
+		<view class="participant-box" bindtap="GetPayer">
+			<view class="participant-01">付款人({{GetPayerCount}})</view>
+			<view class="participant-02" style="float: right;">></view>
 		</view>
-		<view class="Head-image">
+		<view class="Head-image" wx:for="{{GetPayer}}" wx:for-item="item">
 			<view>
-				<image style="width: 50px; height: 50px;float:left;margin-left:10px;margin:10px 0 10px 10px;" mode="" src="../../../../images/其他.png"></image>
-				<span style="float:left;line-height:65px;margin-left:10px;">111</span>
-				<span style="float:right;line-height:65px;margin-right:10px;"><span style="font-size:10px;color:#74A98F;">支付</span><span style="font-weight:bold;">125</span></span>
+				<image style="width: 50px; height: 50px;float:left;margin-left:10px;margin:10px 0 10px 10px;" mode="" src="{{item.friend_imgurl}}"></image>
+				<span style="float:left;line-height:65px;margin-left:10px;">{{item.friend_name}}</span>
+				<span style="float:right;line-height:65px;margin-right:10px;"><span style="font-size:10px;color:#74A98F;">支付</span><span style="font-weight:bold;">{{PayMoney}}</span></span>
 			</view>
 		</view>
 	</view>
 
 	<view class="participant">
 		<view class="participant-box">
-			<view class="participant-01">参与人(1)</view>
+			<view class="participant-01">参与人({{DataAllParticipantNum}})</view>
 		</view>
-		<view class="Head-image">
+		<view class="Head-image" wx:for="{{GetParticipant}}" wx:for-item="item">
 			<view class="Head-image-box">
-				<image style="width: 50px; height: 50px;float:left;margin-left:10px;margin:10px 0 10px 10px;" mode="" src="../../../../images/其他.png"></image>.
-				<span style="float:left;line-height:65px;margin-left:10px;">111</span>
-				<span style="float:right;line-height:65px;margin-right:10px;"><span style="font-size:10px;color:#DDA13F;">消费</span><span style="font-weight:bold;">125</span></span>
-			</view>
-		</view>
-		<view class="Head-image">
-			<view class="Head-image-box">
-				<image style="width: 50px; height: 50px;float:left;margin-left:10px;margin:10px 0 10px 10px;" mode="" src="../../../../images/其他.png"></image>
-				<span style="float:left;line-height:65px;margin-left:10px;">111</span>
-				<span style="float:right;line-height:65px;margin-right:10px;"><span style="font-size:10px;color:#DDA13F;">消费</span><span style="font-weight:bold;">125</span></span>
-			</view>
-		</view>
-		<view class="Head-image">
-			<view class="Head-image-box">
-				<image style="width: 50px; height: 50px;float:left;margin-left:10px;margin:10px 0 10px 10px;" mode="" src="../../../../images/其他.png"></image>
-				<span style="float:left;line-height:65px;margin-left:10px;">111</span>
-				<span style="float:right;line-height:65px;margin-right:10px;"><span style="font-size:10px;color:#DDA13F;">消费</span><span style="font-weight:bold;">125</span></span>
-			</view>
-		</view>
-		<view class="Head-image">
-			<view class="Head-image-box">
-				<image style="width: 50px; height: 50px;float:left;margin-left:10px;margin:10px 0 10px 10px;" mode="" src="../../../../images/其他.png"></image>
-				<span style="float:left;line-height:65px;margin-left:10px;">111</span>
-				<span style="float:right;line-height:65px;margin-right:10px;"><span style="font-size:10px;color:#DDA13F;">消费</span><span style="font-weight:bold;">125</span></span>
+				<image style="width: 50px; height: 50px;float:left;margin-left:10px;margin:10px 0 10px 10px;" mode="" src="{{item.friend_imgurl}}"></image>.
+				<span style="float:left;line-height:65px;margin-left:10px;">{{item.friend_name}}</span>
+				<span style="float:right;line-height:65px;margin-right:10px;"><span style="font-size:10px;color:#DDA13F;">消费</span><span style="font-weight:bold;">{{ParticipantMoney}}</span></span>
 			</view>
 		</view>
 	</view>
 
 	<view class="btn-area">
-    	<button type="default" hover-class="other-button-hover" formType="submit">记账</button>
+    	<button type="default" bindtap="GetCharge" hover-class="other-button-hover" formType="submit">记账</button>
   	</view>
   	<view style="background:#EDEDED;height:80px;"></view>
 </view>

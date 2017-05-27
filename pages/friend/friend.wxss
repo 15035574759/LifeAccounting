@@ -28,7 +28,7 @@
 }
 .payer-userName{
 	/*line-height: 80px;*/
-	line-height: 25px;
+	line-height: 30px;
 	margin-top:15px;
 	margin-left:5px;
 }

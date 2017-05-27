@@ -1,60 +1,64 @@
 <!--pages/account/particulars/account_particulars.wxml-->
 <view class="container">
-	<view class="circle">所属圈子：{{circle}}</view>
+	<view class="circle">所属圈子：{{CircleData['circle_name']}}</view>
 
 	<view class="CircleClass">
 		<view class="CircleClass-bill">
-			<view class="CircleClass-bill01-name">娱乐<view style="color:red;font-size:13px;">人民币</view></view>
-			<view class="CircleClass-bill01-rmb">100</view>
+			<view class="CircleClass-bill01-name">{{CircleData['describe']}}<view style="color:red;font-size:13px;">人民币</view></view>
+			<view class="CircleClass-bill01-rmb">{{CircleData['total']}}</view>
 		</view>
 	</view>
 
 	<view class="remark">
 		<view class="GetRemark">
 			<view>备注</view>
-			<view style="color:#aaa;font-size:15px;">未填写</view>
+			<view style="color:#aaa;font-size:15px;">{{CircleData['remark']}}</view>
 		</view>
 	</view>
 	
 	<!-- 支付人 -->
 	<view class="payer">
-		<view class="payer-man-name">付款人 (2)</view>
-		<view class="payer-user">
+		<view class="payer-man-name">付款人 ({{CircleData['PayerNum']}})</view>
+		<view class="payer-user" wx:for="{{CircleData['PayerData']}}" wx:for-item="item">
 			<view class="payer-user-public payer-user-img">
-				<image class="userinfo-avatar" style="width:50px;height:50px;border-radius: 50%;" src="../../../images/user.png" background-size="cover" mode=""></image>
+				<image class="userinfo-avatar" style="width:50px;height:50px;border-radius: 50%;" src="{{item.friend_imgurl}}" background-size="cover" mode=""></image>
 			</view>
-			<view class="payer-user-public payer-userName">幸福转角</view>
-			<view class="payer-user-pay"><text style="font-size:15px;color:red;">支付</text><text style="font-size:25px;font-weight:bold;">100</text></view>
+			<view class="payer-user-public payer-userName">{{item.friend_name}}</view>
+			<view class="payer-user-pay"><text style="font-size:15px;color:red;">支付</text><text style="font-size:25px;font-weight:bold;">{{item.payment}}</text></view>
 
 		</view>
-		<view class="payer-user">
+		<!-- <view class="payer-user">
 			<view class="payer-user-public payer-user-img">
 				<image class="userinfo-avatar" style="width:50px;height:50px;border-radius: 50%;" src="../../../images/user.png" background-size="cover" mode=""></image>
 			</view>
 			<view class="payer-user-public payer-userName">幸福转角</view>
 			<view class="payer-user-pay"><text style="font-size:15px;color:red;">消费</text><text style="font-size:25px;font-weight:bold;">100</text></view>
-		</view>
+		</view> -->
 	</view>
 	<view style="width:100%;height:15px;background:#EDEDED;"></view>
 	<!-- 参与人 -->
 	<view class="payer participant">
-		<view class="payer-man-name">参与人 (2)</view>
-		<view class="payer-user">
+		<view class="payer-man-name">参与人 ({{CircleData['DataAllParticipantNum']}})</view>
+		<view class="payer-user" wx:for="{{CircleData['DataAllParticipant']}}" wx:for-item="item">
 			<view class="payer-user-public payer-user-img">
-				<image class="userinfo-avatar" style="width:50px;height:50px;border-radius: 50%;" src="../../../images/user.png" background-size="cover" mode=""></image>
+				<image class="userinfo-avatar" style="width:50px;height:50px;border-radius: 50%;" src="{{item.friend_imgurl}}" background-size="cover" mode=""></image>
 			</view>
-			<view class="payer-user-public payer-userName">幸福转角</view>
-			<view class="payer-user-public participant-consume"><text style="font-size:15px;color:red;">支付</text><text style="font-size:25px;font-weight:bold;">100</text></view>
-			<view class="settle"><image class="userinfo-avatar" style="width:40px;height:40px;border-radius: 50%;" src="../../../images/结账.png" background-size="cover" mode="" bindtap="GetSettle"></image></view>
+			<view class="payer-user-public payer-userName">{{item.friend_name}}</view>
+			<view class="payer-user-public participant-consume"><text style="font-size:15px;color:red;">支付</text><text style="font-size:25px;font-weight:bold;">{{item.payer}}</text></view>
+
+			<view class="settle">
+				<image class="userinfo-avatar" wx:if="{{item.pay_start == 0}}" style="width:40px;height:40px;border-radius: 50%;" src="../../../images/结账.png" background-size="cover" mode="" bindtap="GetSettle" data-id="{{item.f_id}}"></image>
+				<text wx:else style="color:red">已付款</text>
+			</view>
 		</view>
-		<view class="payer-user">
+		<!-- <view class="payer-user">
 			<view class="payer-user-public payer-user-img">
 				<image class="userinfo-avatar" style="width:50px;height:50px;border-radius: 50%;" src="../../../images/user.png" background-size="cover" mode=""></image>
 			</view>
 			<view class="payer-user-public payer-userName">幸福转角</view>
 			<view class="payer-user-public participant-consume"><text style="font-size:15px;color:red;">消费</text><text style="font-size:25px;font-weight:bold;">100</text></view>
 			<view class="settle" style="color:red;">已结算</view>
-		</view>
+		</view> -->
 	</view>
 	
 	<!-- 明细 -->
@@ -63,8 +67,8 @@
 			<view>记账货币：人民币</view>
 			<view>结算货币：人民币</view>
 			<view>100人民币=100人民币</view>
-			<view>记录人：幸福转角</view>
-			<view>时间：2017.2.19 21:00:00</view>
+			<view>记录人：{{CircleData['UserName']['friend_name']}}</view>
+			<view>时间：{{CircleData['UserName']['time']}}</view>
 			<view>状态：已生效</view>
 		</view>
 	</view>

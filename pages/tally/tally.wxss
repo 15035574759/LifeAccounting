@@ -1,1 +1,81 @@
 /* pages/tally/tally.wxss */
+.mypie{
+	text-align:center;
+	margin:0 auto;
+	margin-top:10px;
+}
+
+.TabButton{
+	color:#FFFFFF;
+}
+button.income,
+button.expend
+{
+	width:60px;
+	height:30px;
+	font-size: 13px;
+	line-height: 25px;
+	text-align: center;
+	margin-top:20px;
+	float: left;
+	border-radius: 0;
+	border:1px solid #FF8800;
+    /*border-color: #FE8A00;*/
+	/*color:#FE8A00;*/
+}
+button.income{
+	border-right:0;
+}
+.circle{
+	width:100px;
+	height:100px; 
+	margin:0 auto;
+	background:#FFFFFF;
+	border-radius:60px;
+	z-index: 9;
+	position: absolute; 
+	text-align: center;
+	transform: translate(70px, 80px);
+}
+.Br{
+	width:100%;
+	border-bottom: 2px solid #F3F3F3;
+	margin: 10px 0 10px 0;
+}
+
+.Bill{
+	width:100%;
+	float: left;
+	border-bottom: 2px solid #F3F3F3;
+}
+.BillName{
+	float: left;
+	height:50px;
+}
+.navigator-image{
+	width:30px;
+	height:30px;	
+	border-radius:100px;
+}
+.BillName03{
+	float:left;
+	line-height: 50px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.BillName01{
+	float:left;
+	line-height: 50px;
+	margin-left: 15px;
+}
+.BillName02{
+	float:left;
+	line-height: 50px;
+	margin-left: 15px;
+}
+.BillMoney{
+	float: right;
+	line-height: 50px;
+	margin-right: 15px;
+	font-weight:bold;
+}

@@ -6,6 +6,7 @@ Page({
     ExpendType:"warn",
     IncomeDisplay:"none",
     ExpendDisplay:"show",
+    getShow:false,
     inout_start:2,
     avatarUrl:"../../images/选中.png",
     desc:"吃喝",

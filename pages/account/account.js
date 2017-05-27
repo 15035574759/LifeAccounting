@@ -6,13 +6,42 @@ Page({
     avatarUrl:'',
     circleData:[],
   },
-  GetDelete:function(){
+  GetDelete:function(e){
+    var cir_id = e.target.dataset.id
     wx.showModal({
       title: '提示',
       content: '你确定删除吗',
       success: function(res) {
         if (res.confirm) {
-          console.log('用户点击确定')
+           wx.request({
+              url: app.url + 'circle/circleDel', //查询当前用户下所有圈子
+              data: {cir_id:cir_id},
+              header: {
+                  'content-type': 'application/json'
+              },
+              success: function(res) {
+                console.log(res.data)
+                if(res.data.code == 1)
+                {
+                    wx.showToast({
+                      title: '删除成功',
+                      icon: 'success',
+                      duration: 2000
+                    })
+                    wx.navigateTo({//关闭当前页面，跳转到应用内的某个页面。
+                        url: 'account'
+                    })
+                }
+                else
+                {
+                    wx.showToast({
+                      title: res.data.msg,
+                      icon: 'success',
+                      duration: 2000
+                    })
+                }
+              }
+            })
         }
       }
     })
