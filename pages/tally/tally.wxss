@@ -43,20 +43,25 @@ button.income{
 	margin: 10px 0 10px 0;
 }
 
+.GetExpend{
+	width: 100%;
+	height:auto;
+}
 .Bill{
 	width:100%;
 	float: left;
 	border-bottom: 2px solid #F3F3F3;
-}
-.BillName{
-	float: left;
-	height:50px;
 }
 .navigator-image{
 	width:30px;
 	height:30px;	
 	border-radius:100px;
 }
+.BillName{
+	float: left;
+	height:50px;
+}
+
 .BillName03{
 	float:left;
 	line-height: 50px;

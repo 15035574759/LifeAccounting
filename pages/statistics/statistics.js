@@ -25,8 +25,8 @@ Page({
         "desc":"服饰"
       }
     ],
-    inoutClass:[],
-    expendClass:[]
+    inoutClass:[],//收入数据
+    expendClass:[],//支出数据
   },
   bindDateChange: function(e) {//日期选择
     var getdate = e.detail.value 
@@ -57,7 +57,7 @@ Page({
     })
   },
   DefaultIncome:function(e){//收入选项卡
-    this.setData({"inout_start":"1"})//将收入支出状态改为1
+    this.setData({"inout_start":"2"})//将收入支出状态改为1
     this.setData({"IncomeDisplay":"block"})
     this.setData({"ExpendDisplay":"none"})
     this.setData({"ExpendType":"default"})
@@ -65,7 +65,7 @@ Page({
   },
   DefaultExpend:function(e){//支出选项卡
     // console.log("55")
-    this.setData({"inout_start":"2"})//将收入支出状态改为2
+    this.setData({"inout_start":"1"})//将收入支出状态改为2
     this.setData({"ExpendDisplay":"none"})
     this.setData({"ExpendDisplay":"show"})
     this.setData({"IncomeDisplay":"none"})
@@ -108,16 +108,16 @@ Page({
               // console.log(res.data)
               if(res.data.status == 1){
                 wx.showToast({
-                  title: '添加成功',
-                  icon: 'success',
-                  duration: 2000,
-                  success:function(res){
-                    wx.switchTab({
+                    title: '添加成功',
+                    icon: 'success',
+                    duration: 2000
+                  })
+                  wx.switchTab({
                       url: '../show/show'
-                    })
-                  }
-                }) 
-              }else{
+                  }) 
+              }
+              else
+              {
                 wx.showToast({
                   title: '添加失败',
                   icon: 'success',
@@ -153,8 +153,8 @@ Page({
         },
         success: function(res) {
           console.log(res.data.ExpendData)
-          that.setData({ inoutClass: res.data.ExpendData })//收入数据赋值
-          that.setData({ expendClass: res.data.IncomeData })//支出数据赋值
+          that.setData({ inoutClass: res.data.IncomeData })//收入数据赋值
+          that.setData({ expendClass: res.data.ExpendData })//支出数据赋值
         }
     })
 

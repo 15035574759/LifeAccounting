@@ -34,41 +34,46 @@ Page({
   })
   },
   GetDel:function(event){//删除数据
-    var a_id = event.currentTarget.dataset.lastid
-    wx.request({
-      url: app.url + 'check/CheckDel', //删除数据
-      data: {a_id:a_id},
-      header: {
-          'content-type': 'application/json'
-      },
+    wx.showModal({
+      title: '提示',
+      content: '你确定要删除吗',
       success: function(res) {
-          if(res.data.start == 1){
-            wx.showToast({
-              title: '删除成功',
-              icon: 'success',
-              duration: 2000,
-              complete:function(res){
-                wx.switchTab({
-                  url: '../show'
-                })
-              }
-            })
-          }
-          else
-          {
-            wx.showToast({
-              title: '删除失败',
-              icon: 'success',
-              duration: 2000,
-              complete:function(res){
-                wx.switchTab({
-                  url: '../show'
-                })
-              }
-            })
-          }
+        if (res.confirm) {
+          var a_id = event.currentTarget.dataset.lastid
+          wx.request({
+            url: app.url + 'check/CheckDel', //删除数据
+            data: {a_id:a_id},
+            header: {
+                'content-type': 'application/json'
+            },
+            success: function(res) {
+                if(res.data.start == 1){
+                  wx.showToast({
+                    title: '删除成功',
+                    icon: 'success',
+                    duration: 2000
+                  })
+                  wx.switchTab({
+                      url: '../show'
+                  })
+                }
+                else
+                {
+                  wx.showToast({
+                    title: '删除失败',
+                    icon: 'success',
+                    duration: 2000
+                  })
+                  wx.switchTab({
+                      url: '../show'
+                  })
+                }
+            }
+          })
+        }
       }
     })
+    
   },
   GetSave:function(event){//修改数据
 

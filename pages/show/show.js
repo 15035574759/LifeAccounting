@@ -37,7 +37,7 @@ Page({
             data: {openid:openid,limit:limit,lastid:lastid},
             success: function(res) {
               console.log(res.data)
-              // console.log("444");
+              console.log("444");
               //判断数据是否为空
               if (!res.data.data) {
                 wx.showToast({
@@ -90,6 +90,7 @@ Page({
     })
   },
   onLoad:function(){
+    // console.log("onLoad");
     // 页面初始化 options为页面跳转所带来的参数
     //获取用户信息
     var that = this
@@ -102,7 +103,15 @@ Page({
     }) 
     that.loadData(0);
   },
+  onShow:function(){
+    // 页面显示
+    // var that = this
+    // console.log("onShow");
+    // this.setData({newsList:[]})
+    // this.onLoad()
+  },
   onPullDownRefresh: function(){//下拉刷新页面
+    this.setData({newsList:[]})
     this.onLoad();
     wx.stopPullDownRefresh()
   },
@@ -119,9 +128,6 @@ Page({
   },
   onReady:function(){
     // // 页面渲染完成
-  },
-  onShow:function(){
-    // 页面显示
   },
   onHide:function(){
     // 页面隐藏

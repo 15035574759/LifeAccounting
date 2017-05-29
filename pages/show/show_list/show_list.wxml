@@ -26,7 +26,7 @@
 	<view class="GetButton">
 		<navigator url="add/add_friend" hover-class="navigator-hover">
 			<view class="GetButton-button" bindtap="GetSave" data-lastid="{{a_id}}">
-				<button class="nav-desc" style="color:#F29900;font-size:15px;" type="default" bindtap="AddMember" hover-class="other-button-hover"> 编辑 </button>
+				<!-- <button class="nav-desc" style="color:#F29900;font-size:15px;" type="default" bindtap="AddMember" hover-class="other-button-hover"> 编辑 </button> -->
 			</view>
 		</navigator>
 			<view class="GetButton-button" bindtap="GetDel" data-lastid="{{a_id}}">
