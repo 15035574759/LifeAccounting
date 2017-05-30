@@ -11,9 +11,14 @@
         <!--<text class="userinfo-nickname">{{username}}</text>-->
       </view>
 
-      <view class="GetMoner">
+      <view class="GetMoner" style="display:{{ResidueBox}}">
+        <view class="GetMoney-money">{{budgetMoney}}</view>
+        <text class="GetMoney-text">预算余额</text>
+      </view>
+
+      <view class="GetMoner" style="display:{{SurplusBox}}">
         <view class="GetMoney-money">{{money}}</view>
-        <text class="GetMoney-text">本月预算余额</text>
+        <text class="GetMoney-text">本月余额</text>
       </view>
 
       <view class="MoneyMessage">

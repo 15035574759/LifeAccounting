@@ -8,7 +8,8 @@
 		<view class="circle">
 			<view style='position: absolute; text-align: center; transform: translate(30.5px, 32px);line-height: 18px;'>
 				<view style="">
-					<view style="font-size:20px;font-weight:bold;">{{TotalParice}}</view>
+					<view style="font-size:20px;font-weight:bold;" wx:if="{{TotalParice == null}}">0</view>
+					<view style="font-size:20px;font-weight:bold;" wx:else>{{TotalParice}}</view>
 					<view style="font-size:12px;color:#FF8800;">{{totalStart}}</view>
 				</view>
 			</view>

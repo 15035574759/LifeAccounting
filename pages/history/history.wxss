@@ -1,0 +1,41 @@
+/* pages/history/history.wxss */
+page{  
+  display: block;  
+  min-height: 100%;  
+  background-color: #EDEDED;  
+}  
+.container{
+	height:auto;
+}
+.GetBox{
+	margin-top:20px;
+	width:100%;
+}
+.UpdateBox{
+	float: left;
+	width:100%;
+	background: #FFFFFF;
+	border-top: 1px solid #EDEDED;
+	border-bottom: 1px solid #EDEDED;
+	margin-bottom: 20px;
+}
+.UpdateBox01{
+	height:30px;
+	line-height: 30px;
+	border-bottom: 1px solid #EDEDED;
+	margin-left: 10px;
+	/*float: left;*/
+}
+.UpdateBox01-versions{
+	float: left;
+}
+.UpdateBox01-time{
+	float: right;
+	margin-right: 10px;
+}
+.UpdateBox02{
+	clear: both;
+	line-height: 25px;
+	margin-left: 10px;
+	height:auto;
+}

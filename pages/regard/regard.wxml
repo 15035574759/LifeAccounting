@@ -1,0 +1,27 @@
+<!--pages/regard/regard.wxml-->
+<view class="container">
+	<view bindtap="bindViewTap" class="userinfo">
+	        <image class="userinfo-avatar" src="../../images/酒店.png" background-size="cover" mode=""></image>
+	        <text class="userinfo-nickname">我的记账软件 v2.0.2</text>
+	        <text class="userinfo-nickname" style="font-size: 13px;">你的预算管家</text>
+	</view>
+<view class="GetBox">
+	<view class="UpdateBox">
+		<view class="UpdateBox01">本次更新的功能说明</view>
+		<view class="UpdateBox02">
+			1. 优化统计图的文字显示
+		</view>
+		<view class="UpdateBox02">
+			2. 优化账本管理bug
+		</view>
+	</view>
+	<navigator url="/pages/history/history" hover-class="navigator-hover">
+		<view class="box">
+				<view class="box01">历史版本</view>
+				<view class="box02">></view>
+		</view>
+	</navigator>
+</view>
+	
+</view>
+

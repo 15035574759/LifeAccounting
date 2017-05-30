@@ -9,8 +9,8 @@ Page( {
       expendFontColor:'#FFFFFF',
       IncomeDisplay:"none",//收入显示状态
       ExpendDisplay:"show",//支出显示状态
-      mypie_stsrt:1, //1 支出  2 收入
-      TotalParice:'',//总的金额
+      mypie_stsrt:2, //1 支出  2 收入
+      TotalParice:0,//总的金额
       totalStart:'总支出',//收入  支出
       IncomeData:[],//收入数据
       ExpendData:[],//支出数据
@@ -22,28 +22,28 @@ Page( {
       IncomeTotalMoney:0,//收入总金额
     },
     DefaultIncome:function(e){//收入选项卡
-      this.setData({"inout_start":"1"})//将收入支出状态改为1
+      this.setData({"inout_start":1})//将收入支出状态改为1
       this.setData({"IncomeDisplay":"block"})
       this.setData({"ExpendDisplay":"none"})
       this.setData({"IncomeColor":"#FF8800"})//改变背景颜色
       this.setData({"ExpendColor":"#F8F8F8"})
       this.setData({"incomeFontColor":"#FFFFFF"})//字体颜色
       this.setData({"expendFontColor":"#FF8800"})
-      this.setData({"mypie_stsrt":0})//改变收入状态
+      this.setData({"mypie_stsrt":1})//改变收入状态
       // this.setData({"TotalParice":"100"})//金额
       // this.setData({"totalStart":"总收入"})//收入还是支出
       this.onShow()
     },
     DefaultExpend:function(e){//支出选项卡
       // console.log("55")
-      this.setData({"inout_start":"2"})//将收入支出状态改为2
+      this.setData({"inout_start":2})//将收入支出状态改为2
       this.setData({"ExpendDisplay":"show"})
       this.setData({"IncomeDisplay":"none"})
       this.setData({"IncomeColor":"#F8F8F8"})//改变背景颜色
       this.setData({"ExpendColor":"#FF8800"})
       this.setData({"incomeFontColor":"#FF8800"})//字体颜色
       this.setData({"expendFontColor":"#FFFFFF"})
-      this.setData({"mypie_stsrt":1})//改变支出状态
+      this.setData({"mypie_stsrt":2})//改变支出状态
       // this.setData({"TotalParice":"100"})//金额
       // this.setData({"totalStart":"总支出"})//收入还是支出
       this.onShow()
@@ -69,6 +69,13 @@ Page( {
               success: function(res) {
                 console.log(res.data)
                 console.log("查询本月收入与支出数据")
+                if(res.data.code == -1){
+                  wx.showToast({
+                    title: res.data.msg,
+                    icon: 'success',
+                    duration: 2000
+                  })
+                }
                 that.setData({IncomeData:res.data.IncomeData})//赋值收入数据
                 that.setData({ExpendData:res.data.ExpendData})//赋值支出数据
                 that.setData({IncomeMonerArray:res.data.IncomeMonerArray})//收入金额
@@ -81,9 +88,16 @@ Page( {
                 var mypie_start = that.data.mypie_stsrt
                 // console.log(mypie_start)
                 // console.log("画饼图")
-                if(mypie_start == 1)
+                if(mypie_start == 2)
                 {//1 支出
                     var ExpendMonerArray = that.data.ExpendMonerArray //获取支金额数组
+                    if(ExpendMonerArray.length == 0){
+                      wx.showToast({
+                        title: '您本月没有支出记录',
+                        icon: 'success',
+                        duration: 2000
+                      })
+                    }
                     var ExpendColorArray = that.data.ExpendColorArray //获取支出颜色数组
                     // console.log(ExpendMonerArray)
                     var array = ExpendMonerArray //赋值
@@ -92,9 +106,18 @@ Page( {
                     that.setData({totalStart:"总支出"})//收入还是支出
                     
                 }
-                else if(mypie_start == 0)
+                else if(mypie_start == 1)
                 {// 收入
                     var IncomeMonerArray = that.data.IncomeMonerArray //获取支金额数组
+                    console.log(IncomeMonerArray)
+                    console.log("用户点击收入")
+                    if(IncomeMonerArray.length == 0){
+                      wx.showToast({
+                        title: '您本月没有收入记录',
+                        icon: 'success',
+                        duration: 2000
+                      })
+                    }
                     var IncomeColorArray = that.data.IncomeColorArray //获取支出颜色数组
                     // console.log(IncomeMonerArray)
                     // console.log("宾图")

@@ -12,7 +12,7 @@
 					<view class="userinfo-desc01"><text class="userinfo-desc" data_id="{{c_id}}">{{desc}}</text></view>
 			</view>
 			<view class="userinfo-input">
-			  <input name="input" class="userinfo-input-input" maxlength="10" placeholder="请输入金额" type="digit"/>
+			  <input name="money" class="userinfo-input-input" maxlength="10" placeholder="请输入金额" type="digit"/>
 			  <text class="userinfo-input-text">元</text>
 			</view>
 		</view>
@@ -61,7 +61,7 @@
 			<view class="get-remark">
 				<view class="remark remark-remark">备注：</view>
 				<view class="remark remark-input">
-					<input bindinput="bindKeyInput" name="input1" maxlength="10" placeholder="备注，例如：租房"/></view><text class="remark" class="remark-limit">{{remark_length}}/10</text>
+					<input bindinput="bindKeyInput" name="remark" maxlength="10" placeholder="备注，例如：租房"/></view><text class="remark" class="remark-limit">{{remark_length}}/10</text>
 			</view>
 		</view>
 		<view class="btn-area">

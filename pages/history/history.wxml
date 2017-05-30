@@ -1,0 +1,32 @@
+<!--pages/history/history.wxml-->
+<view class="container">
+<view class="GetBox">
+	<view class="UpdateBox">
+		<view class="UpdateBox01">
+			<view class="UpdateBox01-versions">v2.0.1</view>
+			<view class="UpdateBox01-time">2017.5.30</view>
+		</view>
+		<view class="UpdateBox02">
+			1. 优化统计图的文字显示
+		</view>
+		<view class="UpdateBox02">
+			2. 优化账本管理bug
+		</view>
+	</view>
+	<view class="UpdateBox">
+		<view class="UpdateBox01">
+			<view class="UpdateBox01-versions">v2.0.1</view>
+			<view class="UpdateBox01-time">2017.5.30</view>
+		</view>
+		<view class="UpdateBox02">
+			1. 优化统计图的文字显示
+		</view>
+		<view class="UpdateBox02">
+			2. 优化账本管理bug
+		</view>
+	</view>
+</view>
+	
+</view>
+
+

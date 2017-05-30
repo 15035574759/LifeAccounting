@@ -14,6 +14,11 @@ Page({
     lastid: 0,
     Loading: true,//加载中 默认 true
     moreHidden: 'none',//默认加载更多true
+    budget:0,//预算金额状态
+    budgetMoney:0,//预算余额金额
+    openid:'',
+    ResidueBox:'none',//预算余额是否显示
+    SurplusBox:'show',//结余余额是否显示
   },
   AccountBook:function(){//账本
      this.setData({"BillDisplay":"none"})
@@ -100,7 +105,48 @@ Page({
          var avatarUrl = userInfo.avatarUrl
          that.setData({avatarUrl:avatarUrl})
          that.setData({username:nickName})
-    }) 
+    })
+
+    //查询预算是否开启 
+    wx.getStorage({//获取当前用户openid
+      key: 'openid',
+      success: function(res) {
+          var openid = res.data
+          that.setData({openid:openid})
+           wx.request({
+                url: app.url + 'check/BudgetMoney', //查询预算是否开启 
+                data: {openid:openid},
+                header: {
+                    'content-type': 'application/json'
+                },
+                success: function(res) {
+                  console.log(res.data)
+                  if(res.data.code == 1)
+                  {
+                    //预算开启 预算余额显示 赋值数据
+                    that.setData({ResidueBox:'show'})
+                    that.setData({SurplusBox:'none'})
+                    that.setData({budgetMoney:res.data.data})
+                  }
+                  else
+                  {
+                     //预算未开启 结余余额显示 赋值数据
+                    that.setData({SurplusBox:'show'})
+                    that.setData({ResidueBox:'none'})
+                  }
+                  console.log("查询预算是否开启")
+                  // that.setData({ time: res.data.data})//赋值当前时间
+                }
+            }) 
+        },
+        fail:function() {
+            wx.showToast({
+              title: 'openid获取失败',
+              icon: 'success',
+              duration: 2000
+            })
+        }
+      })
     that.loadData(0);
   },
   onShow:function(){

@@ -1,0 +1,41 @@
+<!--pages/budget/budget.wxml-->
+<view class="container">
+	<view style="background: #EDEDED;height:15px;"></view>
+	<view class="GetBox">
+		<view class="box">
+			<view class="box01">开启预算</view>
+			<view class="box02">
+				<view class="body-view">
+				    <switch wx:if="{{checked == 'true'}}" checked bindchange="switchChange"/>
+				    <switch wx:else bindchange="switchChange"/>
+				</view>
+			</view>
+		</view>
+		<view class="GetSwitch" style="display:{{GetSwitchShow}}">
+			<view class="boxswitch">
+				<view class="box03">关闭预算后首页将显示月度结余信息</view>
+			</view>
+			<view class="box">
+				<view class="box01">预算金额</view>
+				<view class="box02" bindtap="BoxButged">
+					{{ButgedMoney}} >
+				</view>
+			</view>
+			<view class="boxswitch">
+				<view class="box03">
+					预算余额为预算金额减支出金额，可自行设置预算金额
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="b1" style="display:{{flag}};">
+    <view class="b2">
+      <view class="v1">设置预算</view>
+      <view class="input"><input name="input" bindinput="bindKeyInput" placeholder="500" class="butged"/></view>
+      <view class="confirm">
+		<view class="con02" bindtap="ButgedCancel">取消</view>
+		<view class="con01" bindtap="ButgedConfirm">确定</view>
+      </view>
+    </view>
+</view>

@@ -8,23 +8,11 @@ Page({
     ExpendDisplay:"show",
     getShow:false,
     inout_start:2,
-    avatarUrl:"../../images/选中.png",
+    avatarUrl:"/images/吃喝玩乐.png",
     desc:"吃喝",
     c_id:"1",
     date: '2017-01-01',
     remark_length:0,
-    array:[
-      {
-        "img-id":"img01",
-        "src":"../../images/交通.png",
-        "desc":"交通"
-      },
-      {
-        "img-id":"img02",
-        "src":"../../images/服饰.png",
-        "desc":"服饰"
-      }
-    ],
     inoutClass:[],//收入数据
     expendClass:[],//支出数据
   },
@@ -62,6 +50,9 @@ Page({
     this.setData({"ExpendDisplay":"none"})
     this.setData({"ExpendType":"default"})
     this.setData({"IncomeType":"warn"})
+    this.setData({"avatarUrl":"/images/工资.png"})
+    this.setData({"desc":"工资"})
+    this.setData({"c_id":11})
   },
   DefaultExpend:function(e){//支出选项卡
     // console.log("55")
@@ -71,6 +62,9 @@ Page({
     this.setData({"IncomeDisplay":"none"})
     this.setData({"ExpendType":"warn"})
     this.setData({"IncomeType":"default"})
+    this.setData({"avatarUrl":"/images/吃喝玩乐.png"})
+    this.setData({"desc":"吃喝"})
+    this.setData({"c_id":1})
   },
   BillClassClick:function(e){//图标样式
     var topImges = e.target.dataset.imgurl
@@ -85,10 +79,29 @@ Page({
     var formData = e.detail.value
     formData.inout_start = this.data.inout_start//支出与收入状态
     formData.inout_class = this.data.c_id//支出与收入状态 id
-    formData.money = formData.input;
-    formData.remark = formData.input1;
+    formData.money = formData.money;//金额
+    formData.remark = formData.remark;//描述
     formData.time = formData.date;
     console.log('form发生了submit事件，携带数据为：', formData)
+    if(formData.money == ""){
+      wx.showToast({
+          title: "请输入金额",
+          icon: 'success',
+          duration: 2000
+        })
+    }else if(formData.remark == ""){
+      wx.showToast({
+          title: "描述不能为空",
+          icon: 'success',
+          duration: 2000
+        })
+    }else if(formData.inout_class == ""){
+      wx.showToast({
+          title: "请选择消费状态",
+          icon: 'success',
+          duration: 2000
+        })
+    }
     
     wx.getStorage({
       key: 'openid',

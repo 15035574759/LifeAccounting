@@ -1,4 +1,4 @@
-/* pages/user/user.wxss */
+/* pages/regard/regard.wxss */
 page{  
   display: block;  
   min-height: 100%;  
@@ -36,12 +36,32 @@ page{
 }
 
 .userinfo-avatar {
-  width: 140rpx;
-  height: 140rpx;
+  width: 200rpx;
+  height: 200rpx;
   /*margin: 20rpx;*/
   border-radius: 50%;
 }
 
 .userinfo-nickname{
   margin:15px 0 20px 0;
+}
+
+.UpdateBox{
+	float: left;
+	width:100%;
+	background: #FFFFFF;
+	border-top: 1px solid #EDEDED;
+	border-bottom: 1px solid #EDEDED;
+	margin-bottom: 20px;
+}
+.UpdateBox01{
+	height:30px;
+	line-height: 30px;
+	border-bottom: 1px solid #EDEDED;
+	margin-left: 10px;
+}
+.UpdateBox02{
+	line-height: 25px;
+	margin-left: 10px;
+	height:auto;
 }
