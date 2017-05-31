@@ -72,5 +72,5 @@ App({
   globalData:{
     userInfo:null
   },
-    url: "https:h5php.xingyuanauto.com/charge/public/index.php/port/"
+    url: "https://h5php.xingyuanauto.com/charge/public/index.php/port/"
 })
