@@ -65,3 +65,11 @@ page{
 	margin-left: 10px;
 	height:auto;
 }
+.UpdateBoxText{
+	width: 100%;
+	margin-top:5px;
+	padding-left:10px ;
+}
+.UpdateBoxText-01{
+	line-height: 30px;
+}

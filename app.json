@@ -13,8 +13,8 @@
     "pages/share/share",
     "pages/service/service",
     "pages/budget/budget",
-    "pages/history/history",
     "pages/regard/regard",
+    "pages/history/history",
     "pages/user/user",
     "pages/friend/add/add_friend",
     "pages/account/particulars/account_particulars",
@@ -26,7 +26,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#9170D9",
-    "navigationBarTitleText": "生活记账",
+    "navigationBarTitleText": "生活账本",
     "navigationBarTextStyle":"white",
     "enablePullDownRefresh":true
   },

@@ -44,7 +44,21 @@ Page({
               console.log(res.data)
               console.log("444");
               //判断数据是否为空
-              if (!res.data.data) {
+              
+
+              if(res.data.start == 0){
+                that.setData({'display':'show'})//没有数据
+              }
+              else if(res.data.code == -1) //获取用户ID错误
+              {
+                wx.showToast({
+                  title: res.data.msg,
+                  icon: 'success',
+                  duration: 2000
+                })
+              }
+              else if (!res.data.data) //没有数据了
+              {
                 wx.showToast({
                   title: '没有更多数据了',
                   icon: 'success',
@@ -55,22 +69,7 @@ Page({
                 }, 2000)
                 that.setData({ moreHidden: 'none' })//隐藏加载更多
               }
-
-              if(res.data.start == 0){
-                  wx.request({
-                    url: app.url + 'check/GetTime', //仅为示例，并非真实的接口地址
-                    data: {},
-                    header: {
-                        'content-type': 'application/json'
-                    },
-                    success: function(res) {
-                      console.log(res.data.MonthAmount)
-                      that.setData({ time: res.data.data})//赋值当前时间
-                    }
-                })
-                that.setData({'display':'show'})//数据赋值
-              }
-              else
+              else  //成功
               {
                 var len = res.data.data.length
                 console.log(len);

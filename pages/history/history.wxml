@@ -1,32 +1,25 @@
 <!--pages/history/history.wxml-->
 <view class="container">
-<view class="GetBox">
-	<view class="UpdateBox">
-		<view class="UpdateBox01">
-			<view class="UpdateBox01-versions">v2.0.1</view>
-			<view class="UpdateBox01-time">2017.5.30</view>
+	<view class="GetBox">
+		<view class="UpdateBox">
+			<view class="UpdateBox01">
+				<view class="UpdateBox01-versions">v1.0.0</view>
+				<view class="UpdateBox01-time">2017.5.30</view>
+			</view>
+			<view class="UpdateBoxText">
+				<text class="UpdateBoxText-01">xxx首次和大家见面，有以下几大功能：\n 1.个人记账 \n 2.本月记账统计 \n 3.好友管理 \n 4.账本管理 \n 5.本月收入与支出统计</text>
+			</view>
 		</view>
-		<view class="UpdateBox02">
-			1. 优化统计图的文字显示
-		</view>
-		<view class="UpdateBox02">
-			2. 优化账本管理bug
-		</view>
+		<!-- <view class="UpdateBox">
+			<view class="UpdateBox01">
+				<view class="UpdateBox01-versions">v2.0.1</view>
+				<view class="UpdateBox01-time">2017.5.30</view>
+			</view>
+			<view class="UpdateBoxText">
+				<text class="UpdateBoxText-01">1. 优化统计图的文字显示\n  2. 优化账本管理bug</text>
+			</view>
+		</view> -->
 	</view>
-	<view class="UpdateBox">
-		<view class="UpdateBox01">
-			<view class="UpdateBox01-versions">v2.0.1</view>
-			<view class="UpdateBox01-time">2017.5.30</view>
-		</view>
-		<view class="UpdateBox02">
-			1. 优化统计图的文字显示
-		</view>
-		<view class="UpdateBox02">
-			2. 优化账本管理bug
-		</view>
-	</view>
-</view>
-	
 </view>
 
 

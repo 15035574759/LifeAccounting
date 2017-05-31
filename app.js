@@ -22,7 +22,15 @@ App({
                 PHPSESSID: wx.getStorageSync('PHPSESSID')//设置session值
               },
               success: function (res) {
-                console.log(res)
+                console.log(res.data)
+                console.log("调用登录接口")
+                if(res.data.code == -1){
+                   wx.showToast({
+                    title: res.data.msg,
+                    icon: 'success',
+                    duration: 2000
+                  })
+                }
                 // //缓存session_id
                 wx.setStorageSync('PHPSESSID', res.data.PHPSESSID)
                 wx.setStorageSync('openid', res.data.openid)
