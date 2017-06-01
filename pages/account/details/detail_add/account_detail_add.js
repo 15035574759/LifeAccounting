@@ -177,7 +177,7 @@ Page({
           if(res.data.msg == 1)
           {
               wx.showToast({
-                title: '添加成功',
+                title: '记账成功',
                 icon: 'success',
                 duration: 2000
               })
@@ -224,7 +224,7 @@ Page({
   GetPayer:function(){//选择付款人
     var cir_id = this.data.cir_id
     var openid = this.data.openid
-    wx.navigateTo({
+    wx.redirectTo({
       url: 'payer/payer?cir_id='+cir_id
     })
     console.log("选择付款人")

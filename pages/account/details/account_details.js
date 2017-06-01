@@ -14,17 +14,20 @@ Page({
     AllconsumeMoney:0,  //查询全员消费金额
   },
   onLoad:function(options){
+    var that = this
+    var cir_id = that.data.cir_id
+    if(cir_id == 0)
+    {//如果第一次加载获取getcir_id
+        var cirid = options.cir_id;//圈子ID
+        that.setData({cir_id:cirid})
+        var cir_id = that.data.cir_id
+    }
+
     // 页面初始化 options为页面跳转所带来的参数
-     var that = this
      wx.getStorage({//获取当前用户openid
       key: 'openid',
       success: function(res) {
         var openid = res.data
-
-        //获取圈子名称
-          var cir_id = options.cir_id;//圈子ID
-
-          that.setData({cir_id:cir_id});
           wx.request({
             url: app.url + 'circle/CircleName', //查询当前圈子标题
             data: {cir_id:cir_id,openid:openid},
@@ -35,12 +38,18 @@ Page({
               console.log(res.data)
               console.log("当前圈子标题")
               wx.setNavigationBarTitle({
-                title: res.data.circle_name//赋值圈子标题
+                title: res.data.circle_name,//赋值圈子标题
+                success:function(){
+                  console.log("标题设置成功")
+                },
+                fail:function(){
+                  console.log("标题设置失败")
+                }
               })
             },
             fail:function() {
                 wx.showToast({
-                  title: '数据请求失败',
+                  title: '获取账单标题失败',
                   icon: 'success',
                   duration: 2000
                 })
@@ -107,33 +116,18 @@ Page({
 
     })
     //获取用户信息
-    app.getUserInfo(function (userInfo) {
-        console.log(userInfo)
-         var nickName = userInfo.nickName
-         var avatarUrl = userInfo.avatarUrl
-         that.setData({avatarUrl:avatarUrl})
-         that.setData({username:nickName})
-    })
-
-    
-    
-    //获取圈子对应好友
-    wx.request({
-      url: app.url + 'circle/circleName', //查询当前圈子好友
-      data: {},
-      header: {
-          'content-type': 'application/json'
-      },
-      success: function(res) {
-        console.log(res.data.circle_name)
-        wx.setNavigationBarTitle({
-          title: res.data.circle_name
-        })
-      }
-    })
+    // app.getUserInfo(function (userInfo) {
+    //     console.log(userInfo)
+    //      var nickName = userInfo.nickName
+    //      var avatarUrl = userInfo.avatarUrl
+    //      that.setData({avatarUrl:avatarUrl})
+    //      that.setData({username:nickName})
+    // })
   },
   onPullDownRefresh: function(){//下拉刷新页面
-    this.onLoad();
+    var that = this
+    var cir_id = that.data.cir_id
+    that.onLoad()
     wx.stopPullDownRefresh()
   },
   GetCharge:function(){

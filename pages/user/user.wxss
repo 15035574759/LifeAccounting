@@ -45,3 +45,8 @@ page{
 .userinfo-nickname{
   margin:15px 0 20px 0;
 }
+.arrows{
+	 font-weight:800;
+	color:#EDEDED;
+	font-size:18px;
+}

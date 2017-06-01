@@ -14,7 +14,7 @@ Page({
       success: function(res) {
         if (res.confirm) {
            wx.request({
-              url: app.url + 'circle/circleDel', //查询当前用户下所有圈子
+              url: app.url + 'circle/circleDel', //删除当前用户下圈子
               data: {cir_id:cir_id},
               header: {
                   'content-type': 'application/json'
@@ -69,11 +69,17 @@ Page({
           },
           success: function(res) {
             console.log(res.data)
+            console.log("当前用户下所有圈子")
             that.setData({circleData:res.data})
           }
         })
       }
     })
+  },
+  onPullDownRefresh: function(){//下拉刷新页面
+    this.setData({circleData:[]})
+    this.onLoad();
+    wx.stopPullDownRefresh()
   },
   onReady:function(){
     // 页面渲染完成

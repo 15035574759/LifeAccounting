@@ -45,7 +45,4 @@ page{
 }
 .UpdateBoxText-01{
 	line-height: 30px;
-	/*margin-left:10px;*/
-	/*margin-left:10px;*/
-	/*text-indent: 10px;*/
 }

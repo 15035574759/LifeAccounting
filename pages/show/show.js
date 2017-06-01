@@ -42,7 +42,7 @@ Page({
             data: {openid:openid,limit:limit,lastid:lastid},
             success: function(res) {
               console.log(res.data)
-              console.log("444");
+              console.log("获取当前用户数据");
               //判断数据是否为空
               
 
@@ -71,8 +71,18 @@ Page({
               }
               else  //成功
               {
+                that.setData({'display':'none'})//没有数据
                 var len = res.data.data.length
                 console.log(len);
+                console.log("获取数据长度");
+                if(len <= 1)
+                { 
+                  that.setData({moreHidden:'none'}) //隐藏加载更多
+                }
+                else
+                {
+                  that.setData({moreHidden:'show'}) //显示加载更多
+                }
                 var dataArr = that.data.newsList
                 var newData = dataArr.concat(res.data.data)
                 that.setData({ newsList: newData })//数据赋值
@@ -82,7 +92,7 @@ Page({
                 that.setData({ money: res.data.MonthBalance})//赋值月预算余额
                 that.setData({ incomes: res.data.MonthIncome})//赋值月收入
                 that.setData({ pay: res.data.MonthExpend})//赋值月支出
-                that.setData({ moreHidden: '' })//显示加载更多
+                // that.setData({ moreHidden: 'show' })//显示加载更多
               }
             },
             complete: function () {

@@ -3,7 +3,7 @@
 	 <view bindtap="bindViewTap" class="userinfo">
         <image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover" mode=""></image>
         <text class="userinfo-nickname">{{username}}</text>
-        <navigator style="float:right;" url="../../pages/account/add/account_add" hover-class="navigator-hover"><image class="userinfo-avatar" style="width:30px;height:30px;margin-right:20px;margin-top:17px;" src="../../images/添加.png" background-size="cover" mode=""></image></navigator>
+        <navigator style="float:right;" url="../../pages/account/add/account_add" hover-class="navigator-hover"><image class="userinfo-avatar" style="width:30px;height:30px;margin-right:20px;margin-top:17px;" src="https://h5php.xingyuanauto.com/charge/public/uploads/images/添加.png" background-size="cover" mode=""></image></navigator>
       </view>
 
       	<!-- 列表 -->

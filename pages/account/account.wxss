@@ -1,4 +1,9 @@
 /* pages/account/account.wxss */
+page{  
+  display: block;  
+  min-height: 100%;  
+  background-color: #FFFBE6;  
+} 
 .container{
 	background: #FFFBE6;
 }

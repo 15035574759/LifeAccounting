@@ -71,7 +71,7 @@
 }
 .con01{
 	border-right: none;
-	color:#027201;
+	color:red;
 }
 .con02{
 	background-color: #fff;

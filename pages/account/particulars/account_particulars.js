@@ -17,7 +17,7 @@ Page({
           var cir_id = that.data.cir_id
            //调用接口删除账单数据
             wx.request({
-              url: app.url + 'circle/DeleteCirclePayment', //查询当前圈子账单明细数据
+              url: app.url + 'circle/DeleteCirclePayment', //调用接口删除账单数据
               data: {cbl_id:cbl_id},
               header: {
                   'content-type': 'application/json'
@@ -44,6 +44,13 @@ Page({
             })
         }
       }
+    })
+  },
+  GetUpdate:function(){
+    wx.showToast({
+      title: '功能待二次开发',
+      icon: 'success',
+      duration: 2000
     })
   },
   onLoad:function(options){

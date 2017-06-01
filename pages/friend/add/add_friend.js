@@ -64,7 +64,7 @@ Page({
             'content-type': 'application/json'
         },
         success: function(res) {
-          // console.log(res.data)
+          console.log(res.data)
          if(res.data.code = 1)
          {
             wx.showToast({

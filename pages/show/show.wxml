@@ -10,17 +10,19 @@
         <image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover" mode=""></image>
         <!--<text class="userinfo-nickname">{{username}}</text>-->
       </view>
-
       <view class="GetMoner" style="display:{{ResidueBox}}">
         <view class="GetMoney-money">{{budgetMoney}}</view>
-        <text class="GetMoney-text">预算余额</text>
+        <navigator class="navigator-img-navigator" url="/pages/budget/budget" hover-class="navigator-hover">  
+          <text class="GetMoney-text">预算余额</text>
+        </navigator>
       </view>
 
       <view class="GetMoner" style="display:{{SurplusBox}}">
         <view class="GetMoney-money">{{money}}</view>
-        <text class="GetMoney-text">本月余额</text>
+        <navigator class="navigator-img-navigator" url="/pages/budget/budget" hover-class="navigator-hover">  
+          <text class="GetMoney-text">本月余额</text>
+        </navigator>
       </view>
-
       <view class="MoneyMessage">
           <view class="MoneyMessage-ul">
                 <view class="MoneyMessage-li01">
@@ -40,7 +42,7 @@
         <navigator class="navigator-img-navigator" url="../../pages/account/account" hover-class="navigator-hover">
           <view class="navigator">
             <view class="navigator-img">
-              <image class="navigator-image" src="../../images/账本.png" background-size="cover" mode=""></image>
+              <image class="navigator-image" src="https://h5php.xingyuanauto.com/charge/public/uploads/images/账本.png" background-size="cover" mode=""></image>
             </view>
             <view class="navigator-img">
               账本管理 <view style="color:#aaa;font-size:13px;">小伙伴一起AA记账</view>
@@ -50,7 +52,7 @@
         <navigator class="navigator-img-navigator" url="../friend/friend" hover-class="navigator-hover">
             <view class="navigator navigator-friends">
               <view class="navigator-img">
-                <image class="navigator-image" src="../../images/好友.png" background-size="cover" mode=""></image>
+                <image class="navigator-image" src="https://h5php.xingyuanauto.com/charge/public/uploads/images/好友.png" background-size="cover" mode=""></image>
               </view>
               <view class="navigator-img" style="width:104px;">
                好友管理 <view style="color:#aaa;font-size:13px;">添加你的好友</view>

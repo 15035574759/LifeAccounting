@@ -51,13 +51,19 @@ Page({
 
     })
   },
-  AddMember:function(){
+  AddMember:function(){//添加好友事件
     var cir_id = this.data.cir_id
     // var openid = this.data.openid
-    
-    //添加成员
+    //跳转到添加成员页面
     wx.navigateTo({
       url: '../circle_friend_add/circle_friend_add?cir_id='+cir_id
+    })
+  },
+  GetSettle:function(){//结算方案事件
+    wx.showToast({
+      title: '功能待二次开发',
+      icon: 'success',
+      duration: 2000
     })
   },
   onReady:function(){

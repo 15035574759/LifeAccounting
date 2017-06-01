@@ -21,7 +21,7 @@ Page({
     var that = this
     //对时间进行判断 不能选择未来日期
     wx.request({
-      url: app.url + 'check/TimeJson', //仅为示例，并非真实的接口地址
+      url: app.url + 'check/TimeJson', //对时间进行判断 不能选择未来日期
       data: {getdate:getdate},
       header: {
           'content-type': 'application/json'
@@ -103,22 +103,18 @@ Page({
         })
     }
     
-    wx.getStorage({
+    wx.getStorage({//获取当前用户openid
       key: 'openid',
       success: function(res) {
          var openid = res.data
-
+          console.log(formData)
+          console.log("formData")
           wx.request({
-            url: app.url + 'check/charge', //仅为示例，并非真实的接口地址
-            data: {
-              openid:openid,
-              formData:formData,
-            },
-            header: {
-                'content-type': 'application/json'
-            },
+            url: app.url + 'check/charge', //提交表单，入库操作
+            data:{openid:openid,formData:formData},
+            header: {'content-type': 'application/json'},
             success: function(res) {
-              // console.log(res.data)
+              console.log(res.data)
               if(res.data.status == 1){
                 wx.showToast({
                     title: '添加成功',
