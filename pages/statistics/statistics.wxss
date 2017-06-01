@@ -73,11 +73,12 @@ button.income{
 }
 .BillClass-get{
 	/*float: left;*/
-	height: 140px;
+	height: 150px;
 	width:100%;
+	margin:0 auto;
 	/*border:1px solid #aaa;*/
 	text-align: center;
-	margin-left:10px;
+	/*margin-left:10px;*/
 }
 .BillClass-class{
 	float: left;
@@ -85,7 +86,8 @@ button.income{
 	width:50px;
 	height:65px;
 	text-align:center;
-	margin-right:20px;
+	padding-right:7px;
+	padding-left:10px;
 }
 .FromText{
 	width:100%;

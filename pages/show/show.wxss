@@ -8,17 +8,20 @@
 
 .TabButton{
   /*color:#FFFFFF;*/
-  float: left;
+  /*float: left;*/
   width:100%;
+  margin:0 auto;
 }
 .navigator{
   float:left;
-  width:49%;
+  width:48%;
   height:60px;
-  /*text-align: center;*/
+  text-align: center;
+  margin:0 auto;
   line-height: 63rpx;
   /*border:1px solid #aaa;*/
 }
+
 .navigator-img{
   float: left;
 }

@@ -45,7 +45,7 @@ Page({
     })
   },
   DefaultIncome:function(e){//收入选项卡
-    this.setData({"inout_start":"2"})//将收入支出状态改为1
+    this.setData({"inout_start":1})//将收入支出状态改为1
     this.setData({"IncomeDisplay":"block"})
     this.setData({"ExpendDisplay":"none"})
     this.setData({"ExpendType":"default"})
@@ -56,7 +56,7 @@ Page({
   },
   DefaultExpend:function(e){//支出选项卡
     // console.log("55")
-    this.setData({"inout_start":"1"})//将收入支出状态改为2
+    this.setData({"inout_start":2})//将收入支出状态改为2
     this.setData({"ExpendDisplay":"none"})
     this.setData({"ExpendDisplay":"show"})
     this.setData({"IncomeDisplay":"none"})
@@ -102,41 +102,43 @@ Page({
           duration: 2000
         })
     }
-    
-    wx.getStorage({//获取当前用户openid
-      key: 'openid',
-      success: function(res) {
-         var openid = res.data
-          console.log(formData)
-          console.log("formData")
-          wx.request({
-            url: app.url + 'check/charge', //提交表单，入库操作
-            data:{openid:openid,formData:formData},
-            header: {'content-type': 'application/json'},
-            success: function(res) {
-              console.log(res.data)
-              if(res.data.status == 1){
-                wx.showToast({
-                    title: '添加成功',
+    else
+    {
+      wx.getStorage({//获取当前用户openid
+        key: 'openid',
+        success: function(res) {
+           var openid = res.data
+            console.log(formData)
+            console.log("formData")
+            wx.request({
+              url: app.url + 'check/charge', //提交表单，入库操作
+              data:{openid:openid,formData:formData},
+              header: {'content-type': 'application/json'},
+              success: function(res) {
+                console.log(res.data)
+                if(res.data.status == 1){
+                  wx.showToast({
+                      title: '添加成功',
+                      icon: 'success',
+                      duration: 2000
+                    })
+                    wx.switchTab({
+                        url: '../show/show'
+                    }) 
+                }
+                else
+                {
+                  wx.showToast({
+                    title: '添加失败',
                     icon: 'success',
                     duration: 2000
                   })
-                  wx.switchTab({
-                      url: '../show/show'
-                  }) 
+                }
               }
-              else
-              {
-                wx.showToast({
-                  title: '添加失败',
-                  icon: 'success',
-                  duration: 2000
-                })
-              }
-            }
-        })
-      } 
-    })
+          })
+        } 
+      })
+    }
   },
   bindKeyInput:function(e){//验证备注不得超过10个字
     var StringLength = e.detail.value.length
