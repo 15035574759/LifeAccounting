@@ -8,7 +8,7 @@
 	<view class="box">
 	<navigator url="/pages/budget/budget" hover-class="navigator-hover">
 		<view class="box01">预算设置</view>
-		<view class="box02">{{ButgedMoney}} <text class="arrows">></text></view>
+		<view class="box02">{{ButgedMoney}} <text class="box02-jt"></text></view>
 	</navigator>
 	</view>
 	<!-- <view class="box">
@@ -20,13 +20,13 @@
 	<navigator url="/pages/service/service" hover-class="navigator-hover">
 		<view class="box">
 			<view class="box01">帮助和反馈意见</view>
-			<view class="box02"><text class="arrows">></text></view>
+			<view class="box02"><text class="box02-jt"></text></view>
 		</view>
 	</navigator>
 	<navigator url="/pages/regard/regard" hover-class="navigator-hover">
 		<view class="box">
 			<view class="box01">关于</view>
-			<view class="box02"><text class="arrows">></text></view>
+			<view class="box02"><text class="box02-jt"></text></view>
 		</view>
 	</navigator>
 </view>

@@ -1,1 +1,33 @@
 /* pages/service/service.wxss */
+page{  
+  display: block;  
+  min-height: 100%;  
+  background-color: #FFFFFF;  
+}  
+.container{
+	height:auto;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:30px;
+}
+
+.userinfo-avatar {
+  width: 140rpx;
+  height: 140rpx;
+  /*margin: 20rpx;*/
+  border-radius: 50%;
+}
+
+.userinfo-nickname{
+  margin:15px 0 20px 0;
+}
+.Qrcode{
+	width:80%;
+	margin-top: 20px;
+}
+.images-Qrcode{
+	margin-top:20px;
+}

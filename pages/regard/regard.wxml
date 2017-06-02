@@ -1,21 +1,23 @@
 <!--pages/regard/regard.wxml-->
 <view class="container">
 	<view bindtap="bindViewTap" class="userinfo">
-	        <image class="userinfo-avatar" src="../../images/酒店.png" background-size="cover" mode=""></image>
-	        <text class="userinfo-nickname">我的记账软件 v1.0.0</text>
+	        <image class="userinfo-avatar" src="https://h5php.xingyuanauto.com/charge/public/uploads/images/log.png" background-size="cover" mode=""></image>
+	        <text class="userinfo-nickname">账本小精灵 v1.0.0</text>
 	        <text class="userinfo-nickname" style="font-size: 13px;">你的预算管家</text>
 	</view>
 <view class="GetBox">
 	<view class="UpdateBox">
 		<view class="UpdateBox01">本次更新的功能说明</view>
 		<view class="UpdateBoxText">
-			<text class="UpdateBoxText-01">xxx首次和大家见面，有以下几大功能：\n 1. 个人记账 \n 2.本月记账统计 \n 3.好友管理 \n 4. 账本管理 \n 5.本月收入与支出统计 </text>
+			<text class="UpdateBoxText-01">账本小精灵首次和大家见面，有以下几大功能：\n 1.个人记账 \n 2.本月收入与支出记账统计 \n 3.好友管理 \n 4.账本管理 </text>
 		</view>
 	</view>
 	<navigator url="/pages/history/history" hover-class="navigator-hover">
 		<view class="box">
 				<view class="box01">历史版本</view>
-				<view class="box02"><text class="arrows">></text></view>
+				<view class="box02">
+					<text class="box02-jt"></text>
+				</view>
 		</view>
 	</navigator>
 </view>

@@ -86,7 +86,7 @@ button.income{
 	width:50px;
 	height:65px;
 	text-align:center;
-	padding-right:7px;
+	padding-right:2px;
 	padding-left:10px;
 }
 .FromText{

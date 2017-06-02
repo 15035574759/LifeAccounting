@@ -27,7 +27,19 @@ page{
 	float: right;
 	margin-right: 10px;
 }
-
+.box02-jt::after{
+	position:relative;
+	float:right;
+	content: "";
+	display: inline-block;
+	height: 18rpx;
+	width: 18rpx;
+	border-width: 3rpx 3rpx 0 0;
+	border-color: #888888;
+	border-style: solid;
+	transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+	margin:14px 10px 0 0;
+}
 .userinfo {
   display: flex;
   flex-direction: column;

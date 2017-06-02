@@ -17,8 +17,8 @@
 			</view>
 			<view class="box">
 				<view class="box01">预算金额</view>
-				<view class="box02" bindtap="BoxButged">
-					{{ButgedMoney}} >
+				<view class="box02" style="color:#D2D2D2;" bindtap="BoxButged">
+					{{ButgedMoney}} <text class="box02-jt"></text>
 				</view>
 			</view>
 			<view class="boxswitch">
