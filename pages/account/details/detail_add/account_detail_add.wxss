@@ -86,7 +86,7 @@ page{
 .SumExpend-money01{
 	float: left;
 	height:80px;
-	width:100%;
+	width:60px;
 	line-height: 20px;
 	margin-top:15px;
 }
@@ -95,14 +95,16 @@ page{
 	margin-left:10px;
 }
 .SumExpend-money02{
-	float: right;
+	float: left;
 	margin-top: 10.016px;
-	width:80px;
+	width:78%;
 }
 .SumExpend-money03{
-	float: left;
+	float: right;
 	border:1px solid #ECECEC;
+	width:81%;
 	height:60px;
+	margin-right:5px;
 }
 
 .participant{

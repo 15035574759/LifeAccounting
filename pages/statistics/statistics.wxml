@@ -1,4 +1,4 @@
-<!--pages/statistics/statistics.wxml-->
+	<!--pages/statistics/statistics.wxml-->
 <view class="container">
 	<view class="TabButton">
 		<button type="{{IncomeType}}" bindtap="DefaultIncome" hover-class="other-button-hover" class="income"> 收入 </button>
@@ -23,7 +23,7 @@
 		
 				<view class="BillClass-class" wx:for="{{inoutClass}}" wx:for-item="item">
 					<view style="height:60px;">
-						<image data-imgurl="{{item.inout_url}}" data-desc="{{item.describe}}" data-id="{{item.c_id}}" bindtap="BillClassClick" class="userinfo-img" src="{{item.inout_url}}" background-size="cover" mode=""></image><image hidden="{{item.c_id == c_id ? false : true}}" style="width:13px;height:13px;position: relative;right:-8px;top:-20px;" src="../../images/选中.png"></image>
+						<image data-imgurl="{{item.inout_url}}" data-desc="{{item.describe}}" data-id="{{item.c_id}}" bindtap="BillClassClick" class="userinfo-img" src="{{item.inout_url}}" background-size="cover" mode=""></image><image hidden="{{item.c_id == c_id ? false : true}}" style="width:13px;height:13px;position: relative;right:-8px;top:-20px;" src="https://h5php.xingyuanauto.com/charge/public/uploads/images/选中.png"></image>
 					</view>
 					<view wx:if="{{item.c_id == c_id}}" style="color:#C7821C">{{item.describe}}</view>
 					<view wx:else>{{item.describe}}</view>
@@ -38,7 +38,7 @@
 
 				<view class="BillClass-class" wx:for="{{expendClass}}" wx:for-item="item">
 					<view style="height:60px;">
-						<image data-imgurl="{{item.inout_url}}" data-desc="{{item.describe}}" data-id="{{item.c_id}}" bindtap="BillClassClick" class="userinfo-img" src="{{item.inout_url}}" background-size="cover" mode=""></image><image hidden="{{item.c_id == c_id ? false : true}}" style="width:13px;height:13px;position: relative;right:-8px;top:-20px;" src="../../images/选中.png"></image>
+						<image data-imgurl="{{item.inout_url}}" data-desc="{{item.describe}}" data-id="{{item.c_id}}" bindtap="BillClassClick" class="userinfo-img" src="{{item.inout_url}}" background-size="cover" mode=""></image><image hidden="{{item.c_id == c_id ? false : true}}" style="width:13px;height:13px;position: relative;right:-8px;top:-20px;" src="https://h5php.xingyuanauto.com/charge/public/uploads/images/选中.png"></image>
 					</view>
 					<view wx:if="{{item.c_id == c_id}}" style="color:#C7821C">{{item.describe}}</view>
 					<view wx:else>{{item.describe}}</view>
@@ -59,13 +59,13 @@
 			</view>
 			<view class="section-br"></view>
 			<view class="get-remark">
-				<view class="remark remark-remark">备注：</view>
-				<view class="remark remark-input">
-					<input bindinput="bindKeyInput" name="remark" maxlength="10" placeholder="备注，例如：租房"/></view><text class="remark" class="remark-limit">{{remark_length}}/10</text>
+				<view class="remark remark-remark">备注:</view>
+				<view class="remark remark-input" style="width:73%;">
+					<input bindinput="bindKeyInput"  name="remark" maxlength="10" placeholder="备注，例如：租房"/></view><text  class="remark remark-limit">{{remark_length}}/10</text>
 			</view>
 		</view>
 		<view class="btn-area">
-		    <button formType="submit">提交</button>
+		    <button formType="submit" style="height:100%;">提交</button>
 		</view>
 	</form>
 </view>

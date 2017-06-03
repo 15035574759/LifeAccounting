@@ -38,19 +38,12 @@ Page({
                   console.log("查询当前圈子所有好友")
                   if(res.data.code == -1)
                   {
-                      wx.showToast({
-                        title: res.data.msg,
-                        icon: 'success',
-                        duration: 2000,
-                        success:function(){
-                          wx.redirectTo({
-                            url: '../circle_friend/circle_friend?cir_id='+cir_id
-                          })
-                        },
-                        fail:function(){
-                          console.log("跳转失败")
-                        }
-                      }) 
+                    
+                    //返回上一页面    
+                    wx.redirectTo({
+                      url: '../circle_friend/circle_friend?cir_id='+cir_id+'&code=1001'
+                    })
+                       
                   }
                   else
                   {
@@ -79,8 +72,9 @@ Page({
          that.setData({username:nickName})
     })
   },
-  AddFriend:function(e){
+  AddFriend:function(e){//给圈子添加好友
     var f_id = e.target.dataset.id
+    //console.log(f_id);
     var openid = this.data.openid_id
     var cir_id = this.data.cir_id
     wx.request({
@@ -94,14 +88,23 @@ Page({
         console.log("给当前圈子添加好友")
         if(res.data.msg == 1)
         {
-          wx.showToast({
-            title: '添加好友成功',
-            icon: 'success',
-            duration: 2000
-          })
-          wx.redirectTo({
-            url: '../account_details?cir_id='+cir_id
-          })
+            wx.redirectTo({
+              url: '../account_details?cir_id='+cir_id
+            })
+          // wx.showToast({
+          //   title: '添加好友成功',
+          //   icon: 'success',
+          //   duration: 2000,
+          //   success:function(){
+          //     console.log("跳转中。。。")
+          //     // wx.navigateBack({
+          //     //   url: '../account_details?cir_id='+cir_id
+          //     // })
+          //   },
+          //   fail:function(){
+          //     console.log("跳转失败")
+          //   }
+          // })
         }
         else
         {

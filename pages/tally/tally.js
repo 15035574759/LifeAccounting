@@ -200,5 +200,36 @@ Page( {
             canvasId: 'mypie',   
             actions: context.getActions()  
         });  
+    },
+    onShareAppMessage: function () {//转发功能
+      return {
+        title: '账本小精灵',
+        path: '/pages/show/show',
+        success: function(res) {
+          // 转发成功
+          wx.showToast({
+            title: '转发成功',
+            icon: 'success',
+            duration: 2000
+          })
+        },
+        fail: function(res) {
+          // 转发失败
+          wx.showToast({
+            title: '转发失败',
+            icon: 'success',
+            duration: 2000
+          })
+        }
+      }
+    },
+    onReady:function(){
+      // 页面渲染完成
+    },
+    onHide:function(){
+      // 页面隐藏
+    },
+    onUnload:function(){
+      // 页面关闭
     }
 })

@@ -29,7 +29,7 @@ page{
 }
 .box02-jt::after{
 	position:relative;
-	float:right;
+	/*float:right;*/
 	content: "";
 	display: inline-block;
 	height: 18rpx;

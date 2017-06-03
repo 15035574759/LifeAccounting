@@ -38,12 +38,13 @@ App({
                 //获取用户信息
                 wx.getUserInfo({
                   success: function (res) { 
-                    // var data = res.encryptedData
-                    // console.log(data)
+                    var data = res.encryptedData
+                    console.log(data)
+                    console.log("加密用户数据")
                     that.globalData.userInfo = res.userInfo
                     typeof cb == "function" && cb(that.globalData.userInfo)
 
-                    wx.request({
+                    wx.request({//修改用户信息
                       url: that.url + 'login/saveUserInfo', //仅为示例，并非真实的接口地址
                       data: {
                         encryptedData : res.encryptedData,
@@ -51,7 +52,8 @@ App({
                         iv:res.iv
                       },
                       success: function (res) {
-                        console.log(res)
+                        console.log(res.data)
+                        console.log("返回用户数据")  
                       }
                     })
                   }

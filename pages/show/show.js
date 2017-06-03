@@ -28,15 +28,38 @@ Page({
       this.setData({"BillDisplay":"show"})
       this.setData({"AccountBookDisplay":"none"})
   },
+  onLoad:function(){
+    // console.log("onLoad")
+    // 页面初始化 options为页面跳转所带来的参数
+    //获取用户信息
+    var that = this
+    app.getUserInfo(function (userInfo) {
+      // console.log("获取用户信息")
+         var nickName = userInfo.nickName
+         var avatarUrl = userInfo.avatarUrl
+         that.setData({avatarUrl:avatarUrl})
+         that.setData({username:nickName})
+         //加载数据 方法
+         that.loadData(0);
+    })
+  },
+  onShow:function(){
+    // 页面显示
+    // console.log("onShow");
+  },
   loadData:function(lastid){
+    // console.log("获取数据")
     var that = this;
     wx.getStorage({//获取当前用户openid
       key: 'openid',
       success: function(res) {
-        console.log(lastid)
+        // console.log(lastid)
         // console.log(5555)
          var openid = res.data
+         that.setData({openid:openid})
          var limit = 3;
+
+         //查询用户账单数据
           wx.request({
             url: app.url + 'check/UserCheck', //调用用户账单
             data: {openid:openid,limit:limit,lastid:lastid},
@@ -45,7 +68,6 @@ Page({
               console.log("获取当前用户数据");
               //判断数据是否为空
               
-
               if(res.data.start == 0){
                 that.setData({'display':'show'})//没有数据
               }
@@ -100,69 +122,35 @@ Page({
               that.setData({ Loading: true })
             }
           })
-       }
-    })
-  },
-  onLoad:function(){
-    // 页面初始化 options为页面跳转所带来的参数
-    //获取用户信息
-    var that = this
-    that.loadData(0);
-    app.getUserInfo(function (userInfo) {
-        // console.log(userInfo)
-         var nickName = userInfo.nickName
-         var avatarUrl = userInfo.avatarUrl
-         that.setData({avatarUrl:avatarUrl})
-         that.setData({username:nickName})
-    })
 
-    //查询预算是否开启 
-    wx.getStorage({//获取当前用户openid
-      key: 'openid',
-      success: function(res) {
-          var openid = res.data
-          that.setData({openid:openid})
-           wx.request({
-                url: app.url + 'check/BudgetMoney', //查询预算是否开启 
-                data: {openid:openid},
-                header: {
-                    'content-type': 'application/json'
-                },
-                success: function(res) {
-                  console.log(res.data)
-                  if(res.data.code == 1)
-                  {
-                    //预算开启 预算余额显示 赋值数据
-                    that.setData({ResidueBox:'show'})
-                    that.setData({SurplusBox:'none'})
-                    that.setData({budgetMoney:res.data.data})
-                  }
-                  else
-                  {
-                     //预算未开启 结余余额显示 赋值数据
-                    that.setData({SurplusBox:'show'})
-                    that.setData({ResidueBox:'none'})
-                  }
-                  console.log("查询预算是否开启")
-                  // that.setData({ time: res.data.data})//赋值当前时间
+          //查询预算是否开启
+          wx.request({
+              url: app.url + 'check/BudgetMoney', //查询预算是否开启 
+              data: {openid:openid},
+              header: {
+                  'content-type': 'application/json'
+              },
+              success: function(res) {
+                console.log(res.data)
+                if(res.data.code == 1)
+                {
+                  //预算开启 预算余额显示 赋值数据
+                  that.setData({ResidueBox:'show'})
+                  that.setData({SurplusBox:'none'})
+                  that.setData({budgetMoney:res.data.data})
                 }
-            }) 
-        },
-        fail:function() {
-            wx.showToast({
-              title: 'openid获取失败',
-              icon: 'success',
-              duration: 2000
-            })
-        }
-      })
-  },
-  onShow:function(){
-    // 页面显示
-    // var that = this
-    // console.log("onShow");
-    // this.setData({newsList:[]})
-    // this.onLoad()
+                else
+                {
+                   //预算未开启 结余余额显示 赋值数据
+                  that.setData({SurplusBox:'show'})
+                  that.setData({ResidueBox:'none'})
+                }
+                // console.log("查询预算是否开启")
+                // that.setData({ time: res.data.data})//赋值当前时间
+              }
+          }) 
+       }
+    })  
   },
   onPullDownRefresh: function(){//下拉刷新页面
     this.setData({newsList:[]})
@@ -179,6 +167,28 @@ Page({
     wx.navigateTo({
       url: 'show_list/show_list?a_id='+id
     })
+  },
+  onShareAppMessage: function () {//转发功能
+    return {
+      title: '账本小精灵',
+      path: '/pages/show/show',
+      success: function(res) {
+        // 转发成功
+        wx.showToast({
+          title: '转发成功',
+          icon: 'success',
+          duration: 2000
+        })
+      },
+      fail: function(res) {
+        // 转发失败
+        wx.showToast({
+          title: '转发失败',
+          icon: 'success',
+          duration: 2000
+        })
+      }
+    }
   },
   onReady:function(){
     // // 页面渲染完成

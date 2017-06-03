@@ -1,8 +1,8 @@
 <!--pages/tally/tally.wxml-->
 <view class="container">
 	<view class="TabButton">
-		<button type="{{IncomeType}}" style="background:{{IncomeColor}};color:{{incomeFontColor}};" bindtap="DefaultIncome" hover-class="other-button-hover" class="income"> 收入 </button>
-		<button type="{{ExpendType}}" style="background:{{ExpendColor}};color:{{expendFontColor}};" bindtap="DefaultExpend" hover-class="other-button-hover" class="expend"> 支出 </button>
+		<button type="{{IncomeType}}" style="background:{{IncomeColor}};color:{{incomeFontColor}};" bindtap="DefaultIncome"  class="income"> 收入 </button>
+		<button type="{{ExpendType}}" style="background:{{ExpendColor}};color:{{expendFontColor}};" bindtap="DefaultExpend"  class="expend"> 支出 </button>
 	</view>
 	<view class="CircleBox" style="float: left;">
 		<view class="circle">

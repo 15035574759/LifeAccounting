@@ -5,7 +5,7 @@
 		<view class="ClassImages" wx:for="{{ClassData}}" wx:for-item="item">
 			<view class="ClassImages-imges" bindtap="BindImg">
 				<image class="userinfo-images" data-id="{{item.c_id}}" src="{{item.inout_url}}" background-size="cover" mode=""></image>
-				<image hidden="{{item.c_id == c_id ? false : true}}" class="xuanzhong" src="/images/选中.png"></image>
+				<image hidden="{{item.c_id == c_id ? false : true}}" class="xuanzhong" src="https://h5php.xingyuanauto.com/charge/public/uploads/images/选中.png"></image>
 			</view>
 			<view class="ClassImages-desc" wx:if="{{item.c_id == c_id}}" style="color:#C7821C">{{item.describe}}</view>
 			<view class="ClassImages-desc" wx:else>{{item.describe}}</view>

@@ -7,6 +7,20 @@ Page({
     openid:0,
   },
   onLoad:function(options){
+    if(options.code == 1001)
+    {
+      wx.showToast({
+        title: "当前没有好友可添加",
+        icon: 'success',
+        duration: 2000,
+        success:function(){
+          console.log("跳转成功")
+        },
+        fail:function(){
+          console.log("跳转失败")
+        }
+      }) 
+    }
     // 页面初始化 options为页面跳转所带来的参数
     wx.setNavigationBarTitle({
       title: '成员'
@@ -53,9 +67,10 @@ Page({
   },
   AddMember:function(){//添加好友事件
     var cir_id = this.data.cir_id
+    console.log("点击添加好友")
     // var openid = this.data.openid
     //跳转到添加成员页面
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../circle_friend_add/circle_friend_add?cir_id='+cir_id
     })
   },

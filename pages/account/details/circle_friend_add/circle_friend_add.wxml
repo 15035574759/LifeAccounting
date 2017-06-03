@@ -4,7 +4,7 @@
 	<view class="payer">
 		<view class="payer-user" wx:for="{{FriendData}}" wx:for-item="item">
 			<view class="payer-user-public payer-user-img">
-				<image class="userinfo-avatar" style="width:50px;height:50px;border-radius: 50%;" src="{{item.friend_imgurl}}" background-size="cover" mode=""></image>
+				<image class="userinfo-avatar" style="width:50px;height:50px;border-radius: 50%;margin-left:10px;" src="{{item.friend_imgurl}}" background-size="cover" mode=""></image>
 			</view>
 			<view class="payer-user-public payer-userName">
 				<view>{{item.friend_name}} 
@@ -12,8 +12,8 @@
 					<text style="font-size:15px;color:red;" wx:else="{{item.start == 0}}">(未注册)</text>
 				</view>
 			</view>
-			<view class="payer-user-pay" >
-				<button bindtap="AddFriend" class="getAddbutton" open-type="contact" data-id="{{item.f_id}}">添加</button>
+			<view class="payer-user-pay" bindtap="AddFriend">
+				<image class="getAddbutton" src="https://h5php.xingyuanauto.com/charge/public/uploads/images/add02.png" data-id="{{item.f_id}}" background-size="cover" mode=""></image>
 			</view>
 		</view>
 	</view>

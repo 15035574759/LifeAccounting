@@ -12,14 +12,14 @@
       </view>
       <view class="GetMoner" style="display:{{ResidueBox}}">
         <view class="GetMoney-money">{{budgetMoney}}</view>
-        <navigator class="navigator-img-navigator" url="/pages/budget/budget" hover-class="navigator-hover">  
+        <navigator hover-class="none" class="navigator-img-navigator" url="/pages/budget/budget">  
           <text class="GetMoney-text">预算余额</text>
         </navigator>
       </view>
 
       <view class="GetMoner" style="display:{{SurplusBox}}">
         <view class="GetMoney-money">{{money}}</view>
-        <navigator class="navigator-img-navigator" url="/pages/budget/budget" hover-class="navigator-hover">  
+        <navigator class="navigator-img-navigator" url="/pages/budget/budget" hover-class="none">  
           <text class="GetMoney-text">本月余额</text>
         </navigator>
       </view>
@@ -40,7 +40,7 @@
 
     <view class="TabButton">
         <navigator class="navigator-img-navigator" url="../../pages/account/account" hover-class="navigator-hover">
-          <view class="navigator navigator-friends">
+          <view class="navigator">
                 <view class="navigator-img">
                   <image class="navigator-image" src="https://h5php.xingyuanauto.com/charge/public/uploads/images/账本.png" background-size="cover" mode=""></image>
                 </view>

@@ -8,7 +8,7 @@
 
       	<!-- 列表 -->
 	    <view class="AccountInventory" wx:for="{{circleData}}" wx:for-item="item">
-	    	<navigator url="../../pages/account/details/account_details?cir_id={{item.cir_id}}" hover-class="navigator-hover">
+    		<navigator url="../../pages/account/details/account_details?cir_id={{item.cir_id}}" hover-class="navigator-hover">
 		      	<view class="AccountInventory-get">
 		      		<image class="userinfo-avatar" style="width:50px;height:50px;margin-top:15px;" src="{{item.inout_url}}" background-size="cover" mode=""></image>
 		      	</view>
@@ -17,6 +17,6 @@
 		      		<view>{{item.friend_length}}人</view>
 		      	</view>
 			</navigator>
-			<view style="float:right;" bindtap="GetDelete"><image class="userinfo-avatar" style="width:30px;height:30px;margin-top:25px;" src="../../images/删除.png" data-id="{{item.cir_id}}" background-size="cover" mode=""></image></view>
+			<view style="float:right;" bindtap="GetDelete"><image class="userinfo-avatar" style="width:30px;height:30px;margin-top:25px;" src="https://h5php.xingyuanauto.com/charge/public/uploads/images/删除.png" data-id="{{item.cir_id}}" background-size="cover" mode=""></image></view>
 	    </view>
 </view>

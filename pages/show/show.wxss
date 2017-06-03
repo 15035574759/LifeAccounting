@@ -18,12 +18,14 @@
   height:60px;
   text-align: center;
   margin:0 auto;
-  line-height: 63rpx;
+  line-height: 52rpx;
+  padding-top: 3px;
   /*border:1px solid #aaa;*/
 }
 
 .navigator-img{
   float: left;
+  margin-top:5px;
 }
 .navigator-img-navigator{
   text-align: center;

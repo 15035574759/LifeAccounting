@@ -8,9 +8,9 @@ Page({
     ExpendDisplay:"show",
     getShow:false,
     inout_start:2,
-    avatarUrl:"/images/吃喝玩乐.png",
+    avatarUrl:"https://h5php.xingyuanauto.com/charge/public/uploads/images/吃喝玩乐.png",
     desc:"吃喝",
-    c_id:"1",
+    c_id:1,
     date: '2017-01-01',
     remark_length:0,
     inoutClass:[],//收入数据
@@ -50,9 +50,9 @@ Page({
     this.setData({"ExpendDisplay":"none"})
     this.setData({"ExpendType":"default"})
     this.setData({"IncomeType":"warn"})
-    this.setData({"avatarUrl":"/images/工资.png"})
-    this.setData({"desc":"工资"})
-    this.setData({"c_id":11})
+    this.setData({"avatarUrl":"https://h5php.xingyuanauto.com/charge/public/uploads/images/其他01.png"})
+    this.setData({"desc":"其他"})
+    this.setData({"c_id":34})
   },
   DefaultExpend:function(e){//支出选项卡
     // console.log("55")
@@ -62,7 +62,7 @@ Page({
     this.setData({"IncomeDisplay":"none"})
     this.setData({"ExpendType":"warn"})
     this.setData({"IncomeType":"default"})
-    this.setData({"avatarUrl":"/images/吃喝玩乐.png"})
+    this.setData({"avatarUrl":"https://h5php.xingyuanauto.com/charge/public/uploads/images/吃喝玩乐.png"})
     this.setData({"desc":"吃喝"})
     this.setData({"c_id":1})
   },
@@ -120,11 +120,17 @@ Page({
                   wx.showToast({
                       title: '添加成功',
                       icon: 'success',
-                      duration: 2000
+                      duration: 3000,
+                      success:function(){
+                        wx.switchTab({
+                            url: '../show/show'
+                        }) 
+                      },
+                      fail:function(){
+                        console.log("跳转失败")
+                      }
                     })
-                    wx.switchTab({
-                        url: '../show/show'
-                    }) 
+                    
                 }
                 else
                 {
@@ -182,6 +188,34 @@ Page({
         }
     })
 
+  },
+  onPullDownRefresh: function(){//下拉刷新页面
+    this.setData({inoutClass:[]})
+    this.setData({expendClass:[]})
+    this.onLoad();
+    wx.stopPullDownRefresh()
+  },
+  onShareAppMessage: function () {//转发功能
+    return {
+      title: '账本小精灵',
+      path: '/pages/show/show',
+      success: function(res) {
+        // 转发成功
+        wx.showToast({
+          title: '转发成功',
+          icon: 'success',
+          duration: 2000
+        })
+      },
+      fail: function(res) {
+        // 转发失败
+        wx.showToast({
+          title: '转发失败',
+          icon: 'success',
+          duration: 2000
+        })
+      }
+    }
   },
   onReady:function(){
     // 页面渲染完成
