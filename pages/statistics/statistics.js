@@ -16,19 +16,21 @@ Page({
     inoutClass:[],//收入数据
     expendClass:[],//支出数据
   },
-  bindDateChange: function(e) {//日期选择
-    var getdate = e.detail.value 
+  bindDateChange: function(e) {//日期选择器
+    var getdate = e.detail.value //选择时间
+    console.log(getdate)
+    console.log("时间")
     var that = this
     //对时间进行判断 不能选择未来日期
     wx.request({
       url: app.url + 'check/TimeJson', //对时间进行判断 不能选择未来日期
       data: {getdate:getdate},
-      header: {
-          'content-type': 'application/json'
-      },
+      header: {'content-type': 'application/json'},
       success: function(res) {
         console.log(res.data)
-        var timeDate = res.data.date
+        var timeDate = res.data.date //获取当前时间
+        console.log(timeDate)
+        console.log("当前时间")
         if(res.data.start == 1)
         {
           that.setData({'date': getdate})//赋值数据
@@ -38,7 +40,13 @@ Page({
             wx.showToast({
             title: '不能选择未来日期',
             icon: 'success',
-            duration: 2000
+            duration: 2000,
+            success:function(){
+              that.setData({'date': timeDate})//赋值当前时间
+            },
+            fail:function(){
+              console.log("赋值失败");
+            }
           })
         }
       }
@@ -120,9 +128,9 @@ Page({
                   wx.showToast({
                       title: '添加成功',
                       icon: 'success',
-                      duration: 3000,
+                      duration: 1000,
                       success:function(){
-                        wx.switchTab({
+                        wx.reLaunch({//关闭所有页面跳转到指定页面
                             url: '../show/show'
                         }) 
                       },

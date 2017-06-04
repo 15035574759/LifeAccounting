@@ -1,4 +1,4 @@
-<!--pages/show/show.wxml-->
+StatsTime <!--pages/show/show.wxml-->
 <view class="TableGet">
    <!-- <view class="TabButton">
     <button bindtap="Bill" style="background:#9170D9;color:#FFFFFE;" hover-class="other-button-hover" class="income"> 账单 </button>

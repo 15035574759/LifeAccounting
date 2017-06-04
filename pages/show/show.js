@@ -53,8 +53,8 @@ Page({
     wx.getStorage({//获取当前用户openid
       key: 'openid',
       success: function(res) {
-        // console.log(lastid)
-        // console.log(5555)
+        console.log(lastid)
+        console.log('lastid')
          var openid = res.data
          that.setData({openid:openid})
          var limit = 3;
@@ -65,9 +65,21 @@ Page({
             data: {openid:openid,limit:limit,lastid:lastid},
             success: function(res) {
               console.log(res.data)
-              console.log("获取当前用户数据");
-              //判断数据是否为空
+              var TimeDataArrCount = res.data.TimeDataArrCount
+              // console.log(TimeDataArrCount);
+              // console.log("获取当前用户数据长度");
               
+              //隐藏加载更多
+              if(TimeDataArrCount <= 3)
+              {
+                  that.setData({ moreHidden: 'none' })//隐藏加载更多
+              }
+              else
+              {
+                  that.setData({ moreHidden: 'show' })//显示加载更多
+              }
+
+              //判断数据是否为空
               if(res.data.start == 0){
                 that.setData({'display':'show'})//没有数据
               }
@@ -95,21 +107,13 @@ Page({
               {
                 that.setData({'display':'none'})//没有数据
                 var len = res.data.data.length
-                console.log(len);
-                console.log("获取数据长度");
-                if(len <= 1)
-                { 
-                  that.setData({moreHidden:'none'}) //隐藏加载更多
-                }
-                else
-                {
-                  that.setData({moreHidden:'show'}) //显示加载更多
-                }
+                // console.log(len);
+                // console.log("获取数据长度55555");
                 var dataArr = that.data.newsList
                 var newData = dataArr.concat(res.data.data)
                 that.setData({ newsList: newData })//数据赋值
                 // that.setData({ newsList: res.data.data })//数据赋值
-                that.setData({ lastid: res.data.data[len - 1].a_id })
+                that.setData({ lastid: res.data.data[len - 1].a_id })//查询最后一个自增id
 
                 that.setData({ money: res.data.MonthBalance})//赋值月预算余额
                 that.setData({ incomes: res.data.MonthIncome})//赋值月收入

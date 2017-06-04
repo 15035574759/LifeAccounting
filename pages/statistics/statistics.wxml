@@ -60,7 +60,7 @@
 			<view class="section-br"></view>
 			<view class="get-remark">
 				<view class="remark remark-remark">备注:</view>
-				<view class="remark remark-input" style="width:73%;">
+				<view class="remark remark-input" style="width:70%;">
 					<input bindinput="bindKeyInput"  name="remark" maxlength="10" placeholder="备注，例如：租房"/></view><text  class="remark remark-limit">{{remark_length}}/10</text>
 			</view>
 		</view>

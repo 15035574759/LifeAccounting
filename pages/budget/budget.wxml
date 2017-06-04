@@ -32,7 +32,7 @@
 <view class="b1" style="display:{{flag}};">
     <view class="b2">
       <view class="v1">设置预算</view>
-      <view class="input"><input name="input" bindinput="bindKeyInput" placeholder="500" class="butged"/></view>
+      <view class="input"><input name="input" bindinput="bindKeyInput" placeholder="{{ButgedMoney}}" class="butged"/></view>
       <view class="confirm">
 		<view class="con02" bindtap="ButgedCancel">取消</view>
 		<view class="con01" bindtap="ButgedConfirm">确定</view>
