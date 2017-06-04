@@ -59,6 +59,7 @@ button.income{
 .container-user{
   width:100%;
   background: #9170D9;
+  /*background:url(https://h5php.xingyuanauto.com/charge/public/uploads/images/beijin.png) 100% 100%;*/
 }
 .userinfo {
   display: flex;
