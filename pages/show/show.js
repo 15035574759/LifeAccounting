@@ -175,7 +175,7 @@ Page({
   onShareAppMessage: function () {//转发功能
     return {
       title: '账本小精灵',
-      path: '/pages/show/show',
+      path: '/pages/index/index',
       success: function(res) {
         // 转发成功
         wx.showToast({

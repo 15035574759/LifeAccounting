@@ -43,6 +43,13 @@ Page({
       }
     })
   },
+  settle:function(){//用户点击结算
+    wx.showToast({
+      title: '功能待二次开发',
+      icon: 'success',
+      duration: 2000
+    })
+  },
   onReady:function(){
     // 页面渲染完成
   },

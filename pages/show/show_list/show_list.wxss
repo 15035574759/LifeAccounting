@@ -48,3 +48,16 @@ page{
 	width:80%;
 	text-align: center;
 }
+.box02-jt::after{
+	position:relative;
+	/*float:right;*/
+	content: "";
+	display: inline-block;
+	height: 15rpx;
+	width: 15rpx;
+	border-width: 5rpx 5rpx 0 0;
+	border-color: #888888;
+	border-style: solid;
+	transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+	margin:0 3px 1px 0;
+}

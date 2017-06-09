@@ -1,4 +1,9 @@
 <!--index.wxml-->
-<view>
-  <image style="width: 380px; height: 670px; background-color: #eeeeee;" mode="{{item.mode}}" src="{{src}}"></image>
-</view>
+<view class="container">  
+	<view class="CountDown">
+		<view style="margin-top:5px;">
+			<view class="Size" bindtap="Skip">跳过</view>  
+			<view class="Size">{{second}}s</view>  
+		</view>
+	</view>
+</view> 

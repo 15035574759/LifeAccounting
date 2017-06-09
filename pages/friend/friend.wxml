@@ -47,7 +47,7 @@
 			</view>
 		</navigator>
 		<navigator url="navigate?title=navigate" hover-class="navigator-hover">
-			<view class="GetButton-button"><button class="nav-desc" style="background:#F29900;width:88px;color:#FFFFFE;font-size:15px;" type="default" bindtap="close" hover-class="other-button-hover"> 结 算 </button></view>
+			<view class="GetButton-button"><button class="nav-desc" style="background:#F29900;width:88px;color:#FFFFFE;font-size:15px;" type="default" bindtap="settle" hover-class="other-button-hover"> 结 算 </button></view>
 		</navigator>
 	</view>
 </view>

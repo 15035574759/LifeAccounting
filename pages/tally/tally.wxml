@@ -4,18 +4,20 @@
 		<button type="{{IncomeType}}" style="background:{{IncomeColor}};color:{{incomeFontColor}};" bindtap="DefaultIncome"  class="income"> 收入 </button>
 		<button type="{{ExpendType}}" style="background:{{ExpendColor}};color:{{expendFontColor}};" bindtap="DefaultExpend"  class="expend"> 支出 </button>
 	</view>
-	<view class="CircleBox" style="float: left;">
-		<view class="circle">
-			<view style='position: absolute; text-align: center; transform: translate(30.5px, 32px);line-height: 18px;'>
+	<!-- <view class="circle" style="position:absolute;transform: translateX(-50% 0); -webkit-transform: translateX(-50% 0); top: 16.5%;">
+			<view style='position: absolute; text-align: center; transform: translate(30.5px, 32px); -webkit-transform: translate(30.5px, 32px);line-height: 18px;'>
 				<view style="">
 					<view style="font-size:20px;font-weight:bold;" wx:if="{{TotalParice == null}}">0</view>
 					<view style="font-size:20px;font-weight:bold;" wx:else>{{TotalParice}}</view>
 					<view style="font-size:12px;color:#FF8800;">{{totalStart}}</view>
 				</view>
 			</view>
-		</view>
-		<canvas canvas-id="mypie" class="mypie" style="width:240px;height:240px;float: left;"></canvas>
-		<!-- <view style="float: right;"></view>  -->
+		</view> -->
+		<!-- <view>
+			<canvas canvas-id="mypie02" class="mypie02" style="width:100px;height:100px;"></canvas>
+		</view> -->
+	<view class="CircleBox" style="margin:0 auto;text-align:center;">
+			<canvas canvas-id="mypie" class="mypie" style="width:240px;height:240px;"></canvas>
 	</view>
 	
 	<view class="Br"></view>

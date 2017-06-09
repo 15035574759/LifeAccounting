@@ -13,7 +13,7 @@
 
 	<view class="SumExpend">
 		<view class="SumExpend-money">
-			<view class="SumExpend-money01">总支出<span style="color:red;font-size:13px;">人民币></span></view>
+			<view class="SumExpend-money01">总支出<span style="color:red;font-size:13px;">人民币<text class="box02-jt"></text></span></view>
 			<view class="SumExpend-money02"><input bindinput="GetPutmoney" placeholder="请填写" auto-focus/></view>
 		</view>
 		<view class="SumExpend-money">
@@ -26,8 +26,8 @@
 
 	<view class="participant">
 		<view class="participant-box" bindtap="GetPayer">
-			<view class="participant-01">付款人({{GetPayerCount}})</view>
-			<view class="participant-02" style="float: right;">></view>
+			<view class="participant-01">付款人（{{GetPayerCount}}）</view>
+			<view class="participant-02" style="float: right;"><text class="box02-jt"></text></view>
 		</view>
 		<view class="Head-image" wx:for="{{GetPayer}}" wx:for-item="item">
 			<view>
@@ -40,7 +40,7 @@
 
 	<view class="participant">
 		<view class="participant-box">
-			<view class="participant-01">参与人({{DataAllParticipantNum}})</view>
+			<view class="participant-01">参与人（{{DataAllParticipantNum}}）</view>
 		</view>
 		<view class="Head-image" wx:for="{{GetParticipant}}" wx:for-item="item">
 			<view class="Head-image-box">

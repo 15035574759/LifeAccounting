@@ -8,8 +8,8 @@
 		<view class="getTable-hr"></view>
 		<view class="getTable-box">
 			<view class="getTable-left">分类</view>
-			<view class="getTable-right" wx:if="{{item.inout_start == 1}}">收入>{{describe}}</view>
-			<view class="getTable-right" wx:else="{{item.inout_start == 2}}">支出>{{describe}}</view>
+			<view class="getTable-right" wx:if="{{item.inout_start == 1}}">收入<text class="box02-jt"></text>{{describe}}</view>
+			<view class="getTable-right" wx:else="{{item.inout_start == 2}}">支出<text class="box02-jt"></text>{{describe}}</view>
 		</view>
 		<view class="getTable-hr"></view>
 		<view class="getTable-box">

@@ -69,6 +69,7 @@ page{
 }
 .payer-user-img{
 	margin-top:15px;
+	margin-left:10px;
 }
 .payer-user-public{
 	float: left;
@@ -89,6 +90,7 @@ page{
 }
 .payer-userName{
 	line-height: 80px;
+	margin-left:10px;
 }
 .specification{
 	width:100%;

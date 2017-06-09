@@ -168,7 +168,9 @@ Page({
   onLoad:function(options){
      var that = this
     // 页面初始化 options为页面跳转所带来的参数
-    
+    wx.setNavigationBarTitle({
+      title: '添加记账'
+    })
     //调用账单收入与支出类型列表
     wx.request({
         url: app.url + 'check/inoutClass', //仅为示例，并非真实的接口地址
@@ -206,7 +208,7 @@ Page({
   onShareAppMessage: function () {//转发功能
     return {
       title: '账本小精灵',
-      path: '/pages/show/show',
+      path: '/pages/index/index',
       success: function(res) {
         // 转发成功
         wx.showToast({

@@ -1,11 +1,11 @@
 {
   "pages":[
+    "pages/index/index",
+    "pages/user/user",
     "pages/show/show",
     "pages/account/details/detail_add/account_detail_add",
     "pages/show/show_list/show_list",
     "pages/statistics/statistics",
-    "pages/index/index",
-    "pages/tally/tally",
     "pages/account/account",
     "pages/account/add/account_add",
     "pages/account/details/account_details",
@@ -15,7 +15,7 @@
     "pages/budget/budget",
     "pages/regard/regard",
     "pages/history/history",
-    "pages/user/user",
+    "pages/tally/tally",
     "pages/service/service",
     "pages/account/particulars/account_particulars",
     "pages/account/details/circle_friend/circle_friend",
@@ -26,13 +26,13 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#9170D9",
-    "navigationBarTitleText": "生活账本",
+    "navigationBarTitleText": "账本小精灵",
     "navigationBarTextStyle":"white",
     "enablePullDownRefresh":true
   },
   "tabBar": { 
      "backgroundColor":"#333333",
-     "color":"white",
+     "color":"#FFFFFF",
      "borderStyle":"white",
      "selectedColor":"#EA9518",
      "list": [{

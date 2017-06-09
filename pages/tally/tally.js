@@ -97,19 +97,27 @@ Page( {
                         icon: 'success',
                         duration: 2000
                       })
+                      that.setData({TotalParice:0})//支出总金额
+                      that.setData({totalStart:"总支出"})//收入还是支出
+                      var array = [ 100 ];  
+                      var colors = [ "#E4E4E4" ];
                     }
-                    var ExpendColorArray = that.data.ExpendColorArray //获取支出颜色数组
-                    // console.log(ExpendMonerArray)
-                    var array = ExpendMonerArray //赋值
-                    var colors = ExpendColorArray   //赋值
-                    that.setData({TotalParice:res.data.ExpendTotalMoney})//支出总金额
-                    that.setData({totalStart:"总支出"})//收入还是支出
+                    else
+                    {
+                      var ExpendColorArray = that.data.ExpendColorArray //获取支出颜色数组
+                      // console.log(ExpendMonerArray)
+                      var array = ExpendMonerArray //赋值
+                      var colors = ExpendColorArray   //赋值
+                      that.setData({TotalParice:res.data.ExpendTotalMoney})//支出总金额
+                      that.setData({totalStart:"总支出"})//收入还是支出
+                    }
                     
                 }
                 else if(mypie_start == 1)
                 {// 收入
                     var IncomeMonerArray = that.data.IncomeMonerArray //获取支金额数组
                     console.log(IncomeMonerArray)
+                    // console.log(IncomeMonerArray.length)
                     console.log("用户点击收入")
                     if(IncomeMonerArray.length == 0){
                       wx.showToast({
@@ -117,14 +125,19 @@ Page( {
                         icon: 'success',
                         duration: 2000
                       })
+                      that.setData({TotalParice:0})//收入总金额
+                      that.setData({totalStart:"总收入"})//收入还是支出
+                      var array = [ 100 ];  
+                      var colors = [ "#E4E4E4" ];
                     }
-                    var IncomeColorArray = that.data.IncomeColorArray //获取支出颜色数组
-                    // console.log(IncomeMonerArray)
-                    // console.log("宾图")
-                    var array = IncomeMonerArray //赋值
-                    var colors = IncomeColorArray   //赋值
-                    that.setData({TotalParice:res.data.IncomeTotalMoney})//收入总金额
-                    that.setData({totalStart:"总收入"})//收入还是支出
+                    else
+                    {
+                      var IncomeColorArray = that.data.IncomeColorArray //获取支出颜色数组
+                      var array = IncomeMonerArray //赋值
+                      var colors = IncomeColorArray   //赋值
+                      that.setData({TotalParice:res.data.IncomeTotalMoney})//收入总金额
+                      that.setData({totalStart:"总收入"})//收入还是支出
+                    }
                     // var array = [ 20, 30, 40, 50, 60, 70];  
                     // var colors = [ "#ff0000", "#ffff00", "#00ff00", "#ff8800", "#3A3736", "#F29289"];
                 }
@@ -154,8 +167,8 @@ Page( {
     },
     GetCreate:function(array,colors){
       //使用wx.createContext获取绘图上下文context  
-      var context = wx.createContext();
-      var total = 0;  
+      var context = wx.createCanvasContext();
+      var total = 0;
         //    计算总量  
         for( var index = 0;index < array.length;index++ ) {  
             total += array[ index ];  
@@ -192,19 +205,43 @@ Page( {
             context.fill();  
             context.closePath();  
             context.save();
+            
         }
+            //画中间小圆
+            context.beginPath(); 
+            context.arc(point.x, point.y, radius/2 - 10, 0, 2 * Math.PI, false);
+            // //      3.连线回圆心  
+            // context.lineTo( point.x, point.y );  
+            //      4.填充样式  
+            context.setFillStyle( "#FFFFFF" );  
+            //      5.填充动作  
+            context.fill();  
+            context.closePath();  
+            context.save();
+
+            //在小圆中间写文字 总支出
+            context.setFontSize(14)
+            context.setTextAlign('center')
+            context.setFillStyle("#FF8800");
+            context.fillText(this.data.totalStart, 120, 130);
+
+            //在小圆中间写文字 支出与收入总金额
+            context.setFontSize(15);
+            context.setTextAlign('center');
+            context.setFillStyle("#54514C");
+            context.fillText(this.data.TotalParice, 120, 110);
 
         //调用wx.drawCanvas，通过canvasId指定在哪张画布上绘制，通过actions指定绘制行为  
         wx.drawCanvas( {  
             //指定canvasId,canvas 组件的唯一标识符  
             canvasId: 'mypie',   
             actions: context.getActions()  
-        });  
+        }); 
     },
     onShareAppMessage: function () {//转发功能
       return {
         title: '账本小精灵',
-        path: '/pages/show/show',
+        path: '/pages/index/index',
         success: function(res) {
           // 转发成功
           wx.showToast({
