@@ -5,7 +5,7 @@
 	        <text class="userinfo-nickname">{{username}}</text>
 	</view>
 	<view>
-		<view style="background:url(https://h5php.xingyuanauto.com/charge/public/uploads/images/yijian.png) 100% 100% no-repeat;width:100px;height:30px;border-radius: 5px;"> 
+		<view style="background:url(https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/yijian.png) 100% 100% no-repeat;width:100px;height:30px;border-radius: 5px;"> 
 			<contact-button type="default-dark" style="z-index:2;margin-top:4px;opacity: 0;" size="25" session-from="weapp"></contact-button>
 			<contact-button type="default-dark" style="z-index:3;margin-top:4px;opacity: 0;" size="25" session-from="weapp"></contact-button>
 			<contact-button type="default-dark" style="z-index:4;margin-top:4px;opacity: 0;" size="25" session-from="weapp"></contact-button>
@@ -14,7 +14,7 @@
 		<!-- <p style="z-index:1; position: absolute;left:42%;top:25%;color:#FFFFFF;">意见反馈</p>  -->
 	</view>
 	<view class="Qrcode">你也可以扫描下方二维码关注我们的公众号近一步获取更多服务</view>
-	<view class="images-Qrcode"><image style="width: 200px; height: 200px; background-color: #eeeeee;" mode="" src="https://h5php.xingyuanauto.com/charge/public/uploads/images/jike.jpg"></image></view>
+	<view class="images-Qrcode"><image style="width: 200px; height: 200px; background-color: #eeeeee;" mode="" src="https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/jike.jpg"></image></view>
 	
 </view>
 

@@ -3,7 +3,7 @@ page{
   display: block;  
   min-height: 100%;  
   background-color: #EDEDED;
-  background: url(https://h5php.xingyuanauto.com/charge/public/uploads/images/index.jpg) no-repeat;  
+  background: url(https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/index.jpg) no-repeat;  
   background-size: 750rpx 100%;
 }
 .container{

@@ -3,7 +3,7 @@
 var app = getApp()
 Page({
   data: {
-    src: '../../images/index.jpg',
+    src: 'https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/index.jpg',
     second: 3 
   },
   onLoad: function () {

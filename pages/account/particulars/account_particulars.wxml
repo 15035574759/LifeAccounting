@@ -47,7 +47,7 @@
 			<view class="payer-user-public participant-consume"><text style="font-size:15px;color:red;">支付</text><text style="font-size:25px;font-weight:bold;">{{item.payer}}</text></view>
 
 			<view class="settle">
-				<image class="userinfo-avatar" wx:if="{{item.pay_start == 0}}" style="width:40px;height:40px;border-radius: 50%;" src="../../../images/结账.png" background-size="cover" mode="" bindtap="GetSettle" data-id="{{item.f_id}}"></image>
+				<image class="userinfo-avatar" wx:if="{{item.pay_start == 0}}" style="width:40px;height:40px;border-radius: 50%;" src="https://h5php.xingyuanauto.com/charge/public/uploads/images/结账.png" background-size="cover" mode="" bindtap="GetSettle" data-id="{{item.f_id}}"></image>
 				<text wx:else style="color:red">已付款</text>
 			</view>
 		</view>

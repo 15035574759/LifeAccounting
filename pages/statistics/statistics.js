@@ -8,7 +8,7 @@ Page({
     ExpendDisplay:"show",
     getShow:false,
     inout_start:2,
-    avatarUrl:"https://h5php.xingyuanauto.com/charge/public/uploads/images/吃喝玩乐.png",
+    avatarUrl:"https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/吃喝玩乐.png",
     desc:"吃喝",
     c_id:1,
     date: '2017-01-01',
@@ -19,7 +19,7 @@ Page({
   bindDateChange: function(e) {//日期选择器
     var getdate = e.detail.value //选择时间
     console.log(getdate)
-    console.log("时间")
+    console.log("选择时间")
     var that = this
     //对时间进行判断 不能选择未来日期
     wx.request({
@@ -58,7 +58,7 @@ Page({
     this.setData({"ExpendDisplay":"none"})
     this.setData({"ExpendType":"default"})
     this.setData({"IncomeType":"warn"})
-    this.setData({"avatarUrl":"https://h5php.xingyuanauto.com/charge/public/uploads/images/其他01.png"})
+    this.setData({ "avatarUrl":"https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/其他01.png"})
     this.setData({"desc":"其他"})
     this.setData({"c_id":34})
   },
@@ -70,7 +70,7 @@ Page({
     this.setData({"IncomeDisplay":"none"})
     this.setData({"ExpendType":"warn"})
     this.setData({"IncomeType":"default"})
-    this.setData({"avatarUrl":"https://h5php.xingyuanauto.com/charge/public/uploads/images/吃喝玩乐.png"})
+    this.setData({ "avatarUrl":"https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/吃喝玩乐.png"})
     this.setData({"desc":"吃喝"})
     this.setData({"c_id":1})
   },

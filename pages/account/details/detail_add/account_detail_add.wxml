@@ -4,7 +4,7 @@
 		<view class="ClassImages" wx:for="{{FriendData}}" wx:for-item="item">
 			<view class="ClassImages-imges" bindtap="BillClassClick">
 				<image class="userinfo-images" data-id="{{item.c_id}}" src="{{item.inout_url}}" background-size="cover" mode=""></image>
-				<image src="https://h5php.xingyuanauto.com/charge/public/uploads/images/选中.png" class="xuanzhong" hidden="{{item.c_id == c_id ? false : true}}"></image>
+				<image src="https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/选中.png" class="xuanzhong" hidden="{{item.c_id == c_id ? false : true}}"></image>
 			</view>
 			<view class="ClassImages-desc" wx:if="{{item.c_id == c_id}}" style="color:#C7821C">{{item.describe}}</view>
 			<view class="ClassImages-desc" wx:else>{{item.describe}}</view>

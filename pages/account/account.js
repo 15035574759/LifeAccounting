@@ -3,7 +3,7 @@ var app = getApp()
 Page({
   data:{
     username:'',
-    avatarUrl:'',
+    avatarUrl:'https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/头像.png',
     circleData:[],
   },
   GetDelete:function(e){

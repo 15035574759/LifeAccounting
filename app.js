@@ -7,6 +7,8 @@ App({
     wx.setStorageSync('logs', logs)
   },
   getUserInfo:function(cb){
+    console.log("每次进来必须判断是否授权");
+
     var that = this
     if(this.globalData.userInfo){
       typeof cb == "function" && cb(this.globalData.userInfo)
@@ -14,6 +16,7 @@ App({
      //调用登录接口
       wx.login({
         success: function (res) {
+          // console.log("code"+res.code);
           if (res) {
             wx.request({
               url: that.url + 'login/sendCode', //仅为示例，并非真实的接口地址
@@ -37,7 +40,7 @@ App({
 
                 //获取用户信息
                 wx.getUserInfo({
-                  success: function (res) { 
+                  success: function (res) {
                     var data = res.encryptedData
                     console.log(data)
                     console.log("加密用户数据")
@@ -53,9 +56,12 @@ App({
                       },
                       success: function (res) {
                         console.log(res.data)
-                        console.log("返回用户数据")  
+                        console.log("返回用户数据")
                       }
                     })
+                  },
+                  fail:function(){
+                    console.log("获取用户信息失败");
                   }
                 })
               }
@@ -74,5 +80,7 @@ App({
   globalData:{
     userInfo:null
   },
-    url: "https://h5php.xingyuanauto.com/charge/public/index.php/port/"
+  url: "https://h5php.xingyuanauto.com/FlowProject/charge/public/index.php/port/",
+  img_url: "https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/账本.png"
+    // url : "http://localhost/charge/public/index.php/port/"
 })

@@ -13,7 +13,7 @@
 				</view>
 			</view>
 			<view class="payer-user-pay" bindtap="AddFriend">
-				<image class="getAddbutton" src="https://h5php.xingyuanauto.com/charge/public/uploads/images/add02.png" data-id="{{item.f_id}}" background-size="cover" mode=""></image>
+				<image class="getAddbutton" src="https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/add02.png" data-id="{{item.f_id}}" background-size="cover" mode=""></image>
 			</view>
 		</view>
 	</view>

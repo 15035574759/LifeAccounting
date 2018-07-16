@@ -3,7 +3,7 @@ var app = getApp()
 Page({
   data:{
     username:'',
-    avatarUrl:'',
+    avatarUrl:'https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/头像01.png',
     money:0,
     incomes:0,
     pay:0,
@@ -39,22 +39,22 @@ Page({
          var avatarUrl = userInfo.avatarUrl
          that.setData({avatarUrl:avatarUrl})
          that.setData({username:nickName})
-         //加载数据 方法
-         that.loadData(0);
     })
+     //加载数据 方法
+     that.loadData(0);
   },
   onShow:function(){
     // 页面显示
     // console.log("onShow");
   },
   loadData:function(lastid){
-    // console.log("获取数据")
+
     var that = this;
     wx.getStorage({//获取当前用户openid
       key: 'openid',
       success: function(res) {
         console.log(lastid)
-        console.log('lastid')
+        console.log(res.data)
          var openid = res.data
          that.setData({openid:openid})
          var limit = 3;
@@ -80,8 +80,17 @@ Page({
               }
 
               //判断数据是否为空
-              if(res.data.start == 0){
-                that.setData({'display':'show'})//没有数据
+              if(res.data.start == 1001)
+              {//用户换没有记账记录 
+                  that.setData({'display':'show'})//显示  您还没有账单,快去记一笔吧！
+                  that.setData({ moreHidden: 'none' })//隐藏加载更多
+              }
+              else if(res.data.start == 0){
+                wx.showToast({
+                  title: "没有更多数据了",
+                  icon: 'success',
+                  duration: 2000
+                })
               }
               else if(res.data.code == -1) //获取用户ID错误
               {

@@ -16,6 +16,7 @@ Page({
     remark:0,//备注
     cir_id:0,
     openid_id:0,
+    f_id: undefined
   },
   onLoad:function(options){
     var that = this
@@ -41,9 +42,9 @@ Page({
           //显示付款人
           var cir_id = that.data.cir_id
           if(f_id == undefined)
-          {
+          {//如果未选择付款人默认显示本人
               wx.request({
-                url: app.url + 'circle/GetShowpayerEmpty', //如果未选择付款人默认显示本人
+                url: app.url + 'circle/GetShowpayerEmpty', 
                 data: {openid:openid,cir_id:cir_id},
                 header: {
                     'content-type': 'application/json'

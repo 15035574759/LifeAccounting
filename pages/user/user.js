@@ -2,7 +2,7 @@
 var app = getApp()
 Page({
   data:{
-    avatarUrl:'',
+    avatarUrl:'https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/头像.png',
     username:'',
     ButgedMoney:0,
     openid:'',

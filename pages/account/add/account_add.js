@@ -9,6 +9,15 @@ Page({
   formSubmit: function(e) {
     var that = this
     var circle = e.detail.value.name //圈子名称
+    if(circle.length == 0){
+      wx.showToast({
+          title: "请填写圈子名称",
+          icon: 'success',
+          duration: 2000
+        })
+      return false;
+    }
+
     var c_id = that.data.c_id
     //开始添加圈子账本
     // 页面初始化 options为页面跳转所带来的参数
