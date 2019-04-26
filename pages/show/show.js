@@ -3,7 +3,7 @@ var app = getApp()
 Page({
   data:{
     username:'',
-    avatarUrl:'https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/头像01.png',
+    avatarUrl:'https://www.qinlh.com/charge/public/uploads/images/头像01.png',
     money:0,
     incomes:0,
     pay:0,

@@ -8,7 +8,7 @@ Page({
     ExpendDisplay:"show",
     getShow:false,
     inout_start:2,
-    avatarUrl:"https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/吃喝玩乐.png",
+    avatarUrl:"https://www.qinlh.com/charge/public/uploads/images/吃喝玩乐.png",
     desc:"吃喝",
     c_id:1,
     date: '2017-01-01',
@@ -58,7 +58,7 @@ Page({
     this.setData({"ExpendDisplay":"none"})
     this.setData({"ExpendType":"default"})
     this.setData({"IncomeType":"warn"})
-    this.setData({ "avatarUrl":"https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/其他01.png"})
+    this.setData({ "avatarUrl":"https://www.qinlh.com/charge/public/uploads/images/其他01.png"})
     this.setData({"desc":"其他"})
     this.setData({"c_id":34})
   },
@@ -70,7 +70,7 @@ Page({
     this.setData({"IncomeDisplay":"none"})
     this.setData({"ExpendType":"warn"})
     this.setData({"IncomeType":"default"})
-    this.setData({ "avatarUrl":"https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/吃喝玩乐.png"})
+    this.setData({ "avatarUrl":"https://www.qinlh.com/charge/public/uploads/images/吃喝玩乐.png"})
     this.setData({"desc":"吃喝"})
     this.setData({"c_id":1})
   },

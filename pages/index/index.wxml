@@ -1,9 +1,9 @@
 <!--index.wxml-->
 <view class="container">  
-	<view class="CountDown">
-		<view style="margin-top:5px;">
-			<view class="Size" bindtap="Skip">跳过</view>  
-			<view class="Size">{{second}}s</view>  
-		</view>
+		<view bindtap="bindViewTap" class="userinfo">
+	    <image class="userinfo-avatar" src="https://www.qinlh.com/charge/public/uploads/images/log.png" background-size="cover" mode=""></image>
+	    <text class="userinfo-nickname">账本小精灵</text>
+      <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="userinfo-button">{{TextContent}}记账之旅</button>
+      <view wx:else>请升级微信版本</view>
 	</view>
 </view> 

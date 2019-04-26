@@ -1,7 +1,7 @@
 <!--pages/regard/regard.wxml-->
 <view class="container">
 	<view bindtap="bindViewTap" class="userinfo">
-	        <image class="userinfo-avatar" src="https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/log.png" background-size="cover" mode=""></image>
+	        <image class="userinfo-avatar" src="https://www.qinlh.com/charge/public/uploads/images/log.png" background-size="cover" mode=""></image>
 	        <text class="userinfo-nickname">账本小精灵 v1.0.0</text>
 	        <text class="userinfo-nickname" style="font-size: 13px;">你的预算管家</text>
 	</view>

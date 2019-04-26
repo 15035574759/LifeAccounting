@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="container">  
+	<view class="CountDown">
+		<view style="margin-top:5px;">
+			<view class="Size" bindtap="Skip">跳过</view>  
+			<view class="Size">{{second}}s</view>  
+		</view>
+	</view>
+</view> 

@@ -3,7 +3,7 @@ var app = getApp()
 Page({
   data:{
     username:'',
-    avatarUrl:'https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/头像.png',
+    avatarUrl:'https://www.qinlh.com/charge/public/uploads/images/头像.png',
     circleData:[],
   },
   GetDelete:function(e){

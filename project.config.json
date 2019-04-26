@@ -8,10 +8,12 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.94",
-	"appid": "wx772b2ddb98b4de78",
-	"projectname": "%E7%BE%8E%E9%A3%9F%E7%BE%8E%E8%8D%9F",
+	"libVersion": "2.6.6",
+	"appid": "wx14fd8a03c8bf2694",
+	"projectname": "LifeAccounting",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

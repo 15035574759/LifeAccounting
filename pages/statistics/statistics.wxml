@@ -23,7 +23,7 @@
 		
 				<view class="BillClass-class" wx:for="{{inoutClass}}" wx:for-item="item">
 					<view style="height:60px;">
-						<image data-imgurl="{{item.inout_url}}" data-desc="{{item.describe}}" data-id="{{item.c_id}}" bindtap="BillClassClick" class="userinfo-img" src="{{item.inout_url}}" background-size="cover" mode=""></image><image hidden="{{item.c_id == c_id ? false : true}}" style="width:13px;height:13px;position: relative;right:-8px;top:-20px;" src="https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/选中.png"></image>
+						<image data-imgurl="{{item.inout_url}}" data-desc="{{item.describe}}" data-id="{{item.c_id}}" bindtap="BillClassClick" class="userinfo-img" src="{{item.inout_url}}" background-size="cover" mode=""></image><image hidden="{{item.c_id == c_id ? false : true}}" style="width:13px;height:13px;position: relative;right:-8px;top:-20px;" src="https://www.qinlh.com/charge/public/uploads/images/选中.png"></image>
 					</view>
 					<view wx:if="{{item.c_id == c_id}}" style="color:#C7821C">{{item.describe}}</view>
 					<view wx:else>{{item.describe}}</view>
@@ -38,7 +38,7 @@
 
 				<view class="BillClass-class" wx:for="{{expendClass}}" wx:for-item="item">
 					<view style="height:60px;">
-						<image data-imgurl="{{item.inout_url}}" data-desc="{{item.describe}}" data-id="{{item.c_id}}" bindtap="BillClassClick" class="userinfo-img" src="{{item.inout_url}}" background-size="cover" mode=""></image><image hidden="{{item.c_id == c_id ? false : true}}" style="width:13px;height:13px;position: relative;right:-8px;top:-20px;" src="https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/选中.png"></image>
+						<image data-imgurl="{{item.inout_url}}" data-desc="{{item.describe}}" data-id="{{item.c_id}}" bindtap="BillClassClick" class="userinfo-img" src="{{item.inout_url}}" background-size="cover" mode=""></image><image hidden="{{item.c_id == c_id ? false : true}}" style="width:13px;height:13px;position: relative;right:-8px;top:-20px;" src="https://www.qinlh.com/charge/public/uploads/images/选中.png"></image>
 					</view>
 					<view wx:if="{{item.c_id == c_id}}" style="color:#C7821C">{{item.describe}}</view>
 					<view wx:else>{{item.describe}}</view>

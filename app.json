@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/user/user",
     "pages/show/show",
@@ -23,38 +23,44 @@
     "pages/account/details/detail_add/payer/payer",
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#9170D9",
     "navigationBarTitleText": "账本小精灵",
-    "navigationBarTextStyle":"white",
-    "enablePullDownRefresh":true
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
   },
-  "tabBar": { 
-     "backgroundColor":"#333333",
-     "color":"#FFFFFF",
-     "borderStyle":"white",
-     "selectedColor":"#EA9518",
-     "list": [{
-      "pagePath": "pages/show/show",
-      "iconPath":"images/book1.png",
-      "selectedIconPath":"images/book.png",
-      "text": "账单"
-    }, {
-      "pagePath": "pages/statistics/statistics",
-      "iconPath":"images/add1.png",
-      "selectedIconPath":"images/add.png",
-      "text": "记账"
-    },{
-      "pagePath": "pages/tally/tally",
-      "iconPath":"images/static2.png",
-      "selectedIconPath":"images/static.png",
-      "text": "统计"
-    },{
-      "pagePath": "pages/user/user",
-      "iconPath":"images/set.png",
-      "selectedIconPath":"images/set1.png",
-      "text": "设置"
-    }]
-  }
+  "tabBar": {
+    "backgroundColor": "#333333",
+    "color": "#FFFFFF",
+    "borderStyle": "white",
+    "selectedColor": "#EA9518",
+    "list": [
+      {
+        "pagePath": "pages/show/show",
+        "iconPath": "images/book1.png",
+        "selectedIconPath": "images/book.png",
+        "text": "账单"
+      },
+      {
+        "pagePath": "pages/statistics/statistics",
+        "iconPath": "images/add1.png",
+        "selectedIconPath": "images/add.png",
+        "text": "记账"
+      },
+      {
+        "pagePath": "pages/tally/tally",
+        "iconPath": "images/static2.png",
+        "selectedIconPath": "images/static.png",
+        "text": "统计"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "images/set.png",
+        "selectedIconPath": "images/set1.png",
+        "text": "设置"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }

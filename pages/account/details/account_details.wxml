@@ -37,8 +37,8 @@
 		</view>
 		<view class="MoneyClass-right">
 			<view class="MoneyClass-rightBox">
-				<view><image style="width:15px;height:15px;margin-right:8px;" src="https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/消费.png" background-size="cover" mode=""></image>我的消费：{{MyconsumeMoney}}</view>
-				<view><image style="width:15px;height:15px;margin-right:8px;" src="https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/消费(1).png" background-size="cover" mode=""></image>全员消费：{{AllconsumeMoney}}</view>
+				<view><image style="width:15px;height:15px;margin-right:8px;" src="https://www.qinlh.com/charge/public/uploads/images/消费.png" background-size="cover" mode=""></image>我的消费：{{MyconsumeMoney}}</view>
+				<view><image style="width:15px;height:15px;margin-right:8px;" src="https://www.qinlh.com/charge/public/uploads/images/消费(1).png" background-size="cover" mode=""></image>全员消费：{{AllconsumeMoney}}</view>
 			</view>
 		</view>
 	</view>
@@ -66,7 +66,7 @@
 		<button class="nav-desc" type="default" bindtap="default" hover-class="other-button-hover"> 编辑 </button>
 	</view> -->
 	<view class="nav">
-			<image class="BillListGetBox-nav-images" bindtap="GetCharge" style="width:40px;height:40px;margin-top:15px;" src="https://h5php.xingyuanauto.com/FlowProject/charge/public/uploads/images/记.png" background-size="cover" mode=""></image>
+			<image class="BillListGetBox-nav-images" bindtap="GetCharge" style="width:40px;height:40px;margin-top:15px;" src="https://www.qinlh.com/charge/uploads/images/记.png" background-size="cover" mode=""></image>
 	</view>
 	<view style="width:100%;height:100px;"></view>
 </view>

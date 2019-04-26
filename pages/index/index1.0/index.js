@@ -3,24 +3,35 @@
 var app = getApp()
 Page({
   data: {
-    canIUse: wx.canIUse('button.open-type.getUserInfo') ,
-    TextContent: '开启'
+    src: 'https://www.qinlh.com/charge/public/uploads/images/index.jpg',
+    second: 3 
   },
   onLoad: function () {
     var that = this
-    //获取用户信息 判断是否授权
-    app.getUserInfo(function (userInfo) {
-      if(userInfo) {
-        that.setData({ TextContent: '进入' })
-      }
+    that.countdown();
+    var time = that.data.second
+  },
+  Skip:function(){//点击跳过
+    wx.switchTab({//跳转到首页
+        url: '/pages/show/show'
     })
   },
-  bindGetUserInfo(e) {
-    if (e.detail.userInfo) {
-      wx.switchTab({//跳转到首页
-        url: '/pages/show/show'
-      })
-    }
+  countdown:function(that){//设置一个倒计时
+    var that = this
+    var second = that.data.second
+     if (second == 0) {
+      console.log("倒计时结束");
+        // wx.switchTab({//跳转到首页
+        //   url: '/pages/show/show'
+        // })
+      return ;
+     }
+     var time = setTimeout(function(){
+      that.setData({
+       second: second - 1
+      });
+      that.countdown(that);
+     },1000)
   },
   onShareAppMessage: function () {//转发功能
     return {
