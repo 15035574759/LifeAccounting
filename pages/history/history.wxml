@@ -10,6 +10,7 @@
 				<text class="UpdateBoxText-01">账本小精灵首次和大家见面，有以下几大功能：\n 1.个人记账 \n 2.本月收入与支出记账统计 \n 3.好友管理 \n 4.账本管理</text>
 			</view>
 		</view>
+
 		<view class="UpdateBox">
 			<view class="UpdateBox01">
 				<view class="UpdateBox01-versions">v2.0.0</view>
@@ -17,6 +18,16 @@
 			</view>
 			<view class="UpdateBoxText">
 				<text class="UpdateBoxText-01">1. 优化用户授权登录方式\n  2. 服务器接口迁移（用户数据不会受到任何影响）</text>
+			</view>
+		</view>
+
+    <view class="UpdateBox">
+			<view class="UpdateBox01">
+				<view class="UpdateBox01-versions">v3.0.0</view>
+				<view class="UpdateBox01-time">2019.04.28</view>
+			</view>
+			<view class="UpdateBoxText">
+				<text class="UpdateBoxText-01">1. 优化首页进入模式（细节上的优化）</text>
 			</view>
 		</view>
 	</view>
