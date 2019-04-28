@@ -7,6 +7,9 @@ Page({
     TextContent: '开启'
   },
   onLoad: function () {
+    wx.showShareMenu({
+      withShareTicket: true
+    })
     var that = this
     //获取用户信息 判断是否授权
     app.getUserInfo(function (userInfo) {
