@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/tally/tally",
     "pages/index/index",
     "pages/user/user",
     "pages/show/show",
@@ -15,13 +16,13 @@
     "pages/budget/budget",
     "pages/regard/regard",
     "pages/history/history",
-    "pages/tally/tally",
     "pages/service/service",
     "pages/account/particulars/account_particulars",
     "pages/account/details/circle_friend/circle_friend",
     "pages/account/details/circle_friend_add/circle_friend_add",
     "pages/account/details/detail_add/payer/payer",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/add/add"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -62,5 +63,12 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-tab": "./dist/tab/index",
+    "van-tabs": "./dist/tabs/index",
+    "van-datetime-picker": "./dist/datetime-picker/index",
+    "van-icon": "./dist/icon/index",
+    "van-popup": "./dist/popup/index"
+  }
 }

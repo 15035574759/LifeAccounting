@@ -1,6 +1,5 @@
 /* pages/statistics/statistics.wxss */
-
-.TabButton{
+/* .TabButton{
 	color:#FFFFFF;
 }
 button.income,
@@ -15,11 +14,22 @@ button.expend
 	float: left;
 	border-radius: 0;
 	font-weight: both;
-    /*border-color: #FE8A00;*/
-	/*color:#FE8A00;*/
 }
 button.income{
 	border-right:0;
+} */
+.van-tab {
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+.van-tabs--card .van-tabs__wrap {
+  height:37px!important;
+}
+.van-tabs__nav--card {
+  height: 37px!important;
+}
+.van-tabs__nav--card .van-tab {
+  line-height: 37px!important;
 }
 .TabButton-br{
 	width:100%;

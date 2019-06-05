@@ -90,6 +90,6 @@
       <view bindtap="loadMore" data-lastid="{{lastid}}" class="loadMore" style="display:{{moreHidden}}">加载更多</view>
       <loading hidden="{{Loading}}">加载中...</loading>
   </view>
-  <ad unit-id="adunit-0e48cff45c340d29"></ad>
+  <!-- <ad unit-id="adunit-0e48cff45c340d29"></ad> -->
   <view class="container01" style="display:{{AccountBookDisplay}};">111</view>
 </view>

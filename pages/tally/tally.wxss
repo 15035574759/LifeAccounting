@@ -1,4 +1,11 @@
 /* pages/tally/tally.wxss */
+.containers {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 .mypie{
 	text-align:center;
 	margin:0 auto;
@@ -11,7 +18,21 @@
 	overflow: hidden;
 }
 
-button.income,
+.van-tab {
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+.van-tabs--card .van-tabs__wrap {
+  height:37px!important;
+}
+.van-tabs__nav--card {
+  height: 37px!important;
+}
+.van-tabs__nav--card .van-tab {
+  line-height: 37px!important;
+}
+
+/* button.income,
 button.expend
 {
 	width:80px;
@@ -25,7 +46,7 @@ button.expend
 }
 button.income{
 	border-right:0;
-}
+} */
 
 .circle{
 	width:100px;
@@ -36,12 +57,16 @@ button.income{
 	z-index: 9;
 	/*position: absolute; */
 	text-align: center;
-	
 }
 .Br{
 	width:100%;
 	border-bottom: 2px solid #F3F3F3;
 	margin: 10px 0 10px 0;
+}
+.Brh2{
+	width:100%;
+	border-bottom: 5px solid #F3F3F3;
+	margin: 20px 0 20px 0;
 }
 
 .GetExpend{
@@ -84,4 +109,37 @@ button.income{
 	line-height: 50px;
 	margin-right: 15px;
 	font-weight:bold;
+}
+
+.category {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  line-height: 30px;
+}
+.category .left {
+  margin:0 20px;
+  float:left;
+}
+.category .right {
+  margin:0 20px;
+  float:right;
+}
+.category-right-picker {
+  width: 110px;
+  height: 30px;
+  /* border: 1px solid red; */
+  background-color: #EEE9E9;
+  border-radius: 5px;
+}
+.category-right-picker .time {
+  font-size: 13px;
+  margin-left:4px;
+}
+.category-right-picker .shu {
+  color:#D8D8D8;
+}
+.van-icon {
+  font-size:20px!important;
+  top:5px!important;
 }

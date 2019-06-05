@@ -1,25 +1,31 @@
 <!--pages/tally/tally.wxml-->
-<view class="container">
-	<view class="TabButton">
-		<button type="{{IncomeType}}" style="background:{{IncomeColor}};color:{{incomeFontColor}};" bindtap="DefaultIncome"  class="income"> 收入 </button>
-		<button type="{{ExpendType}}" style="background:{{ExpendColor}};color:{{expendFontColor}};" bindtap="DefaultExpend"  class="expend"> 支出 </button>
-	</view>
-	<!-- <view class="circle" style="position:absolute;transform: translateX(-50% 0); -webkit-transform: translateX(-50% 0); top: 16.5%;">
-			<view style='position: absolute; text-align: center; transform: translate(30.5px, 32px); -webkit-transform: translate(30.5px, 32px);line-height: 18px;'>
-				<view style="">
-					<view style="font-size:20px;font-weight:bold;" wx:if="{{TotalParice == null}}">0</view>
-					<view style="font-size:20px;font-weight:bold;" wx:else>{{TotalParice}}</view>
-					<view style="font-size:12px;color:#FF8800;">{{totalStart}}</view>
-				</view>
-			</view>
-		</view> -->
-		<!-- <view>
-			<canvas canvas-id="mypie02" class="mypie02" style="width:100px;height:100px;"></canvas>
-		</view> -->
-	<view class="CircleBox" style="margin:0 auto;text-align:center;">
+<view class="containers">
+<view class="van-tab">
+    <van-tabs active="{{ active }}" type="card" bind:click="onClickDefault">
+      <van-tab title="收入" index="0"></van-tab>
+      <van-tab title="支出" index="1"></van-tab>
+    </van-tabs>
+</view>
+  <view class="Brh2"></view>
+  <view style="margin:25px 0 0 20px;">月{{ExpendIncome}}对比</view>
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+
+  <view class="Brh2"></view>
+  <view class="category">
+    <view class="left">{{ExpendIncome}}类别</view>
+    <view class="right">
+      <view class="category-right-picker">
+        <picker mode="date" value="{{startDate}}" fields="month" start="2017-01" bindchange="bindDateChange">
+          <text class="time">{{choceDate}}</text> 
+          <text class="shu">|</text>
+          <van-icon name="idcard" />
+        </picker>
+      </view>
+    </view>
+  </view>
+	<view class="CircleBox" style="margin:0 auto;text-align:center;margin-top:60px;">
 			<canvas canvas-id="mypie" class="mypie" style="width:240px;height:240px;"></canvas>
 	</view>
-	
 	<view class="Br"></view>
 
 	<!-- 收入数据遍历 -->
@@ -32,15 +38,6 @@
 			</view>
 			<view class="BillMoney">{{item.money}}</view>
 		</view>
-		<!-- <view class="Bill">
-			<view class="BillName">
-				<view class="BillName03"><image class="navigator-image" src="../../images/交通.png" background-size="cover" mode=""></image></view>
-				<text class="BillName01">日用品</text>
-				<text class="BillName02">100%</text>
-			</view>
-			<view class="BillMoney">100</view>
-		</view> -->
-	<!-- </view>	 -->
 
 	<!-- 支出数据遍历 -->
 	<!-- <view class="GetExpend" style="display:{{ExpendDisplay}}"> -->
@@ -50,17 +47,8 @@
 				<text class="BillName01">{{item.describe}}</text>
 				<text class="BillName02">{{item.probability}}</text>
 			</view>
-			<view class="BillMoney">{{item.money}}</view>
+			<view class="BillMoney">{{item.money}} 元</view>
 		</view>
-		<!-- <view class="Bill">
-			<view class="BillName">
-				<view class="BillName03"><image class="navigator-image" src="../../images/交通.png" background-size="cover" mode=""></image></view>
-				<text class="BillName01">日用品</text>
-				<text class="BillName02">100%</text>
-			</view>
-			<view class="BillMoney">100</view>
-		</view> -->
-	<!-- </view>	 -->
-  <view style="margin-top:50rpx;">  </view>
-  <ad unit-id="adunit-4cb93ba39c6a4307"></ad>
+  <!-- <view style="margin-top:50rpx;">  </view> -->
+  <!-- <ad unit-id="adunit-4cb93ba39c6a4307"></ad> -->
 </view> 

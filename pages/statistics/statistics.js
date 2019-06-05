@@ -2,10 +2,11 @@
 var app = getApp()
 Page({
   data:{
-    IncomeType:"default",
-    ExpendType:"warn",
+    // IncomeType:"default",
+    // ExpendType:"warn",
     IncomeDisplay:"none",
     ExpendDisplay:"show",
+    active:1, //tab切换默认选中
     getShow:false,
     inout_start:2,
     avatarUrl:"https://www.qinlh.com/charge/public/uploads/images/吃喝玩乐.png",
@@ -52,28 +53,50 @@ Page({
       }
     })
   },
-  DefaultIncome:function(e){//收入选项卡
-    this.setData({"inout_start":1})//将收入支出状态改为1
-    this.setData({"IncomeDisplay":"block"})
-    this.setData({"ExpendDisplay":"none"})
-    this.setData({"ExpendType":"default"})
-    this.setData({"IncomeType":"warn"})
-    this.setData({ "avatarUrl":"https://www.qinlh.com/charge/public/uploads/images/其他01.png"})
-    this.setData({"desc":"其他"})
-    this.setData({"c_id":34})
+  onClickDefault: function(event) {
+    if(event.detail.index == 0) {
+      this.setData({ "inout_start": 1 })//将收入支出状态改为1
+      this.setData({ "IncomeDisplay": "block" })
+      this.setData({ "ExpendDisplay": "none" })
+      this.setData({ "ExpendType": "default" })
+      this.setData({ "IncomeType": "warn" })
+      this.setData({ "avatarUrl": "https://www.qinlh.com/charge/public/uploads/images/其他01.png" })
+      this.setData({ "desc": "其他" })
+      this.setData({ "c_id": 34 })
+    } else {
+      this.setData({ "inout_start": 2 })//将收入支出状态改为2
+      this.setData({ "ExpendDisplay": "none" })
+      this.setData({ "ExpendDisplay": "show" })
+      this.setData({ "IncomeDisplay": "none" })
+      this.setData({ "ExpendType": "warn" })
+      this.setData({ "IncomeType": "default" })
+      this.setData({ "avatarUrl": "https://www.qinlh.com/charge/public/uploads/images/吃喝玩乐.png" })
+      this.setData({ "desc": "吃喝" })
+      this.setData({ "c_id": 1 })
+    }
   },
-  DefaultExpend:function(e){//支出选项卡
-    // console.log("55")
-    this.setData({"inout_start":2})//将收入支出状态改为2
-    this.setData({"ExpendDisplay":"none"})
-    this.setData({"ExpendDisplay":"show"})
-    this.setData({"IncomeDisplay":"none"})
-    this.setData({"ExpendType":"warn"})
-    this.setData({"IncomeType":"default"})
-    this.setData({ "avatarUrl":"https://www.qinlh.com/charge/public/uploads/images/吃喝玩乐.png"})
-    this.setData({"desc":"吃喝"})
-    this.setData({"c_id":1})
-  },
+  // DefaultIncome:function(e){//收入选项卡
+  //   this.setData({"inout_start":1})//将收入支出状态改为1
+  //   this.setData({"IncomeDisplay":"block"})
+  //   this.setData({"ExpendDisplay":"none"})
+  //   this.setData({"ExpendType":"default"})
+  //   this.setData({"IncomeType":"warn"})
+  //   this.setData({ "avatarUrl":"https://www.qinlh.com/charge/public/uploads/images/其他01.png"})
+  //   this.setData({"desc":"其他"})
+  //   this.setData({"c_id":34})
+  // },
+  // DefaultExpend:function(e){//支出选项卡
+  //   // console.log("55")
+  //   this.setData({"inout_start":2})//将收入支出状态改为2
+  //   this.setData({"ExpendDisplay":"none"})
+  //   this.setData({"ExpendDisplay":"show"})
+  //   this.setData({"IncomeDisplay":"none"})
+  //   this.setData({"ExpendType":"warn"})
+  //   this.setData({"IncomeType":"default"})
+  //   this.setData({ "avatarUrl":"https://www.qinlh.com/charge/public/uploads/images/吃喝玩乐.png"})
+  //   this.setData({"desc":"吃喝"})
+  //   this.setData({"c_id":1})
+  // },
   BillClassClick:function(e){//图标样式
     var topImges = e.target.dataset.imgurl
     var c_id = e.target.dataset.id
@@ -157,9 +180,9 @@ Page({
   bindKeyInput:function(e){//验证备注不得超过10个字
     var StringLength = e.detail.value.length
     this.setData({"remark_length":StringLength})
-    if(StringLength > 10){
+    if(StringLength > 20){
       wx.showToast({
-        title: '文字内容不得超过10个汉字',
+        title: '文字内容不得超过20个汉字',
         icon: 'success',
         duration: 2000
       })

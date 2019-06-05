@@ -1,8 +1,12 @@
 	<!--pages/statistics/statistics.wxml-->
-<view class="container">
-	<view class="TabButton">
-		<button type="{{IncomeType}}" bindtap="DefaultIncome" hover-class="other-button-hover" class="income"> 收入 </button>
-		<button type="{{ExpendType}}" bindtap="DefaultExpend" hover-class="other-button-hover" class="expend"> 支出 </button>
+<view class="containers">
+	<view class="van-tab">
+    <van-tabs active="{{ active }}" type="card" bind:click="onClickDefault">
+      <van-tab title="收入" index="0"></van-tab>
+      <van-tab title="支出" index="1"></van-tab>
+    </van-tabs>
+		<!-- <button type="{{IncomeType}}" bindtap="DefaultIncome" hover-class="other-button-hover" class="income"> 收入 </button>
+		<button type="{{ExpendType}}" bindtap="DefaultExpend" hover-class="other-button-hover" class="expend"> 支出 </button> -->
 	</view>
 	<view class="TabButton-br"></view>
 	<form bindsubmit="formSubmit">
@@ -51,7 +55,7 @@
 		<view class="FromText">
 			<view class="section">
 			  <!-- <view class="section__title">日期选择器</view> -->
-			  <picker mode="date" name="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+			  <picker mode="date" name="date" value="{{date}}" bindchange="bindDateChange">
 			    <view class="picker">
 			      时间: {{date}} <text class="picker-text">不能选择未来日期</text>
 			    </view>
@@ -61,7 +65,7 @@
 			<view class="get-remark">
 				<view class="remark remark-remark">备注:</view>
 				<view class="remark remark-input" style="width:70%;">
-					<input bindinput="bindKeyInput"  name="remark" maxlength="10" placeholder="备注，例如：租房"/></view><text  class="remark remark-limit">{{remark_length}}/10</text>
+					<input bindinput="bindKeyInput"  name="remark" maxlength="10" placeholder="备注，例如：租房"/></view><text  class="remark remark-limit">{{remark_length}}/20</text>
 			</view>
 		</view>
 		<view class="btn-area">

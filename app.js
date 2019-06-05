@@ -32,6 +32,7 @@ App({
                     duration: 2000
                   })
                 }
+                console.log(res);
                 // //缓存session_id
                 wx.setStorageSync('PHPSESSID', res.data.PHPSESSID)
                 wx.setStorageSync('openid', res.data.openid)
@@ -73,7 +74,7 @@ App({
   globalData:{
     userInfo:null
   },
-  url: "https://www.qinlh.com/charge/public/index.php/port/",
+  // url: "https://www.qinlh.com/charge/public/index.php/port/",
+  url: "http://www.charge.com/port/",
   img_url: "https://www.qinlh.com/charge/public/uploads/images/账本.png"
-    // url : "http://localhost/charge/public/index.php/port/"
 })
