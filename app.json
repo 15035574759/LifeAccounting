@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/tally/tally",
     "pages/index/index",
     "pages/user/user",
     "pages/show/show",
     "pages/account/details/detail_add/account_detail_add",
     "pages/show/show_list/show_list",
     "pages/statistics/statistics",
+    "pages/tally/tally",
     "pages/account/account",
     "pages/account/add/account_add",
     "pages/account/details/account_details",
@@ -69,6 +69,7 @@
     "van-tabs": "./dist/tabs/index",
     "van-datetime-picker": "./dist/datetime-picker/index",
     "van-icon": "./dist/icon/index",
-    "van-popup": "./dist/popup/index"
+    "van-popup": "./dist/popup/index",
+    "ec-canvas": "./ec-canvas/ec-canvas"
   }
 }

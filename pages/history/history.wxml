@@ -30,6 +30,16 @@
 				<text class="UpdateBoxText-01">1. 优化首页进入模式（细节上的优化）</text>
 			</view>
 		</view>
+
+    <view class="UpdateBox">
+			<view class="UpdateBox01">
+				<view class="UpdateBox01-versions">v4.0.0</view>
+				<view class="UpdateBox01-time">2019.06.05</view>
+			</view>
+			<view class="UpdateBoxText">
+				<text class="UpdateBoxText-01">1. 优化页面切换按钮样式\n 2. 统计功能增加本年度每个月收入与支出对比统计</text>
+			</view>
+		</view>
 	</view>
 </view>
 

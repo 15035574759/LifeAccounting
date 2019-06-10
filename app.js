@@ -74,7 +74,7 @@ App({
   globalData:{
     userInfo:null
   },
-  // url: "https://www.qinlh.com/charge/public/index.php/port/",
-  url: "http://www.charge.com/port/",
+  url: "https://www.qinlh.com/charge/public/index.php/port/",
+  // url: "http://www.charge.com/port/",
   img_url: "https://www.qinlh.com/charge/public/uploads/images/账本.png"
 })

@@ -58,6 +58,7 @@ Page({
       // 页面初始化 options为页面跳转所带来的参数
       this.UserInfoOpenid(function (openid){
         if(openid) {
+          _this.setData({openid:openid});
           _this.GetShowYearMoneyData(openid); //获取本年度每个月的收支金额
           _this.GetThisMonthBudget(openid, _this.data.choceDate); //获取本月收支明细数据 饼图数据
         } else {
@@ -316,7 +317,7 @@ Page({
       this.setData({
         choceDate: time[0]+'年'+time[1]+'月'
       })
-      this.GetThisMonthBudget(this.data.choceDate);
+      this.GetThisMonthBudget(this.data.openid, this.data.choceDate);
     },
     init_bar: function (ExpendMonths, ExpendMoney) { //渲染柱状图数据
       this.barComponent.init((canvas, width, height) => {
@@ -329,15 +330,16 @@ Page({
           color: ['#9170D9'],
           tooltip: {
             trigger: 'axis',
-            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+            show : false,
+            axisPointer: {          // 坐标轴指示器，坐标轴触发有效
               type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
             }
           },
           grid: {
             left: '3%',
             right: '4%',
-            // bottom: '3%',
-            height: '280',
+            bottom: '5%',
+            height: '80%',
             containLabel: true
           },
           xAxis: [
@@ -349,6 +351,8 @@ Page({
               },
               splitLine: {
                 show: false,
+              },
+              axisLabel: {
               }
             }
           ],
@@ -373,6 +377,11 @@ Page({
             {
               name: '直接访问',
               type: 'bar',
+              label: {
+                normal: {
+                  rich: {}
+                }
+              },
               itemStyle: {
                 normal: {
                   label: {
@@ -380,7 +389,7 @@ Page({
                     position: 'top',
                     formatter: '￥{c}',
                     textStyle: {
-                      color: '#9170D9'
+                      color: '#9170D9',
                     }
                   }
                 }
@@ -424,7 +433,10 @@ Page({
     },
     onUnload:function(){
       // 页面关闭
-    }
+    },
+    onTabItemTap(item) { //tab切换事件监听
+      this.onLoad();
+    },
 })
 
 //默认初始化方法
