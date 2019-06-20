@@ -110,9 +110,11 @@ Page({
     var formData = e.detail.value
     formData.inout_start = this.data.inout_start//支出与收入状态
     formData.inout_class = this.data.c_id//支出与收入状态 id
+    formData.inout_class_name = this.data.desc//支出与收入状态 名称
     formData.money = formData.money;//金额
     formData.remark = formData.remark;//描述
     formData.time = formData.date;
+    formData.formId = e.detail.formId;
     console.log('form发生了submit事件，携带数据为：', formData)
     if(formData.money == ""){
       wx.showToast({
@@ -139,8 +141,8 @@ Page({
         key: 'openid',
         success: function(res) {
            var openid = res.data
-            console.log(formData)
-            console.log("formData")
+            // console.log(formData)
+            // console.log("formData")
             wx.request({
               url: app.url + 'check/charge', //提交表单，入库操作
               data:{openid:openid,formData:formData},

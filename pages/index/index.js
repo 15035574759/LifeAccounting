@@ -21,13 +21,13 @@ Page({
   bindGetUserInfo(e) { //用户授权
     if (e.detail.userInfo) {
        //获取用户信息 判断是否授权
-      app.getUserInfo(function (userInfo) {
-        if(userInfo) {
-          wx.switchTab({//跳转到首页
-            url: '/pages/show/show'
-          })
-        }
-    })
+        app.getUserInfo(function (userInfo) {
+          if(userInfo) {
+            wx.switchTab({//跳转到首页
+              url: '/pages/show/show'
+            })
+          }
+      })
     }
   },
   onShareAppMessage: function () {//转发功能

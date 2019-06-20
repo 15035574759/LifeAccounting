@@ -69,15 +69,15 @@
       <!-- <view wx:for="{{newsList}}" class="list" wx:for-item="itemName"> -->
           <view class="Stats">
             <view class="StatsTime">{{time}}</view>
-            <view class="StatsStats">收入:{{IncomeTimeDataArrSum}} 支出:{{ExpendTimeDataArrSum}}</view>
+            <view class="StatsStats">收入:{{IncomeTimeDataArrSum ? IncomeTimeDataArrSum : 0}} 支出:{{ExpendTimeDataArrSum ? ExpendTimeDataArrSum : 0}}</view>
           </view>
               <view class="imgs" wx:for="{{array}}" wx:for-item="item">
                 <view bindtap="GetNav"  data-lastid="{{item.a_id}}">
                   <view class="imgs-text"><image class="in-img" src="{{item.inout_url}}" background-size="cover"></image></view>
                   <view class="imgs-text"><text class="imgs-test01">{{item.describe}}</text><text class="imgs-test02">{{item.remark}}</text></view>
                 </view>
-                <view class="imgs-text money" wx:if="{{item.inout_start == 1}}" style="color:#9170D9;font-weight:bold;">{{item.money}}</view>
-                <view class="imgs-text money" wx:else="{{item.inout_start == 2}}" style="color:red;font-weight:bold;">{{item.money}}</view>
+                <view class="imgs-text money" wx:if="{{item.inout_start == 1}}" style="color:#9170D9;font-weight:bold;">￥{{item.money}}</view>
+                <view class="imgs-text money" wx:else="{{item.inout_start == 2}}" style="color:red;font-weight:bold;">￥{{item.money}}</view>
               </view>
         <!-- </view> -->
         <!-- </navigator> -->

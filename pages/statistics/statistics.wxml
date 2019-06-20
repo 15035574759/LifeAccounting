@@ -9,7 +9,7 @@
 		<button type="{{ExpendType}}" bindtap="DefaultExpend" hover-class="other-button-hover" class="expend"> 支出 </button> -->
 	</view>
 	<view class="TabButton-br"></view>
-	<form bindsubmit="formSubmit">
+	<form bindsubmit="formSubmit" report-submit='true'>
 		<view class="userinfo">
 			<view class="userinfo-imgDesc">
 					<view class="userinfo-desc01"><image class="userinfo-img" src="{{avatarUrl}}" background-size="cover" mode=""></image></view>
@@ -69,7 +69,7 @@
 			</view>
 		</view>
 		<view class="btn-area">
-		    <button formType="submit" style="height:100%;">提交</button>
+		    <button form-type="submit" style="height:100%;">提交</button>
 		</view>
 	</form>
 </view>
